@@ -5,7 +5,14 @@ export default {
     './src/**/*.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        header: '#363636',
+        'green-btn': '#89B58C',
+        'green-light': '#F3F8F4',
+        black: '#363636',    
+      }
+    },
   },
   plugins: [],
 }
