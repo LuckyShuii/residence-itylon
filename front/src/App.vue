@@ -5,7 +5,8 @@ import Header from '@/components/Header.vue'
 
 <template>
   <!-- <RouterLink to="/about">About</RouterLink> -->
-
   <Header />
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
 </template>

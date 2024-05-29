@@ -1,3 +1,5 @@
 <template>
-<p>That's the header</p>
+    <header class="bg-green-800">
+        <p class="text-6xl">header</p>
+    </header>
 </template>
