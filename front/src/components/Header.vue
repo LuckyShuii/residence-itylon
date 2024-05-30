@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-black opacity-40 text-white flex justify-between items-center my-[32px] mx-[63px] py-[18px] px-[31px] rounded-xl">
+    <header class="bg-black bg-opacity-40 text-white flex justify-between items-center my-[32px] py-[18px] px-[31px] rounded-xl absolute w-[90%] left-1/2 transform -translate-x-1/2">
         <img src="@/assets/logo/logo-header.svg" alt="logo" />
         <div class="flex">
             <li>
