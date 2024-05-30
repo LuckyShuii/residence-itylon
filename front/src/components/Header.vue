@@ -1,17 +1,25 @@
 <script setup lang="ts">
-import Button from 'primevue/button';
 import { RouterLink } from 'vue-router';
-import Dropdown from 'primevue/dropdown';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 
-const discoverItems = ref([
-    { label: 'Découvrir', icon: 'pi pi-fw pi-search' },
-    { label: 'Activités', icon: 'pi pi-fw pi-calendar' },
-    { label: 'Tarifs', icon: 'pi pi-fw pi-money-bill' },
-    { label: 'Contact', icon: 'pi pi-fw pi-envelope' }
-]);
+const activities = ref([]);
 
-const selectedItem = ref(null);
+const loadActivities = async () => {
+    try {
+        const response = await axios.get('http://localhost:8002/activities');
+        activities.value = response.data;
+        console.log('activities,', activities.value)
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+onMounted(async () => {
+    await loadActivities();
+});
+
+const selectedActivity = ref(null);
 </script>
 
 <template>
@@ -25,12 +33,10 @@ const selectedItem = ref(null);
                 Découvrir
             </li>
             <li class="ml-[25px]">
-                Activités
+                <Dropdown v-model="selectedActivity" :options="activities" optionLabel="headerTitle" placeholder="Activités" class="w-full md:w-14rem" />
             </li>
             <li class="ml-[25px]">
                 <RouterLink to="/tarifs">Tarifs</RouterLink>
-                <Dropdown v-model="selectedItem" :options="discoverItems" optionLabel="activity" placeholder="Select an Item" class="w-full md:w-14rem" />
-
             </li>
             <li class="ml-[25px]">
                 <RouterLink to="/contact">Contact</RouterLink>

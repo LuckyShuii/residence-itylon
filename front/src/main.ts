@@ -5,6 +5,7 @@ import '@/assets/css/tailwind.css'
 import PrimeVue from 'primevue/config';
 import Dropdown from 'primevue/dropdown';
 import Button from 'primevue/button';
+import 'primevue/resources/themes/aura-light-green/theme.css'
 
 const app = createApp(App);
 
