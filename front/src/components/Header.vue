@@ -4,12 +4,18 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
 const activities = ref([]);
+const selectedActivity = ref(null);
+
+const discoveries = ref([
+    { name: 'Les maisons' },
+    { name: 'La résidence' }
+]);
+const selectedDiscover = ref(null);
 
 const loadActivities = async () => {
     try {
         const response = await axios.get('http://localhost:8002/activities');
         activities.value = response.data;
-        console.log('activities,', activities.value)
     } catch (error) {
         console.error(error);
     }
@@ -19,7 +25,6 @@ onMounted(async () => {
     await loadActivities();
 });
 
-const selectedActivity = ref(null);
 </script>
 
 <template>
@@ -30,7 +35,7 @@ const selectedActivity = ref(null);
                 <RouterLink to="/">Accueil</RouterLink>
             </li>
             <li class="ml-[25px]">
-                Découvrir
+                <Dropdown v-model="selectedDiscover" :options="discoveries" optionLabel="name" placeholder="Découvrir" class="w-full md:w-14rem" />
             </li>
             <li class="ml-[25px]">
                 <Dropdown v-model="selectedActivity" :options="activities" optionLabel="headerTitle" placeholder="Activités" class="w-full md:w-14rem" />

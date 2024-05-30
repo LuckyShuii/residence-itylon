@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* variables */
+
+/* header: '#363636',
+'green-btn': '#89B58C',
+'green-light': '#F3F8F4',
+black: '#363636', */
+
+:root {
+  --header: #363636;
+  --green-btn: #89B58C;
+  --green-light: #F3F8F4;
+  --green-dark: #6f9671;
+  --black: #363636;
+}
+
 li {
   list-style-type: none;
 }
@@ -18,11 +33,45 @@ a {
 
 .p-button {
   padding: 10px;
-  background-color: #89B58C;
+  background-color: var(--green-btn);
   border-radius: 10px;
 }
 
 .p-button:hover {
-  background-color: #6f9671;
+  background-color: var(--green-dark);
   transition: 0.3s;
+}
+
+.p-dropdown {
+  padding: 10px;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.p-dropdown.p-focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.p-dropdown-label {
+  color: white;
+}
+
+.p-dropdown-trigger	{
+  color: white;
+}
+
+.p-dropdown-items-wrapper {
+  background-color: var(--green-light);
+  border-radius: 10px;
+}
+
+.p-dropdown-items {
+  padding: 5px;
+}
+
+.p-dropdown-item {
+  padding: 5px;
+  border-radius: 5px;
 }
