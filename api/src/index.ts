@@ -24,7 +24,7 @@ const swaggerDefinition = {
             'This is a simple CRUD API application made with Express and documented with Swagger. It is meant to populate the project frontend with data.',
         contact: {
             name: 'Lucas Boillot',
-            url: 'https://www.linkedin.com/in/lucas-boillot/',
+            url: 'https://www.lucasboillot.fr/',
         },
     },
     servers: [
