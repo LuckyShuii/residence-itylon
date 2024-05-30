@@ -75,3 +75,8 @@ a {
   padding: 5px;
   border-radius: 5px;
 }
+
+.p-dropdown-item:hover {
+  background-color: var(--green-dark);
+  transition: 0.3s;
+}
