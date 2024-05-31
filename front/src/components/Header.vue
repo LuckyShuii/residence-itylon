@@ -26,10 +26,10 @@ const loadActivities = async () => {
 const resetDropdown = (event: any) => {
     let toRoute = '/';
     if (event.value.name) {
-        toRoute += Slugify((event.value.name as string).toLowerCase());
+        toRoute += "decouvrir/" + Slugify((event.value.name as string).toLowerCase());
     }
     if (event.value.headerTitle) {
-        toRoute += Slugify((event.value.headerTitle as string).toLowerCase());
+        toRoute += "activite/" + Slugify((event.value.headerTitle as string).toLowerCase());
     }
     reRoute(toRoute);
     resetSelectedActivity();
