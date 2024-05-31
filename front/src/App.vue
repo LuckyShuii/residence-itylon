@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import Header from '@/components/Header.vue'
+import Toast from 'primevue/toast';
 </script>
 
 <template>
   <div class="bg-blue-200">
-    <!-- <RouterLink to="/about">About</RouterLink> -->
+    <Toast />
     <Header />
     <main>
       <RouterView />

@@ -81,3 +81,24 @@ a {
   background-color: var(--green-dark);
   transition: 0.3s;
 }
+
+.p-toast {
+  width: 25rem;
+  margin-bottom: 1rem;
+}
+
+.p-toast-message-content {
+  padding: 1rem;
+}
+
+.p-toast-detail {
+  margin-left: 0.9rem;
+}
+
+.p-toast-summary {
+  margin-left: 0.9rem;
+}
+
+.p-toast-message-icon {
+  margin-top: 2px;
+}

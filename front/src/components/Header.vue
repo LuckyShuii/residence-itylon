@@ -4,6 +4,9 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import Slugify from 'slugify';
 import router from '@/router';
+import { useToast } from 'primevue/usetoast';
+
+const toast = useToast();
 
 const activities = ref([]);
 const selectedActivity = ref(null);
@@ -16,10 +19,10 @@ const selectedDiscover = ref(null);
 
 const loadActivities = async () => {
     try {
-        const response = await axios.get('http://localhost:8002/activities');
+        const response = await axios.get('http://localhost:8002/actvities');
         activities.value = response.data;
     } catch (error) {
-        console.error(error);
+        toast.add({ severity: 'error', summary: 'Erreur', detail: 'Une erreur est survenue lors du chargement des activités', life: 6000 });
     }
 };
 
