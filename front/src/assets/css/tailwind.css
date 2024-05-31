@@ -46,6 +46,7 @@ a {
   padding: 10px;
   background: transparent;
   border-radius: 10px;
+  box-shadow: none;
 }
 
 .p-dropdown.p-focus {
