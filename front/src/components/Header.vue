@@ -69,10 +69,10 @@ onMounted(async () => {
             <li class="ml-[25px]">
                 <Dropdown v-model="selectedDiscover" :options="discoveries" optionLabel="name" placeholder="Découvrir" class="w-full md:w-14rem" @change="resetDropdown"/>
             </li>
-            <li class="ml-[25px]">
+            <li class="">
                 <Dropdown v-model="selectedActivity" :options="activities" optionLabel="headerTitle" placeholder="Activités" class="w-full md:w-14rem" @change="resetDropdown"/>
             </li>
-            <li class="ml-[25px]">
+            <li class="">
                 <RouterLink to="/tarifs">Tarifs</RouterLink>
             </li>
             <li class="ml-[25px]">
