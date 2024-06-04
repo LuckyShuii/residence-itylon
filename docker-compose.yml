@@ -1,0 +1,27 @@
+services:
+  api:
+    build: ./api
+    ports:
+      - 8002:8002
+    volumes:
+      - ./api/src:/app/src
+      - ./api/residence.sqlite:/app/residence.sqlite
+    healthcheck:
+      test: 'curl --fail --request GET --url ''http://localhost:8002/'' || exit 1'
+      interval: 1s
+      timeout: 2s
+      retries: 100
+  front:
+    build: ./front
+    ports:
+      - 5173:5173
+    volumes:
+      - ./front/src:/app/src
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: "curl --fail --request GET --url 'http://localhost:5173/' || exit 1"
+      interval: 1s
+      timeout: 2s
+      retries: 100

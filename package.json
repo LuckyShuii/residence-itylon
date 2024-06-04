@@ -1,0 +1,11 @@
+{
+  "name": "residence-itylon",
+  "version": "1.0.0",
+  "description": "## Start the API",
+  "main": "index.js",
+  "scripts": {
+    "start": "sudo docker-compose up --build"
+  },
+  "author": "",
+  "license": "ISC"
+}

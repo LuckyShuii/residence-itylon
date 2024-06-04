@@ -69,8 +69,7 @@ app.listen(port, async () => {
 });
 
 app.get("/", (_req, res) => {
-    console.log("Hello World! Your server is ON")
-    res.send("Hello World! Your server is ON");
+    res.status(200).send("The server is ON");
 });
 
 /**
