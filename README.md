@@ -1,5 +1,9 @@
 # residence-itylon
 
+This app is working with Docker, simply run `npm start` at the root and go to `http://localhost:5173/`
+
+## Start the
+
 ## Start the API
 
 Go in the API folder
