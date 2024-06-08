@@ -6,10 +6,24 @@
         <video class="absolute top-0 left-0 z-0 w-full h-full object-cover" autoplay muted loop>
             <source src="https://www.residence-itylon.com/media/videos/Vid%C3%A9o%20sans%20titre%20%E2%80%93%20R%C3%A9alis%C3%A9e%20avec%20Clipchamp%20(1).mp4" type="video/mp4">
         </video>
-        <div class="relative z-10 flex items-center flex-col justify-center h-full text-center">
+        <div id="hero-content" class="relative z-10 flex items-center flex-col justify-center h-full text-center transition-opacity duration-500 opacity-0">
             <img src="@/assets/logo/logo-hero.svg" alt="logo" class="mx-auto" />
             <Button class="mt-4 w-[172px] h-[46px] flex justify-center">Découvrir</Button>
         </div>
         <img src="@/assets/icons/down-arrow.svg" alt="arrow-down" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-[100px]" />
     </div>
 </template>
+
+<script setup lang="ts">
+import { onMounted } from 'vue';
+
+onMounted(() => {
+    const heroContent = document.getElementById('hero-content');
+    setTimeout(() => {
+        if (heroContent) {
+            heroContent.classList.remove('opacity-0');
+            heroContent.classList.add('opacity-100');
+        }
+    }, 500);
+});
+</script>
