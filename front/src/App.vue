@@ -5,7 +5,7 @@ import Toast from 'primevue/toast';
 </script>
 
 <template>
-  <div class="bg-blue-200">
+  <div>
     <Toast />
     <Header />
     <main>

@@ -4,4 +4,14 @@ import Hero from '@/components/Home/Hero.vue'
 
 <template>
     <Hero />
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
 </template>

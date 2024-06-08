@@ -2,8 +2,11 @@
 </script>
 
 <template>
-    <div class="fixed bg-center bg-cover h-screen w-full" :style="{ backgroundImage: 'url(src/assets/hero.png)' }">
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center">
+    <div class="relative h-screen overflow-hidden">
+        <video class="absolute top-0 left-0 z-0 w-full h-full object-cover" autoplay muted loop>
+            <source src="https://www.residence-itylon.com/media/videos/Vid%C3%A9o%20sans%20titre%20%E2%80%93%20R%C3%A9alis%C3%A9e%20avec%20Clipchamp%20(1).mp4" type="video/mp4">
+        </video>
+        <div class="relative z-10 flex items-center flex-col justify-center h-full text-center">
             <img src="@/assets/logo/logo-hero.svg" alt="logo" class="mx-auto" />
             <Button class="mt-4 w-[172px] h-[46px] flex justify-center">Découvrir</Button>
         </div>
