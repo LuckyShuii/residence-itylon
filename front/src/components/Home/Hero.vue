@@ -8,7 +8,7 @@ onMounted(() => {
             heroContainer.classList.remove('opacity-0');
             heroContainer.classList.add('opacity-100');
         }
-    }, 100);
+    }, 250);
 });
 </script>
 

@@ -43,8 +43,8 @@ onMounted(async () => {
     <div class="bg-green-light flex justify-center">
         <div class="px-[85px] py-[90px] flex items-center justify-between max-w-[1440px] w-full">
             <div class="w-[325px] flex flex-col">
-                <h2>Trouvez la maison parfaite pour vos vacances</h2>
-                <p class="mb-[28px] mt-[58px]">Velit repudiandae amet maiores amet voluptatibus itaque ullam praesentium. Vero cupiditate molestiae sequi quo voluptatibus nostrum minus.</p>
+                <h2 class="font-mistress text-[46px]">Trouvez la maison parfaite pour vos vacances</h2>
+                <p class="mb-[28px] mt-[50px] w-[385px]">Velit repudiandae amet maiores amet voluptatibus itaque ullam praesentium. Vero cupiditate molestiae sequi quo voluptatibus nostrum minus.</p>
                 <Button label="En savoir plus" class="w-[160px] h-[46px]" />
             </div>
             <div class="flex" v-if="featuredHouses.firstHouse && featuredHouses.secondHouse">

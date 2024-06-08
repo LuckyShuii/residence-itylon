@@ -11,7 +11,10 @@ export default {
         'green-btn': '#89B58C',
         'green-light': '#F3F8F4',
         black: '#363636',    
-      }
+      },
+      fontFamily: {
+        'mistress': ['Mistress Benedict Brush', 'sans-serif'],
+      },
     },
   },
   plugins: [],

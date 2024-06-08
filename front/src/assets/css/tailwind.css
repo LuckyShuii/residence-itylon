@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Mistress Benedict Brush';
+  src: url('/src/assets/Mistress Benedict Brush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* variables */
 
 /* header: '#363636',
@@ -26,6 +33,7 @@ li {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 18px;
 }
 
 a {
