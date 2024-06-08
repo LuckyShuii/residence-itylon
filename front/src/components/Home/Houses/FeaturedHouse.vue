@@ -12,7 +12,7 @@ const props = defineProps<{
         <img :src="'src/assets/photos/best-photo/' + props.house.previewPicture + '.jpg'" alt="house" class="w-full h-[250px] object-cover rounded-t" />
         <div class="flex items-center justify-between px-[16px] py-[14px]">
             <div class="flex flex-col">
-                <h3 class="text-bold">{{ house.title }}</h3>
+                <h3 class="font-medium">{{ house.title }}</h3>
                 <p class="text-[14px]">{{ house.capacity }} personnes</p>
             </div>
             <Button class="w-[110px] h-[30px] text-[14px] flex justify-center">Visiter</Button>

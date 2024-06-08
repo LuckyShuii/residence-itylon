@@ -135,3 +135,8 @@ INSERT INTO activity (id, headerTitle, headerDescription, title, description, ex
 
 UPDATE house
 SET previewPicture = UPPER(SUBSTR(title, 1, 1)) || SUBSTR(title, 2);
+
+UPDATE activity SET pictures = "src/assets/photos/activities/cheval.jpg" WHERE id = 4;
+UPDATE activity SET pictures = "src/assets/photos/activities/rando.jpg" WHERE id = 3;
+UPDATE activity SET pictures = "https://www.ufilanciu.fr/photo/93/450/0/normal" WHERE id = 2;
+UPDATE activity SET pictures = "src/assets/photos/activities/plage.jpg" WHERE id = 1;
