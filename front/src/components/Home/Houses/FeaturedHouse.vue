@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, onMounted, ref } from 'vue';
+import { defineProps } from 'vue';
 import type { HouseType } from '@/types/HouseType';
 
 const props = defineProps<{

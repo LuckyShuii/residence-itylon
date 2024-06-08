@@ -13,6 +13,7 @@ black: '#363636', */
   --header: #363636;
   --green-btn: #89B58C;
   --green-light: #F3F8F4;
+  --green-middle: #8dbf8d;
   --green-dark: #6f9671;
   --black: #363636;
 }
@@ -79,7 +80,7 @@ a {
 }
 
 .p-dropdown-item:hover {
-  background-color: var(--green-dark);
+  background-color: var(--green-middle);
   transition: 0.3s;
 }
 
