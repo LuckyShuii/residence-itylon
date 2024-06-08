@@ -79,7 +79,9 @@ onMounted(async () => {
                 <RouterLink to="/contact">Contact</RouterLink>
             </li>
             <li>
-                <Button class="ml-[25px] w-[100px] h-[42px]" @click="reRoute('/reservation')">Réserver</Button>
+                <RouterLink to="/reservation">
+                    <Button class="ml-[25px] w-[100px] h-[42px]">Réserver</Button>
+                </RouterLink>
             </li>
         </div>
     </header>
