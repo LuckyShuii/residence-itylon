@@ -8,7 +8,7 @@ const props = defineProps<{
 </script>
 
 <template>
-    <div class="w-[306px] bg-green-light rounded-[20px] flex flex-col">
+    <div class="w-[306px] bg-green-light rounded-[20px] flex flex-col" :class="activity.id === 1 ? '' : 'ml-[28px]'">
       <img :src="activity.pictures" alt="house" class="w-full h-[250px] object-cover rounded-t" />
       <div class="flex items-center justify-between px-[16px] py-[14px] flex-1">
         <h3 class="font-medium">{{ activity.headerTitle }}</h3>
