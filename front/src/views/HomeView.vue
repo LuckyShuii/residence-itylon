@@ -6,4 +6,10 @@ import FeaturedHouses from '@/components/Home/FeaturedHouses.vue'
 <template>
     <Hero />
     <FeaturedHouses />
+    <p>iazddzaidaz</p>
+    <p>iazddzaidaz</p>
+    <p>iazddzaidaz</p>
+    <p>iazddzaidaz</p>
+    <p>iazddzaidaz</p>
+    <p>iazddzaidaz</p>
 </template>

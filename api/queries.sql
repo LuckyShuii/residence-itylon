@@ -132,3 +132,6 @@ INSERT INTO activity (id, headerTitle, headerDescription, title, description, ex
 -- DROP TABLE IF EXISTS activity;
 -- DROP TABLE IF EXISTS house;
 -- DROP TABLE IF EXISTS price;
+
+UPDATE house
+SET previewPicture = UPPER(SUBSTR(title, 1, 1)) || SUBSTR(title, 2);
