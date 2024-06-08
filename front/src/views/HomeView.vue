@@ -10,10 +10,4 @@ import LastSection from '@/components/Home/LastSection.vue'
     <FeaturedHouses />
     <Activities />
     <LastSection />
-    <p>iazddzaidaz</p>
-    <p>iazddzaidaz</p>
-    <p>iazddzaidaz</p>
-    <p>iazddzaidaz</p>
-    <p>iazddzaidaz</p>
-    <p>iazddzaidaz</p>
 </template>

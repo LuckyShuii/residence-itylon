@@ -45,7 +45,9 @@ onMounted(async () => {
             <div class="w-[325px] flex flex-col">
                 <h2 class="font-mistress text-[46px]">Trouvez la maison parfaite pour vos vacances</h2>
                 <p class="mb-[28px] mt-[40px] w-[385px]">Velit repudiandae amet maiores amet voluptatibus itaque ullam praesentium. Vero cupiditate molestiae sequi quo voluptatibus nostrum minus.</p>
-                <Button label="En savoir plus" class="w-[160px] h-[46px]" />
+                <RouterLink to="/les-maisons">
+                    <Button label="En savoir plus" class="w-[160px] h-[46px]" />
+                </RouterLink>
             </div>
             <div class="flex" v-if="featuredHouses.firstHouse && featuredHouses.secondHouse">
                 <FeaturedHouse v-for="house in featuredHouses" :key="house!.id" :house="house!" />

@@ -8,7 +8,9 @@ import Pictures from '@/components/Home/LastSection/Pictures.vue'
             <div class="flex flex-col justify-center w-[385px] mr-[60px]">
                 <h2 class="font-mistress text-[45px] mb-[45px]">Séjourner à Itylon</h2>
                 <p>Velit repudiandae amet maiores amet voluptatibus itaque ullam praesentium. Vero cupiditate molestiae sequi quo voluptatibus nostrum minus.</p>
-                <Button class="mt-[30px] w-[160px] flex justify-center">En savoir plus</Button>
+                <RouterLink to="/decouvrir/la-residence">
+                    <Button class="mt-[30px] w-[160px] flex justify-center">En savoir plus</Button>
+                </RouterLink>
             </div>
             <Pictures />
         </div>

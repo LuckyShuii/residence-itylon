@@ -32,7 +32,7 @@ const resetDropdown = (event: any) => {
         toRoute += "decouvrir/" + Slugify((event.value.name as string).toLowerCase());
     }
     if (event.value.headerTitle) {
-        toRoute += "activite/" + Slugify((event.value.headerTitle as string).toLowerCase());
+        toRoute += "activites/" + Slugify((event.value.headerTitle as string).toLowerCase()) + "?a=" + event.value.id;
     }
     reRoute(toRoute);
     resetSelectedActivity();
@@ -79,7 +79,7 @@ onMounted(async () => {
                 <RouterLink to="/contact">Contact</RouterLink>
             </li>
             <li>
-                <Button class="ml-[25px] w-[100px] h-[42px]">Réserver</Button>
+                <Button class="ml-[25px] w-[100px] h-[42px]" @click="reRoute('/reservation')">Réserver</Button>
             </li>
         </div>
     </header>
