@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import Hero from '@/components/Home/Hero.vue'
 </script>
 
 <template>
-    <img alt="" src="@/assets/hero.png" class="w-full h-96 object-cover object-center" />
+    <Hero />
 </template>

@@ -58,7 +58,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <header class="bg-black bg-opacity-40 text-white flex justify-between items-center my-[32px] py-[18px] px-[31px] rounded-xl absolute w-[90%] left-1/2 transform -translate-x-1/2">
+    <header class="bg-black bg-opacity-40 text-white flex justify-between items-center my-[32px] py-[18px] px-[31px] rounded-xl absolute w-[90%] left-1/2 transform -translate-x-1/2 z-10">
         <RouterLink to="/">
             <img src="@/assets/logo/logo-header.svg" alt="logo" />
         </RouterLink>
