@@ -43,7 +43,7 @@ a {
 .p-button {
   padding: 10px;
   background-color: var(--green-btn);
-  border-radius: 10px;
+  border-radius: 5px;
   color: white;
 }
 

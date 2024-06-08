@@ -1,0 +1,14 @@
+<script setup lang="ts">
+</script>
+
+<template>
+    <div class="flex justify-center bg-green-light py-[30px]">
+        <div class="px-[85px] flex items-center justify-center max-w-[1440px] w-full">
+            <div class="flex flex-col justify-center w-[385px]">
+                <h2 class="font-mistress text-[45px] mb-[45px]">Séjourner à Itylon</h2>
+                <p>Velit repudiandae amet maiores amet voluptatibus itaque ullam praesentium. Vero cupiditate molestiae sequi quo voluptatibus nostrum minus.</p>
+                <Button class="mt-[30px] w-[160px] flex justify-center">En savoir plus</Button>
+            </div>
+        </div>
+    </div>
+</template>
