@@ -98,11 +98,11 @@ a {
 
 .p-toast {
   width: 25rem;
-  margin-bottom: 1rem;
 }
 
 .p-toast-message-content {
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .p-toast-detail {
