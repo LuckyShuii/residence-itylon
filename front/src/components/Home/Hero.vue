@@ -1,3 +1,17 @@
+<script setup lang="ts">
+import { onMounted } from 'vue';
+
+onMounted(() => {
+    const heroContainer = document.getElementById('hero-container');
+    setTimeout(() => {
+        if (heroContainer) {
+            heroContainer.classList.remove('opacity-0');
+            heroContainer.classList.add('opacity-100');
+        }
+    }, 100);
+});
+</script>
+
 <template>
     <div id="hero-container" class="relative h-screen overflow-hidden opacity-0 transition-opacity duration-500">
         <video class="absolute top-0 left-0 z-0 w-full h-full object-cover" autoplay muted loop>
@@ -10,17 +24,3 @@
         <img src="@/assets/icons/down-arrow.svg" alt="arrow-down" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-[100px]" />
     </div>
 </template>
-
-<script setup lang="ts">
-import { onMounted } from 'vue';
-
-onMounted(() => {
-    const heroContainer = document.getElementById('hero-container');
-    setTimeout(() => {
-        if (heroContainer) {
-            heroContainer.classList.remove('opacity-0');
-            heroContainer.classList.add('opacity-100');
-        }
-    }, 100); // Temps d'attente pour l'affichage initial
-});
-</script>
