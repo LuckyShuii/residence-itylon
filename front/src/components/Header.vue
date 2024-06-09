@@ -58,24 +58,24 @@ onMounted(async () => {
 </script>
 
 <template>
-    <header class="bg-black bg-opacity-40 text-white flex justify-between items-center my-[32px] py-[18px] px-[31px] rounded-xl absolute w-[90%] left-1/2 transform -translate-x-1/2 z-20">
+    <header class="max-w-[1440px] bg-black bg-opacity-40 text-white flex justify-between items-center my-[32px] py-[18px] px-[31px] rounded-xl absolute w-full left-1/2 transform -translate-x-1/2 z-20">
         <RouterLink to="/">
             <img src="@/assets/logo/logo-header.svg" alt="logo" />
         </RouterLink>
         <div class="flex items-center">
-            <li>
+            <li class="hover:border-b-2 hover:border-white">
                 <RouterLink to="/">Accueil</RouterLink>
             </li>
             <li class="ml-[25px]">
                 <Dropdown v-model="selectedDiscover" :options="discoveries" optionLabel="name" placeholder="Découvrir" class="w-full md:w-14rem" @change="resetDropdown"/>
             </li>
-            <li class="">
+            <li>
                 <Dropdown v-model="selectedActivity" :options="activities" optionLabel="headerTitle" placeholder="Activités" class="w-full md:w-14rem" @change="resetDropdown"/>
             </li>
-            <li class="">
+            <li class="hover:border-b-2 hover:border-white">
                 <RouterLink to="/tarifs">Tarifs</RouterLink>
             </li>
-            <li class="ml-[25px]">
+            <li class="ml-[25px] hover:border-b-2 hover:border-white">
                 <RouterLink to="/contact">Contact</RouterLink>
             </li>
             <li>
