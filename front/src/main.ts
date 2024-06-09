@@ -15,9 +15,9 @@ const app = createApp(App);
 app.component('Button', Button);
 app.component('Dropdown', Dropdown);
 
+app.use(pinia)
 app.use(PrimeVue);
 app.use(ToastService);
 app.use(router)
-app.use(pinia)
 
 app.mount('#app')

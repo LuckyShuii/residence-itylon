@@ -11,7 +11,6 @@ const toast = useToast();
 const loadFeaturedHouses = async () => {
     await loadFirstHouse();
     await loadSecondHouses();
-    console.log(featuredHouses.value);
 };
 
 const loadFirstHouse = async () => {
