@@ -6,12 +6,18 @@
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col min-h-screen">
     <Toast />
     <Header />
-    <main>
+    <main class="flex-grow">
       <RouterView />
     </main>
-    <Footer />
+    <Footer class="flex-shrink-0" />
   </div>
 </template>
+
+<style scoped>
+  .min-h-screen {
+    min-height: 100vh;
+  }
+</style>
