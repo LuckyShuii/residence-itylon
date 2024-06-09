@@ -2,6 +2,14 @@
 import JoinUs from '@/components/Footer/JoinUs.vue';
 import FindUs from '@/components/Footer/FindUs.vue';
 import Ressources from '@/components/Footer/Ressources.vue';
+import { useResidenceStore } from '@/store/ResidenceStore';
+import { onMounted } from 'vue';
+
+const { loadResidences } = useResidenceStore();
+
+onMounted(async () => {
+    await loadResidences();
+});
 </script>
 
 <template>

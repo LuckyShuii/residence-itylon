@@ -1,14 +1,8 @@
 <script setup lang="ts">
 import { useResidenceStore } from '@/store/ResidenceStore';
-import { onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 
 const { facebook, instagram  } = storeToRefs(useResidenceStore());
-const { loadResidences } = useResidenceStore();
-
-onMounted(async () => {
-    await loadResidences();
-});
 </script>
 
 <template>
