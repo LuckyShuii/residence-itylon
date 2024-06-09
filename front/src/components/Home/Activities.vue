@@ -23,9 +23,9 @@ onMounted(async () => {
 
 <template>
     <div class="flex justify-center mt-[80px]">
-        <div class="px-[85px] pb-[90px] flex items-center justify-center max-w-[1440px] w-full flex-col">
+        <div class="px-[85px] pb-[90px] flex items-center justify-center max-w-[1480px] w-full flex-col">
             <h2 class="font-mistress text-[45px] mb-[60px]">Des activités pour tous les goûts</h2>
-            <div class="flex">
+            <div class="flex flex-wrap justify-center gap-4">
                 <ActivityCard v-for="activity in activities" :key="activity.id" :activity="activity" class="flex justify-center" />
             </div>
         </div>
