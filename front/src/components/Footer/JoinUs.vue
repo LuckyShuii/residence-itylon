@@ -8,18 +8,18 @@ const { residences  } = storeToRefs(useResidenceStore());
 <template>
     <div class="flex">
         <div class="flex flex-col">
-            <h4 class="font-semibold mb-[15px]">Nous joindre</h4>
+            <h4 class="text-[16px] font-semibold mb-[15px]">Nous joindre</h4>
             <li class="flex">
                 <img src="@/assets/icons/home.svg" alt="home">
-                <p class="ml-[13px]">{{ residences.postalAddress }}</p>
+                <p class="text-[16px] ml-[13px]">{{ residences.postalAddress }}</p>
             </li>
             <li class="flex">
                 <img src="@/assets/icons/phone.svg" alt="phone">
-                <p class="ml-[13px]">{{ residences.phone }}</p>
+                <p class="text-[16px] ml-[13px]">{{ residences.phone }}</p>
             </li>
             <li class="flex">
                 <img src="@/assets/icons/mail.svg" alt="mail">
-                <p class="ml-[13px]">{{ residences.email }}</p>
+                <p class="text-[16px] ml-[13px]">{{ residences.email }}</p>
             </li>
         </div>
     </div>
