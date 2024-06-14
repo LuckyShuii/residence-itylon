@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vueuse/core": "^10.10.0"
+    "@vueuse/core": "^10.10.0",
   }
 }

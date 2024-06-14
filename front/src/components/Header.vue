@@ -7,6 +7,15 @@ import router from '@/router';
 import { useToast } from 'primevue/usetoast';
 
 const toast = useToast();
+const items = [
+    { label: 'Accueil', icon: 'pi pi-fw pi-home', to: '/' },
+    { label: 'Découvrir', icon: 'pi pi-fw pi-search', to: '/decouvrir' },
+    { label: 'Activités', icon: 'pi pi-fw pi-calendar', to: '/activites' },
+    { label: 'Tarifs', icon: 'pi pi-fw pi-money-bill', to: '/tarifs' },
+    { label: 'Contact', icon: 'pi pi-fw pi-envelope', to: '/contact' },
+    { label: 'Réserver', icon: 'pi pi-fw pi-calendar-plus', to: '/reservation' }
+];
+const menu = ref();
 
 const activities = ref([]);
 const selectedActivity = ref(null);
@@ -51,6 +60,11 @@ const reRoute = (route: string) => {
     router.push(route);
 };
 
+const toggle = (event: Event) => {
+    console.log("event is: ", event)
+    menu.value.toggle(event);
+};
+
 onMounted(async () => {
     await loadActivities();
 });
@@ -62,7 +76,7 @@ onMounted(async () => {
         <RouterLink to="/">
             <img src="@/assets/logo/logo-header.svg" alt="logo" />
         </RouterLink>
-        <div class="flex items-center">
+        <div class="flex items-center xl:flex hidden">
             <li class="hover:border-b-2 hover:border-white">
                 <RouterLink to="/">Accueil</RouterLink>
             </li>
@@ -83,6 +97,10 @@ onMounted(async () => {
                     <Button class="ml-[25px] w-[100px] h-[42px]">Réserver</Button>
                 </RouterLink>
             </li>
+        </div>
+        <div class="card flex justify-center xl:hidden">
+            <Button type="button" icon="pi-arrow-right-arrow-left" @click="toggle" class="bg-transparent w-[5rem]" />
+            <Menu ref="menu" id="overlay_menu" :model="items" :popup="true" />
         </div>
     </header>
 </template>
