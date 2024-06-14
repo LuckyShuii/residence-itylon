@@ -7,7 +7,7 @@ const { residences  } = storeToRefs(useResidenceStore());
 
 <template>
     <div class="flex">
-        <div class="flex flex-col">
+        <div class="flex flex-col max-[1170px]:items-center">
             <h4 class="text-[16px] font-semibold mb-[15px]">Nous joindre</h4>
             <li class="flex">
                 <img src="@/assets/icons/home.svg" alt="home">
