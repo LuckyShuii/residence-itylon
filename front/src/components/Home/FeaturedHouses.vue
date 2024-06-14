@@ -39,11 +39,11 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="bg-green-light flex justify-center">
-        <div class="px-[85px] py-[90px] flex items-center justify-between max-w-[1440px] w-full max-[1380px]:justify-around max-[980px]:flex-col">
-            <div class="w-[325px] flex flex-col">
-                <h2 class="font-mistress text-[46px]">Trouvez la maison parfaite pour vos vacances</h2>
-                <p class="mb-[28px] mt-[40px] w-[385px] max-[980px]:w-[90%]">Velit repudiandae amet maiores amet voluptatibus itaque ullam praesentium. Vero cupiditate molestiae sequi quo voluptatibus nostrum minus.</p>
+    <div class="bg-green-light flex justify-center max-[980px]:w-full">
+        <div class="px-[85px] py-[90px] flex items-center justify-between max-w-[1440px] w-full max-[1380px]:justify-around max-[980px]:flex-col max-[980px]:w-[90%] max-[980px]:px-0">
+            <div class="w-[325px] flex flex-col max-[980px]:items-center max-[980px]:w-full max-[980px]:min-w-[16rem]">
+                <h2 class="font-mistress text-[46px] max-[980px]:text-center">Trouvez la maison parfaite pour vos vacances</h2>
+                <p class="mb-[28px] mt-[40px] w-[385px] max-[980px]:w-[90%] max-[980px]:text-center">Velit repudiandae amet maiores amet voluptatibus itaque ullam praesentium. Vero cupiditate molestiae sequi quo voluptatibus nostrum minus.</p>
                 <RouterLink to="/les-maisons">
                     <Button label="En savoir plus" class="w-[160px] h-[46px]" />
                 </RouterLink>
