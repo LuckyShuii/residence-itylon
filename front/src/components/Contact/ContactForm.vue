@@ -9,30 +9,32 @@ const message = ref<string>('')
 </script>
 
 <template>
-  <div class="w-[670px]">
-    <h2 class="font-mistress text-[40px]">Formulaire de contact</h2>
+  <div class="w-[670px] mt-[80px]">
+    <h2 class="font-mistress text-[46px] mb-[37px]">Formulaire de contact</h2>
     <form method="POST" action="" class="border border-gray-200 rounded-[10px] w-full p-[41px]">
       <div class="flex justify-between w-full mb-[2rem]">
         <div class="flex flex-col gap-2">
           <label for="lastName">Nom</label>
-          <InputText id="lastName" v-model="lastName" class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px]" />
+          <InputText id="lastName" v-model="lastName" class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
         </div>
         <div class="flex flex-col gap-2">
           <label for="firstName">Prénom</label>
-          <InputText id="firstName" v-model="firstName" class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px]" />
+          <InputText id="firstName" v-model="firstName" class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
         </div>
       </div>
       <div class="flex justify-between w-full mb-[2rem]">
         <div class="flex flex-col gap-2">
           <label for="email">Email</label>
-          <InputText id="email" v-model="email" class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px]" />
+          <InputText id="email" v-model="email" class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
         </div>
         <div class="flex flex-col gap-2">
           <label for="phone">Téléphone</label>
-          <InputMask id="phone" v-model="phone" mask="06 06 06 06 06" placeholder="06 06 06 06 06" fluid class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px]" />
+          <InputMask id="phone" v-model="phone" mask="06 06 06 06 06" placeholder="06 06 06 06 06" fluid class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
         </div>
       </div>
-      <Textarea v-model="message" rows="5" cols="30" class="w-full border border-gray-200 rounded-[10px] w-full py-[5px] px-[8px] text-[16px]" />
+      <Textarea v-model="message" rows="5" cols="30" class="w-full border border-gray-200 rounded-[10px] w-full h-[310px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
+
+      <Button label="Envoyer" class="mt-[25px] py-[5px] w-[160px]" />
     </form>
   </div>
 </template>
