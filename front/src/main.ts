@@ -3,9 +3,14 @@ import App from './App.vue'
 import router from './router'
 import '@/assets/css/tailwind.css'
 import PrimeVue from 'primevue/config';
+
 import Dropdown from 'primevue/dropdown';
 import Button from 'primevue/button';
 import Menu from 'primevue/menu';
+import InputMask from 'primevue/inputmask';
+import InputText from "primevue/inputtext";
+import Textarea from "primevue/textarea";
+
 import ToastService from 'primevue/toastservice';
 import { createPinia } from 'pinia';
 import 'primevue/resources/themes/aura-light-green/theme.css'
@@ -17,6 +22,9 @@ const app = createApp(App);
 app.component('Button', Button);
 app.component('Dropdown', Dropdown);
 app.component('Menu', Menu);
+app.component('InputText', InputText)
+app.component('InputMask', InputMask);
+app.component('TextArea', Textarea)
 
 app.use(pinia)
 app.use(PrimeVue);
