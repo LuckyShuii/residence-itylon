@@ -4,11 +4,11 @@
   "description": "## Start the API",
   "main": "index.js",
   "scripts": {
-    "start": "sudo docker-compose up --build"
+    "start": "sudo docker compose up --build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vueuse/core": "^10.10.0",
+    "@vueuse/core": "^10.10.0"
   }
 }
