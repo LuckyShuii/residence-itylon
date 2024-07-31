@@ -30,7 +30,7 @@ const checkForm = (): void => {
 <template>
   <div class="w-[670px] mt-[80px]">
     <h2 class="font-mistress text-[46px] mb-[37px]">Formulaire de contact</h2>
-    <form method="POST" action="" class="border border-gray-200 rounded-[10px] w-full p-[41px]" @submit.prevent="checkForm">
+    <form method="POST" action="" class="border border-gray-200 rounded-[10px] w-full p-[41px] h-[826px]" @submit.prevent="checkForm">
       <div class="flex justify-between w-full mb-[2rem]">
         <div class="flex flex-col gap-2">
           <label for="lastName">Nom</label>
