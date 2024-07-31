@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
+import {useToast} from "primevue/usetoast";
+
+const toast = useToast()
 
 interface FormData {
   firstName: string;
@@ -19,7 +22,7 @@ const formData = reactive<FormData>({
 
 const checkForm = (): void => {
   if (Object.values(formData).some(value => value === '')) {
-    console.log("Found an empty input");
+    toast.add({ severity: 'error', summary: 'Formulaire', detail: 'Tous les champs sont obligatoires !', life: 6000 });
   }
 }
 </script>
