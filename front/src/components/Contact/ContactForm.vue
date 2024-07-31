@@ -1,17 +1,44 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
+
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+const generateFormData = () => {
+  return {
+    firstName: firstName.value,
+    lastName: lastName.value,
+    email: email.value,
+    phone: phone.value,
+    message: messageText.value,
+  }
+}
 
 const firstName = ref<string>('')
 const lastName = ref<string>('')
 const email = ref<string>('')
 const phone = ref<string>('')
-const message = ref<string>('')
+const messageText = ref<string>('')
+const formData = ref<FormData>(generateFormData())
+
+const checkForm = (): void => {
+  formData.value = generateFormData()
+  console.log(formData.value)
+  if (Object.entries(formData.value).some(([key, value]) => value === '')) {
+    console.log("Found an empty input")
+  }
+}
 </script>
 
 <template>
   <div class="w-[670px] mt-[80px]">
     <h2 class="font-mistress text-[46px] mb-[37px]">Formulaire de contact</h2>
-    <form method="POST" action="" class="border border-gray-200 rounded-[10px] w-full p-[41px]">
+    <form method="POST" action="" class="border border-gray-200 rounded-[10px] w-full p-[41px]" @submit.prevent="checkForm">
       <div class="flex justify-between w-full mb-[2rem]">
         <div class="flex flex-col gap-2">
           <label for="lastName">Nom</label>
@@ -29,12 +56,13 @@ const message = ref<string>('')
         </div>
         <div class="flex flex-col gap-2">
           <label for="phone">Téléphone</label>
-          <InputMask id="phone" v-model="phone" mask="06 06 06 06 06" placeholder="06 06 06 06 06" fluid class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
+          <InputText type="tel" id="phone" v-model="phone" placeholder="0606060606" fluid class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
         </div>
       </div>
-      <Textarea v-model="message" rows="5" cols="30" class="w-full border border-gray-200 rounded-[10px] w-full h-[310px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
+      {{messageText}}
+      <Textarea v-model="messageText" rows="5" cols="30" class="w-full border border-gray-200 rounded-[10px] w-full h-[310px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
 
-      <Button label="Envoyer" class="mt-[25px] py-[5px] w-[160px]" />
+      <Button type="submit" label="Envoyer" class="mt-[25px] py-[5px] w-[160px]" />
     </form>
   </div>
 </template>
