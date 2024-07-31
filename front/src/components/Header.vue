@@ -29,7 +29,8 @@ const selectedDiscover = ref(null);
 const loadActivities = async () => {
     try {
         const response = await axios.get('http://localhost:8002/activities');
-        activities.value = response.data;
+        activities.value = [{id: 0, headerTitle: "Toutes les activites"}, ...response.data];
+        console.log([{headerTitle: "Toutes les activites"}, ...response.data]);
     } catch (error) {
         toast.add({ severity: 'error', summary: 'Erreur', detail: 'Une erreur est survenue lors du chargement des activités', life: 6000 });
     }
