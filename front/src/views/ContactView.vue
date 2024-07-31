@@ -8,7 +8,7 @@ import FindUs from '../components/Contact/FindUs.vue'
   <div class="custom-bg " style="background-image: url('../assets/photos/contact/a%20residence%20(16).jpg');">
     <img src="../assets/photos/contact/a%20residence%20(16).jpg" alt="contact" class="image"/>
   </div>
-  <div class="flex w-full justify-center items-center">
+  <div class="flex w-full justify-center">
     <ContactForm />
     <div class="flex flex-col w-[670px]">
       <UsefulInfo />
