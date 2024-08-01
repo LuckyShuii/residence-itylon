@@ -2,8 +2,11 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import { useToast } from 'primevue/usetoast';
+import { useRoute } from 'vue-router'
+import AllActivities from "@/components/Activities/AllActivities.vue";
 import type { ActivityType } from '@/types/ActivityType';
-import ActivityCard from '@/components/ActivityCard.vue';
+
+const route = useRoute()
 
 const toast = useToast();
 const activities = ref<ActivityType[]>([]);
@@ -16,6 +19,8 @@ const loadActivities = async () => {
   }
 };
 
+const isAllActivities = () => route.query.a === '0'
+
 onMounted(async () => {
   await loadActivities();
 });
@@ -27,12 +32,22 @@ onMounted(async () => {
   </div>
   {{ $route.params.activity }}
   {{ $route.query.a }}
-  <div class="flex justify-center mt-[80px] max-[980px]:w-full">
-    <div class="px-[85px] pb-[90px] flex items-center justify-center max-w-[1480px] w-full flex-col max-[980px]:w-[90%] max-[980px]:px-0 max-[980px]:min-w-[16rem]">
-      <h2 class="font-mistress text-[45px] mb-[60px] max-[980px]:w-full max-[980px]:text-center">Des activités pour tous les goûts</h2>
-      <div class="flex flex-wrap justify-center gap-4 max-[980px]:w-full">
-        <ActivityCard v-for="activity in activities" :key="activity.id" :activity="activity" class="flex justify-center" />
-      </div>
-    </div>
-  </div>
+  {{ isAllActivities() }}
+  <AllActivities v-if="isAllActivities()" :activities />
 </template>
+
+<style scoped>
+.custom-bg {
+  width: 100%;
+  height: 460px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
