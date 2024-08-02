@@ -4,12 +4,15 @@ import axios from 'axios';
 import { useToast } from 'primevue/usetoast';
 import { useRoute } from 'vue-router'
 import AllActivities from "@/components/Activities/AllActivities.vue";
+import TopImageBlock from "@/components/layout/TopImageBlock.vue";
 import type { ActivityType } from '@/types/ActivityType';
 
 const route = useRoute()
 
 const toast = useToast();
 const activities = ref<ActivityType[]>([]);
+
+const paragraph = ref("Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus")
 
 const loadActivities = async () => {
   try {
@@ -19,6 +22,10 @@ const loadActivities = async () => {
   }
 };
 
+const getImageSrc = () => {
+  return "../src/assets/photos/contact/a%20residence%20(16).jpg"
+}
+
 const isAllActivities = () => route.query.a === '0'
 
 onMounted(async () => {
@@ -27,27 +34,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="custom-bg " style="background-image: url('../assets/photos/contact/a%20residence%20(16).jpg');">
-    <img src="../assets/photos/contact/a%20residence%20(16).jpg" alt="contact" class="image"/>
-  </div>
-  {{ $route.params.activity }}
+  <TopImageBlock title="Les activités" :paragraph="paragraph" :image-src="getImageSrc()" />
+<!--  {{ $route.params.activity }}
   {{ $route.query.a }}
-  {{ isAllActivities() }}
-  <AllActivities v-if="isAllActivities()" :activities />
+  {{ isAllActivities() }}-->
+  <AllActivities v-if="isAllActivities()" :activities :isAllActivityView="true" />
 </template>
-
-<style scoped>
-.custom-bg {
-  width: 100%;
-  height: 460px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-</style>
