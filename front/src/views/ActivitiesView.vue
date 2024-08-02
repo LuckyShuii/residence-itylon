@@ -30,7 +30,7 @@ const loadActivities = async () => {
 const generateBasicBlockData = () => {
   blockData.title = "Les activités"
   blockData.paragraph = "Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus"
-  blockData.imageSrc = "../src/assets/photos/contact/a%20residence%20(16).jpg"
+  blockData.imageSrc = "../src/assets/photos/activities/plage.jpg"
 }
 
 const generateAdvancedData = (id: number) => {
