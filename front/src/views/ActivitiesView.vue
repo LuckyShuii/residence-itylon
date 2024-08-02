@@ -35,8 +35,5 @@ onMounted(async () => {
 
 <template>
   <TopImageBlock title="Les activités" :paragraph="paragraph" :image-src="getImageSrc()" />
-<!--  {{ $route.params.activity }}
-  {{ $route.query.a }}
-  {{ isAllActivities() }}-->
   <AllActivities v-if="isAllActivities()" :activities :isAllActivityView="true" />
 </template>

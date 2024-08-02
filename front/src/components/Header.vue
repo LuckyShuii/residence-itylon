@@ -30,7 +30,6 @@ const loadActivities = async () => {
     try {
         const response = await axios.get('http://localhost:8002/activities');
         activities.value = [{id: 0, headerTitle: "Toutes les activites"}, ...response.data];
-        console.log([{headerTitle: "Toutes les activites"}, ...response.data]);
     } catch (error) {
         toast.add({ severity: 'error', summary: 'Erreur', detail: 'Une erreur est survenue lors du chargement des activités', life: 6000 });
     }
@@ -62,7 +61,6 @@ const reRoute = (route: string) => {
 };
 
 const toggle = (event: Event) => {
-    console.log("event is: ", event)
     menu.value.toggle(event);
 };
 
@@ -94,7 +92,7 @@ onMounted(async () => {
                 <RouterLink to="/contact">Contact</RouterLink>
             </li>
             <li>
-                <RouterLink to="/reservation">
+                <RouterLink to="/contact?page=reservation">
                     <Button class="ml-[25px] w-[100px] h-[42px]">Réserver</Button>
                 </RouterLink>
             </li>
