@@ -5,15 +5,10 @@ import FindUs from '../components/Contact/FindUs.vue'
 import TopImageBlock from "@/components/layout/TopImageBlock.vue";
 import { reactive, watch } from "vue";
 import { useRoute } from 'vue-router'
-
+import type { BlockTemplateType } from '@/types/BlockTemplateType'
 const route = useRoute()
-interface BlockTemplate {
-  title: string,
-  paragraph: string,
-  imageSrc: string
-}
 
-const blockData = reactive<BlockTemplate>({
+const blockData = reactive<BlockTemplateType>({
   title: '',
   paragraph: 'Vous avez une question ? Vous souhaitez faire une réservation ? N’hésitez pas à nous contacter !',
   imageSrc: '../src/assets/photos/contact/a%20residence%20(16).jpg'

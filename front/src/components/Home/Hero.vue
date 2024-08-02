@@ -19,7 +19,7 @@ onMounted(() => {
         </video>
         <div class="relative z-10 flex items-center flex-col justify-center h-full text-center">
             <img src="@/assets/logo/logo-hero.svg" alt="logo" class="mx-auto" />
-            <RouterLink to="/reservation">
+            <RouterLink to="/contact?page=reservation">
                 <Button class="mt-4 w-[172px] h-[46px] flex justify-center">RÉSERVER</Button>
             </RouterLink>
         </div>
