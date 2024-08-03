@@ -14,7 +14,7 @@ const props = defineProps<{
         <div class="p-4">
           <h2 class="text-lg font-semibold mb-4">La randonnée en Cargèse</h2>
           <p>Ici pareil quelques mots clés et peut être la distance entre la résidence et certains lieux de randonnées. Remplacer les photos par des lieux de randonnées.</p>
-          <a :href="externalLink"> <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded">En savoir plus</button></a>
+          <a :href="externalLink"><Button class="mt-4 w-[178px] !pl-[1rem]" icon="pi pi-external-link" label="En savoir plus" /></a>
         </div>
       </div>
       <div class="bg-cover rounded-lg bg-center" :style="{ backgroundImage: `url(${pictures[1]})`, width: '406.44px', height: '346.82px' }"></div>
