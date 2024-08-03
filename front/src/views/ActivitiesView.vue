@@ -52,9 +52,16 @@ const generateImgSrc = (img: string): string => {
 }
 
 const generateActivityPictures = (images: string): void => {
-  activityPictures.value = images.split(',')
-  activityPictures.value.pop()
+  activityPictures.value = images.split(',');
+  activityPictures.value.pop();
+  activityPictures.value = activityPictures.value.map((element) => {
+    if (element.split('/')[0] === 'src') {
+      return '../' + element;
+    }
+    return '';
+  }).filter((element) => element !== '');
 }
+
 
 const generateAdvancedData = (id: number): void => {
   let currentActivity = activities.value[id - 1]
@@ -88,5 +95,7 @@ onMounted(async () => {
 <template>
   <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph" :image-src="blockData.imageSrc" />
   <AllActivities v-if="isAllActivities()" :activities :isAllActivityView="true" />
-  <Activity v-if="!isAllActivities()" :pictures="activityPictures" :title="activityDetailData.title" :description="activityDetailData.description" :external-link="activityDetailData.externalLink" />
+  <div class="w-full flex justify-center items-center">
+    <Activity v-if="!isAllActivities()" :pictures="activityPictures" :title="activityDetailData.title" :description="activityDetailData.description" :external-link="activityDetailData.externalLink" />
+  </div>
 </template>
