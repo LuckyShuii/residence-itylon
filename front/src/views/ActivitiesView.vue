@@ -29,9 +29,9 @@ const activityDetailData = reactive<ActivityDetail>({
 });
 
 const blockData = reactive<BlockTemplateType>({
-  title: '',
-  paragraph: '',
-  imageSrc: ''
+  title: 'Les activités',
+  paragraph: 'Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus',
+  imageSrc: '../src/assets/photos/activities/plage.jpg'
 });
 
 const loadActivities = async () => {
