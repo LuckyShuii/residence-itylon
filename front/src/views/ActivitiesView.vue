@@ -94,8 +94,9 @@ onMounted(async () => {
 
 <template>
   <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph" :image-src="blockData.imageSrc" />
-  <AllActivities v-if="isAllActivities()" :activities :isAllActivityView="true" />
-  <div class="w-full flex justify-center items-center">
-    <Activity v-if="!isAllActivities()" :pictures="activityPictures" :title="activityDetailData.title" :description="activityDetailData.description" :external-link="activityDetailData.externalLink" />
+  <AllActivities :activities :isAllActivityView="true" />
+  <hr class="border-0 h-[1px] w-full border-t-2 block mt-[-1rem]" v-if="!isAllActivities()">
+  <div class="w-full flex justify-center items-center" v-if="!isAllActivities()">
+    <Activity :pictures="activityPictures" :title="activityDetailData.title" :description="activityDetailData.description" :external-link="activityDetailData.externalLink" />
   </div>
 </template>
