@@ -139,7 +139,7 @@ SET previewPicture = UPPER(SUBSTR(title, 1, 1)) || SUBSTR(title, 2);
 UPDATE activity SET pictures = "src/assets/photos/activities/cheval.jpg," WHERE id = 4;
 UPDATE activity SET pictures = "src/assets/photos/activities/rando.jpg," WHERE id = 3;
 UPDATE activity SET pictures = "src/assets/photos/activities/bateau.webp," WHERE id = 2;
-UPDATE activity SET pictures = "src/assets/photos/activities/plage.jpg,src/assets/photos/activities/plage/plage-1.jpg,src/assets/photos/activities/plage/plage-2.jpg,src/assets/photos/activities/plage/plage-3.png,src/assets/photos/activities/plage/plage-4.jpg," WHERE id = 1;
+UPDATE activity SET pictures = "src/assets/photos/activities/plage.jpg,src/assets/photos/activities/bateau/bateau-1.webp,src/assets/photos/activities/bateau/bateau-2.jpeg,src/assets/photos/activities/bateau/bateau-3.jpg,src/assets/photos/activities/bateau/bateau-4.jpeg," WHERE id = 2;
 
 UPDATE activity SET pictures = "src/assets/photos/activities/cheval.jpg," WHERE id = 4;
 UPDATE activity SET pictures = "src/assets/photos/activities/rando.jpg," WHERE id = 3;
