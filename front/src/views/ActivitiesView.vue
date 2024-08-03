@@ -5,6 +5,7 @@ import { useToast } from 'primevue/usetoast';
 import { useRoute } from 'vue-router'
 import AllActivities from "@/components/Activities/AllActivities.vue";
 import TopImageBlock from "@/components/layout/TopImageBlock.vue";
+import Activity from "@/components/Activities/Activity.vue";
 import type { ActivityType } from '@/types/ActivityType';
 import type { BlockTemplateType } from '@/types/BlockTemplateType'
 
@@ -12,6 +13,19 @@ const route = useRoute()
 
 const toast = useToast();
 const activities = ref<ActivityType[]>([]);
+const activityPictures = ref<string[]>([]);
+
+interface ActivityDetail {
+  title: string,
+  description: string,
+  externalLink: string
+}
+
+const activityDetailData = reactive<ActivityDetail>({
+  title: '',
+  description: '',
+  externalLink: ''
+})
 
 const blockData = reactive<BlockTemplateType>({
   title: '',
@@ -33,17 +47,26 @@ const generateBasicBlockData = () => {
   blockData.imageSrc = "../src/assets/photos/activities/plage.jpg"
 }
 
-const generateAdvancedData = (id: number) => {
-  let prefixImg = ""
-
-  blockData.title = activities.value[id - 1].headerTitle
-  blockData.paragraph = activities.value[id - 1].headerDescription
-
-  if (activities.value[id - 1].pictures.split("/")[0] === "src") prefixImg = "../"
-  blockData.imageSrc = prefixImg + activities.value[id - 1].pictures
+const generateImgSrc = (img: string): string => {
+  return '../' + img
 }
 
-const loadBlockData = (id: number) => {
+const generateActivityPictures = (images: string): void => {
+  activityPictures.value = images.split(',')
+  activityPictures.value.pop()
+}
+
+const generateAdvancedData = (id: number): void => {
+  let currentActivity = activities.value[id - 1]
+  blockData.title = currentActivity.headerTitle
+  blockData.paragraph = currentActivity.headerDescription
+  blockData.imageSrc = generateImgSrc(currentActivity.pictures.split(",")[0])
+  activityDetailData.title = currentActivity.title
+  activityDetailData.description = currentActivity.description
+  generateActivityPictures(currentActivity.pictures)
+}
+
+const loadBlockData = (id: number): void => {
   if (id === 0) generateBasicBlockData()
   if (id > 0) generateAdvancedData(id)
 }
@@ -58,10 +81,12 @@ watch(async () => route.query, async () => {
 
 onMounted(async () => {
   await loadActivities();
+  console.log(activities.value)
 });
 </script>
 
 <template>
   <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph" :image-src="blockData.imageSrc" />
   <AllActivities v-if="isAllActivities()" :activities :isAllActivityView="true" />
+  <Activity v-if="!isAllActivities()" :pictures="activityPictures" :title="activityDetailData.title" :description="activityDetailData.description" :external-link="activityDetailData.externalLink" />
 </template>

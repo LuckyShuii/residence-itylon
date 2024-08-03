@@ -136,7 +136,13 @@ INSERT INTO activity (id, headerTitle, headerDescription, title, description, ex
 UPDATE house
 SET previewPicture = UPPER(SUBSTR(title, 1, 1)) || SUBSTR(title, 2);
 
-UPDATE activity SET pictures = "src/assets/photos/activities/cheval.jpg" WHERE id = 4;
-UPDATE activity SET pictures = "src/assets/photos/activities/rando.jpg" WHERE id = 3;
-UPDATE activity SET pictures = "src/assets/photos/activities/bateau.webp" WHERE id = 2;
-UPDATE activity SET pictures = "src/assets/photos/activities/plage.jpg" WHERE id = 1;
+UPDATE activity SET pictures = "src/assets/photos/activities/cheval.jpg," WHERE id = 4;
+UPDATE activity SET pictures = "src/assets/photos/activities/rando.jpg," WHERE id = 3;
+UPDATE activity SET pictures = "src/assets/photos/activities/bateau.webp," WHERE id = 2;
+UPDATE activity SET pictures = "src/assets/photos/activities/plage.jpg,src/assets/photos/activities/plage/plage-1.jpg,src/assets/photos/activities/plage/plage-2.jpg,src/assets/photos/activities/plage/plage-3.png,src/assets/photos/activities/plage/plage-4.jpg," WHERE id = 1;
+
+UPDATE activity SET pictures = "src/assets/photos/activities/cheval.jpg," WHERE id = 4;
+UPDATE activity SET pictures = "src/assets/photos/activities/rando.jpg," WHERE id = 3;
+UPDATE activity SET pictures = "src/assets/photos/activities/bateau.webp," WHERE id = 2;
+
+UPDATE activity SET description = "Ici pareil quelques mots clés et peut etre la distance entre la résidence et certains lieux de randonnées. Remplacer les photos par des lieux de randonnées." WHERE id = 4;

@@ -7,10 +7,7 @@ const props = defineProps<{
 }>();
 
 const getActivityPicture = (picturePath: string): string => {
-  if (picturePath.split('/')[0] === 'src') {
-    return '../' + picturePath
-  }
-  return picturePath
+  return '../' + picturePath.split(",")[0]
 }
 </script>
 
