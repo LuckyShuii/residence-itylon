@@ -12,8 +12,8 @@ const props = defineProps<{
     <div class="flex justify-between">
       <div class="bg-white rounded-lg shadow-md flex justify-center items-center w-[466.94px] h-[346.82px] py-[70px] px-[43px]">
         <div class="p-4">
-          <h2 class="text-lg font-semibold mb-4">La randonnée en Cargèse</h2>
-          <p>Ici pareil quelques mots clés et peut être la distance entre la résidence et certains lieux de randonnées. Remplacer les photos par des lieux de randonnées.</p>
+          <h2 class="text-lg font-semibold mb-4">{{ title }}</h2>
+          <p>{{ description }}</p>
           <a :href="externalLink"><Button class="mt-4 w-[178px] !pl-[1rem]" icon="pi pi-external-link" label="En savoir plus" /></a>
         </div>
       </div>

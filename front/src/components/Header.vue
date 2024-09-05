@@ -75,7 +75,7 @@ onMounted(async () => {
         <RouterLink to="/">
             <img src="@/assets/logo/logo-header.svg" alt="logo" />
         </RouterLink>
-        <div class="flex items-center xl:flex hidden">
+        <div class="flex items-center xl:flex">
             <li class="hover:border-b-2 hover:border-white">
                 <RouterLink to="/">Accueil</RouterLink>
             </li>
