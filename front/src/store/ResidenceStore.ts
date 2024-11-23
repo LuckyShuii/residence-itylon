@@ -14,7 +14,7 @@ export const useResidenceStore = defineStore('residence', () => {
 
     const loadResidences = async () => {
         try {
-            const response = await axios.get<ResidenceType[]>('http://api/residences');
+            const response = await axios.get<ResidenceType[]>('http://localhost:8002/residences');
             residences.value = response.data[0];
             loadSocials();
         } catch (error) {

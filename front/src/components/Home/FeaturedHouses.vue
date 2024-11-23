@@ -4,12 +4,9 @@ import axios from 'axios';
 import { useToast } from 'primevue/usetoast';
 import FeaturedHouse from '@/components/Home/Houses/FeaturedHouse.vue';
 import type { HouseType } from '@/types/HouseType';
-import { useHouseStore} from "@/store/HouseStore";
 
 const featuredHouses = ref<{ firstHouse: HouseType | null, secondHouse: HouseType | null }>({ firstHouse: null, secondHouse: null });
 const toast = useToast();
-
-const { getHousePrice } = useHouseStore()
 
 const loadFeaturedHouses = async () => {
     await loadFirstHouse();
@@ -38,7 +35,6 @@ const loadSecondHouses = async () => {
 
 onMounted(async () => {
     await loadFeaturedHouses();
-    await getHousePrice(2);
 });
 </script>
 
