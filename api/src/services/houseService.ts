@@ -2,12 +2,12 @@ import { House } from "../entities/house";
 
 const houseService = {
     getAllHouses: async (): Promise<House[]> => {
-        const result = await House.find({
+        const allHouses = await House.find({
             relations: {
-                price: true
+                price: true,
             },
         });
-        return result;
+        return allHouses;
     },
 
     getHouseById: async (id: number) => {

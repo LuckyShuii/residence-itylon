@@ -4,9 +4,12 @@ import axios from 'axios';
 import { useToast } from 'primevue/usetoast';
 import FeaturedHouse from '@/components/Home/Houses/FeaturedHouse.vue';
 import type { HouseType } from '@/types/HouseType';
+import { useHouseStore} from "@/store/HouseStore";
 
 const featuredHouses = ref<{ firstHouse: HouseType | null, secondHouse: HouseType | null }>({ firstHouse: null, secondHouse: null });
 const toast = useToast();
+
+const { getHousePrice } = useHouseStore()
 
 const loadFeaturedHouses = async () => {
     await loadFirstHouse();
@@ -35,6 +38,7 @@ const loadSecondHouses = async () => {
 
 onMounted(async () => {
     await loadFeaturedHouses();
+    await getHousePrice(2);
 });
 </script>
 
@@ -49,7 +53,8 @@ onMounted(async () => {
                 </RouterLink>
             </div>
             <div class="flex max-[1380px]:flex-col" v-if="featuredHouses.firstHouse && featuredHouses.secondHouse">
-                <FeaturedHouse v-for="house in featuredHouses" :key="house!.id" :house="house!" class="max-[1380px]:mb-4 max-[980px]:mx-0 max-[980px]:mt-12" />
+
+              <FeaturedHouse v-for="house in featuredHouses" :key="house!.id" :house="house!" class="max-[1380px]:mb-4 max-[980px]:mx-0 max-[980px]:mt-12" :displayPrice="false" />
             </div>
         </div>
     </div>

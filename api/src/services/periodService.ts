@@ -5,6 +5,6 @@ const PeriodService = {
         const result = await Period.find();
         return result;
     },
-}
+};
 
 export default PeriodService;

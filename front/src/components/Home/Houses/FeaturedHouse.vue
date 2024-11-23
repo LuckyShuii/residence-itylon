@@ -4,6 +4,7 @@ import Slugify from 'slugify';
 
 const props = defineProps<{
     house: HouseType;
+    displayPrice: boolean
 }>();
 </script>
 

@@ -8,7 +8,7 @@ const HouseController = {
             const house = await House.getAllHouses();
             res.status(200).send(house);
         } catch (err) {
-            res.status(500).send("An error has occured when trying to get all houses");
+            res.status(500).send("An error has occurred when trying to get all houses");
         }
     },
 
@@ -18,9 +18,9 @@ const HouseController = {
             const ad = await houseService.getHouseById(id);
             res.status(200).send(ad);
         } catch (err) {
-            res.status(500).send('An error has occured when trying to get the house');
+            res.status(500).send('An error has occurred when trying to get the house');
         }
-    },
+    }
 }
 
 export default HouseController;

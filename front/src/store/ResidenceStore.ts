@@ -14,10 +14,9 @@ export const useResidenceStore = defineStore('residence', () => {
 
     const loadResidences = async () => {
         try {
-            const response = await axios.get<ResidenceType[]>('http://localhost:8002/residences');
+            const response = await axios.get<ResidenceType[]>('http://api/residences');
             residences.value = response.data[0];
             loadSocials();
-            console.log("big", residences.value);
         } catch (error) {
             toast.add({ severity: 'error', summary: 'Error', detail: 'An error occurred while loading the residence information' });
         }

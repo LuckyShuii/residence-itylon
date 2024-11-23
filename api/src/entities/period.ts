@@ -17,9 +17,9 @@ export class Period extends BaseEntity {
 
     @Column()
     @Min(1)
-    startDate: Date;
+    startDate: string;
 
     @Column()
     @Min(1)
-    endDate: Date;
+    endDate: string;
 }

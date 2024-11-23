@@ -9,7 +9,7 @@ const PriceController = {
         } catch (err) {
             res.status(500).send("An error has occured when trying to get all prices");
         }
-    },
+    }
 }
 
 export default PriceController;
