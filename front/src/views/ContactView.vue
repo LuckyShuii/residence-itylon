@@ -10,7 +10,7 @@ const route = useRoute()
 
 const blockData = reactive<BlockTemplateType>({
   title: '',
-  paragraph: 'Vous avez une question ? Vous souhaitez faire une réservation ? N’hésitez pas à nous contacter !',
+  paragraph: 'Vous avez une question ? Vous souhaitez faire une réservation ?<br> N’hésitez pas à nous contacter !',
   imageSrc: '../src/assets/photos/contact/a%20residence%20(16).jpg'
 });
 
