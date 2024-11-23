@@ -44,7 +44,7 @@ onMounted(async () => {
             <div class="w-[325px] flex flex-col max-[980px]:items-center max-[980px]:w-full max-[980px]:min-w-[16rem]">
                 <h2 class="font-mistress text-[46px] max-[980px]:text-center">Trouvez la maison parfaite pour vos vacances</h2>
                 <p class="mb-[28px] mt-[40px] w-[385px] max-[980px]:w-[90%] max-[980px]:text-center">Velit repudiandae amet maiores amet voluptatibus itaque ullam praesentium. Vero cupiditate molestiae sequi quo voluptatibus nostrum minus.</p>
-                <RouterLink to="/les-maisons">
+                <RouterLink to="/decouvrir/les-maisons">
                     <Button label="En savoir plus" class="w-[160px] h-[46px]" />
                 </RouterLink>
             </div>
