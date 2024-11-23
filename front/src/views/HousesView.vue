@@ -12,7 +12,7 @@ const { houses } = storeToRefs(useHouseStore());
 const blockData = reactive<BlockTemplateType>({
   title: 'Les maisons',
   paragraph: 'Deux phrases pour parler des maisons',
-  imageSrc: '../src/assets/photos/contact/a%20residence%20(16).jpg'
+  imageSrc: '../src/assets/photos/houses/houses_main.jpg'
 });
 
 onMounted(async () => {

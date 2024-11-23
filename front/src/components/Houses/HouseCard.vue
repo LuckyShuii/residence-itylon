@@ -7,6 +7,8 @@ const props = defineProps<{
   house: HouseType;
 }>();
 
+const housePicturePreview = computed(() => props.house.title === 'cerisier' ? 'kiwi' : props.house.title)
+
 const capitalizeFirstLetter = (word: string) => {
   return String(word).charAt(0).toUpperCase() + String(word).slice(1);
 }
@@ -27,7 +29,7 @@ const lowestPrice = computed(() => {
 
 <template>
   <div class="w-[306px] rounded-[20px] flex flex-col bg-green-light">
-    <img src="/src/assets/photos/residence/residence_main.jpg" alt="house" class="w-full h-[250px] object-cover rounded-t" />
+    <img :src="`/src/assets/photos/houses/${housePicturePreview}/${housePicturePreview}_preview.jpg`" alt="house" class="w-full h-[250px] object-cover rounded-t" />
     <div class="flex flex-col justify-between px-[16px] py-[14px]">
       <h3 class="font-medium">{{ capitalizeFirstLetter(house.title) }} <small class="text-[14px] font-normal">({{ house.capacity }} personnes)</small></h3>
       <div class="flex items-center justify-between">
