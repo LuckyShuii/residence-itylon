@@ -140,3 +140,5 @@ UPDATE activity SET pictures = "src/assets/photos/activities/cheval.jpg," WHERE 
 UPDATE activity SET pictures = "src/assets/photos/activities/rando.jpg," WHERE id = 3;
 UPDATE activity SET pictures = "src/assets/photos/activities/bateau.webp," WHERE id = 2;
 UPDATE activity SET pictures = "src/assets/photos/activities/cheval.jpg,src/assets/photos/activities/cheval/cheval-1.jpg,src/assets/photos/activities/cheval/cheval-2.jpg,src/assets/photos/activities/cheval/cheval-3.jpg,src/assets/photos/activities/cheval/cheval-4.jpg," WHERE id = 4;
+
+UPDATE residence

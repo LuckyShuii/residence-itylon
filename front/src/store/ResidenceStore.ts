@@ -1,6 +1,6 @@
 import axios from "axios";
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import type { ResidenceType } from "@/types/ResidenceType";
 import { useToast } from "primevue/usetoast";
 
@@ -9,12 +9,15 @@ export const useResidenceStore = defineStore('residence', () => {
     const residences = ref<ResidenceType>({} as ResidenceType);
     const facebook = ref<string>('');
     const instagram = ref<string>('');
+    const residenceHeaderTitle = computed(() => residences.value?.headerTitle)
+    const description = computed(() => residences.value?.description)
 
     const loadResidences = async () => {
         try {
             const response = await axios.get<ResidenceType[]>('http://localhost:8002/residences');
             residences.value = response.data[0];
             loadSocials();
+            console.log("big", residences.value);
         } catch (error) {
             toast.add({ severity: 'error', summary: 'Error', detail: 'An error occurred while loading the residence information' });
         }
@@ -31,6 +34,8 @@ export const useResidenceStore = defineStore('residence', () => {
         loadResidences,
         facebook,
         instagram,
-        loadSocials
+        loadSocials,
+        residenceHeaderTitle,
+        description
     }
 });
