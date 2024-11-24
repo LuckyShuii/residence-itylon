@@ -26,6 +26,7 @@ export const useHouseStore = defineStore("house", () => {
     });
 
     const loadHouses = async () => {
+        if (!allHouses.value) return;
         try {
             allHouses.value = (
                 await axios.get<HouseType[]>(`http://localhost:8002/houses`)

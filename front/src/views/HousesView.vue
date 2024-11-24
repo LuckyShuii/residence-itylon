@@ -22,9 +22,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph" :imageSrc="blockData.imageSrc" />
+  <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph as string" :imageSrc="blockData.imageSrc" />
   <div class="flex w-full justify-center items-center mt-[80px]">
-    <div class="w-[1284px] flex flex-wrap gap-y-[20px] gap-x-[20px]">
+    <div class="w-[1284px] flex justify-center flex-wrap gap-y-[20px] gap-x-[20px] mx-8">
       <HouseCard v-for="house in houses" :house="house" :key="house!.id" />
     </div>
   </div>
