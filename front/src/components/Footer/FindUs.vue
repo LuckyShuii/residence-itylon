@@ -12,13 +12,13 @@ const { facebook, instagram  } = storeToRefs(useResidenceStore());
             <a :href="facebook" target="_blank">
                 <li class="flex">
                     <img src="@/assets/icons/facebook.svg" alt="facebook icon">
-                    <p class="text-[16px] ml-[13px] hover:border-b-[1px] hover:cursor-pointer border-[black] inline-block">Résidence Itylon</p>
+                    <p class="text-[16px] ml-[13px] hover:border-b-[1px] hover:cursor-pointer border-[black] inline-block">Facebook</p>
                 </li>
             </a>
             <a :href="instagram" target="_blank">
                 <li class="flex">
                     <img src="@/assets/icons/instagram.svg" alt="instagram icon">
-                    <p class="text-[16px] ml-[13px] hover:border-b-[1px] hover:cursor-pointer border-[black] inline-block">residence insta</p>
+                    <p class="text-[16px] ml-[13px] hover:border-b-[1px] hover:cursor-pointer border-[black] inline-block">Instagram</p>
                 </li>
             </a>
         </div>

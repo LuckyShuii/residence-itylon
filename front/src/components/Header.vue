@@ -93,7 +93,7 @@ onMounted(async () => {
             </li>
             <li>
                 <RouterLink to="/contact?page=reservation">
-                    <Button class="ml-[25px] w-[100px] h-[42px]">Réserver</Button>
+                    <Button class="ml-[25px] w-[100px] h-[42px] flex justify-center">Réserver</Button>
                 </RouterLink>
             </li>
         </div>
