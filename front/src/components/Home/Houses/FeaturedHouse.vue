@@ -9,7 +9,7 @@ const props = defineProps<{
 </script>
 
 <template>
-    <div class="w-[306px] bg-white rounded-[20px] flex flex-col ml-[121px]">
+    <div class="w-[306px] bg-white rounded-[10px] flex flex-col ml-[121px]">
         <img :src="'src/assets/photos/best-photo/' + props.house.previewPicture + '.jpg'" alt="house" class="w-full h-[250px] object-cover rounded-t" />
         <div class="flex items-center justify-between px-[16px] py-[14px]">
             <div class="flex flex-col">
