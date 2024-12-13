@@ -125,20 +125,6 @@ a {
   margin-top: 2px;
 }
 
-/* Class	Description
-p-menu	Class name of the root element
-p-menu-start	Class name of the start element
-p-menu-list	Class name of the list element
-p-menu-submenu-item	Class name of the submenu item element
-p-menu-separator	Class name of the separator element
-p-menu-end	Class name of the end element
-p-menu-item	Class name of the item element
-p-menu-item-content	Class name of the item content element
-p-menu-item-link	Class name of the item link element
-p-menu-item-icon	Class name of the item icon element
-p-menu-item-label	Class name of the item label element */
-/* Root element styling */
-
 .p-menu {
   background-color: var(--green-light);
   border-radius: 10px;
@@ -148,18 +134,31 @@ p-menu-item-label	Class name of the item label element */
   height: 3rem;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
 }
 
-.p-menuitem:hover {
+.p-menuitem-content a:hover {
   background-color: var(--green-middle);
   cursor: pointer;
   transition: 0.3s;
   border-radius: 10px;
+  color: white;
 }
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.p-menuitem-content {
+  height: 100%;
+  width: 100%;
+}
+
+.p-menuitem-content a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem
 }

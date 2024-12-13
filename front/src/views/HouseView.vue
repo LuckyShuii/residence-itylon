@@ -10,6 +10,8 @@ import { capitalizeFirstLetter } from '@/utils/capitalizedFirstLetter';
 const { loadHouses } = useHouseStore();
 const { houses } = storeToRefs(useHouseStore());
 
+const requestHousePreviewPicture = computed(() => requestedHouse.value?.title === 'cerisier' ? 'kiwi' : requestedHouse.value?.title)
+
 const route = useRoute()
 const requestedHouse = computed(() => houses.value.find((house) => house.id === Number(route.query.h)))
 
@@ -21,7 +23,7 @@ const blockData = reactive<BlockTemplateType>({
 
 const loadBlockData = () => {
     blockData.title = capitalizeFirstLetter(requestedHouse.value?.title as string),
-    blockData.imageSrc = `/src/assets/photos/houses/${requestedHouse.value?.title}/${requestedHouse.value?.title}_preview.jpg`,    
+    blockData.imageSrc = `/src/assets/photos/houses/${requestHousePreviewPicture.value}/${requestHousePreviewPicture.value}_preview.jpg`,    
     blockData.paragraph = requestedHouse.value?.descriptionTitle
 }
 

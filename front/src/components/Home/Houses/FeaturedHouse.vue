@@ -16,7 +16,7 @@ const props = defineProps<{
                 <h3 class="font-medium">{{ house.title }}</h3>
                 <p class="text-[14px]">{{ house.capacity }} personnes</p>
             </div>
-            <RouterLink :to="'/les-maison/' + Slugify(house.title.toLowerCase()) + '?h=' + house.id">
+            <RouterLink :to="'/decouvrir/les-maisons/' + Slugify(house.title.toLowerCase()) + '?h=' + house.id">
                 <Button class="w-[110px] h-[30px] text-[14px] flex justify-center">Visiter</Button>
             </RouterLink>
         </div>

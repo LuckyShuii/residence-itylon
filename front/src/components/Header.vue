@@ -9,11 +9,12 @@ import { useToast } from 'primevue/usetoast';
 const toast = useToast();
 const items = [
     { label: 'Accueil', icon: 'pi pi-fw pi-home', to: '/' },
-    { label: 'Découvrir', icon: 'pi pi-fw pi-search', to: '/decouvrir' },
-    { label: 'Activités', icon: 'pi pi-fw pi-calendar', to: '/activites' },
+    { label: 'Découvrir la résidence', icon: 'pi pi-fw pi-search', to: '/decouvrir/la-residence' },
+    { label: 'Découvrir les maisons', icon: 'pi pi-fw pi-search', to: '/decouvrir/les-maisons' },
+    { label: 'Activités', icon: 'pi pi-fw pi-calendar', to: '/activites/toutes-les-activites?a=0' },
     { label: 'Tarifs', icon: 'pi pi-fw pi-money-bill', to: '/tarifs' },
     { label: 'Contact', icon: 'pi pi-fw pi-envelope', to: '/contact' },
-    { label: 'Réserver', icon: 'pi pi-fw pi-calendar-plus', to: '/reservation' }
+    { label: 'Réserver', icon: 'pi pi-fw pi-calendar-plus', to: '/contact?page=reservation' }
 ];
 const menu = ref();
 
@@ -75,7 +76,7 @@ onMounted(async () => {
         <RouterLink to="/">
             <img src="@/assets/logo/logo-header.svg" alt="logo" />
         </RouterLink>
-        <div class="flex items-center xl:flex">
+        <div class="flex items-center xl:flex max-md:hidden">
             <li class="hover:border-b-2 hover:border-white">
                 <RouterLink to="/">Accueil</RouterLink>
             </li>
@@ -97,9 +98,15 @@ onMounted(async () => {
                 </RouterLink>
             </li>
         </div>
-        <div class="card flex justify-center xl:hidden">
+        <div class="md:hidden card flex justify-center">
             <Button type="button" icon="pi-arrow-right-arrow-left" @click="toggle" class="bg-transparent w-[5rem]" />
-            <Menu ref="menu" id="overlay_menu" :model="items" :popup="true" />
+            <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
+              <template #item="{ item, props }">
+                <RouterLink :to='item.to'>
+                  {{item.label}}
+                </RouterLink>
+              </template>
+            </Menu>
         </div>
     </header>
 </template>
