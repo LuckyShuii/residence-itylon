@@ -33,7 +33,11 @@ export class House extends BaseEntity {
 
     @Column()
     @Min(1)
-    capacity: number;
+    capacityMin: number;
+
+    @Column()
+    @Min(1)
+    capacityMax: number;
 
     @Column()
     @Min(1)
@@ -58,6 +62,10 @@ export class House extends BaseEntity {
     @Column()
     @Min(1)
     bed: number;
+
+    @Column()
+    @Min(1)
+    canapeLit: number;
 
     @Column()
     @Min(1)

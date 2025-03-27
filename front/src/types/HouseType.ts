@@ -6,13 +6,15 @@ export interface HouseType {
     descriptionTitle: string;
     previewPicture: string;
     pictures: string;
-    capacity: string;
+    capacityMin: number;
+    capacityMax: number;
     wifi: number;
     barbecue: number;
     ac: number;
     parking: number;
     terrace: number;
-    bed: string;
+    bed: number;
+    canapeLit: number;
     kitchen: number;
     bathroom: number;
     room: number;

@@ -37,23 +37,27 @@ CREATE TABLE IF NOT EXISTS activity (
     pictures TEXT
 );
 
-CREATE TABLE IF NOT EXISTS house (
+CREATE TABLE house (
     id INTEGER PRIMARY KEY,
-    title VARCHAR(255),
-    descriptionTitle VARCHAR(255),
+    title TEXT,
+    descriptionTitle TEXT,
+    description TEXT,
     previewPicture TEXT,
     pictures TEXT,
-    capacity STRING,
-    wifi BOOLEAN,
-    barbecue BOOLEAN,
-    ac BOOLEAN,
-    parking BOOLEAN,
-    terrace BOOLEAN,
-    bed STRING,
-    kitchen BOOLEAN,
+    capacityMin INTEGER,
+    capacityMax INTEGER,
+    wifi INTEGER,  
+    barbecue INTEGER,
+    ac INTEGER,
+    parking INTEGER,
+    terrace INTEGER,
+    bed TEXT,
+    canapeLit INTEGER, 
+    kitchen INTEGER,
     bathroom INTEGER,
     room INTEGER
 );
+
 
 CREATE TABLE IF NOT EXISTS price (
     id INTEGER PRIMARY KEY,
@@ -93,26 +97,27 @@ INSERT INTO price (id, lowSeason, mediumSeason, highSeason, veryHighSeason, clea
 INSERT INTO residence (id, headerTitle, title, description, postalAddress, email, phone, socials) VALUES
 (1, 'Residence Itylon', "Séjourner à Itylon, c'est être un peu chez soi en vacances", "Ici, rien de tape à l'oeil et de clinquant, nichées au milieu des fleurs et du maquis, sur un terrain arboré qui jouxte la superbe crique de Menasina, à l'entrée de Cargèse. Jean et Isadora, sa fille, jouent la carte de la décontraction : disponible et serein, ils ont su installer à Itylon une ambiance familiale et bon enfant. On se prend à fureter dans les recoins du jardin avant de prendre le petit chemin qui conduit à la plage. Un luxe simple, mais d'autant plus précieux.", 'Residence Itylon 20130 Cargèse', 'residence.itylon@gmail.com', '06.07.73.12.25', 'https://www.facebook.com/residenceitylon, https://www.instagram.com/residence_itylon/');
 
-INSERT INTO house (id, title, descriptionTitle, previewPicture, pictures, capacity, wifi, barbecue, ac, parking, terrace, bed, kitchen, bathroom, room) VALUES
-(1, "romarin", "Le Romarin est une maison de type 1, peut accueillir de 2 à 4 personnes.", "", "", "2 a 4", 1, 1, 1, 1, 1, "1 + canapé-lit", 1, 1, 1),
-(2, "eucaliptus", "L'Eucalyptus est une maison de type 1, elle est idéale pour 2 à 4 personnes.", "", "", "2 a 4", 1, 1, 1, 1, 1, "1 + canapé-lit", 1, 1, 1),
-(3, "laurier", "Le Laurier, une maison de type 1, accueille 2 à 4 personnes.", "", "", "2 a 4", 1, 1, 1, 1, 1, "1 + canapé-lit", 1, 1, 1),
-(4, "olivier", "L'Olivier, une maison de type 1, est parfaite pour 2 à 4 personnes.", "", "", "2 a 4", 1, 1, 1, 1, 1, "1 + canapé-lit", 1, 1, 1),
-(5, "rosier", "Le Rosier, une maison de type 1, accueille confortablement 2 à 4 personnes.", "", "", "2 a 4", 1, 1, 1, 1, 1, "1 + canapé-lit", 1, 1, 1),
-(6, "ciste", "Le Ciste est une maison de type 1, peut accueillir de 2 à 4 personnes.", "", "", "2 a 4", 1, 1, 1, 1, 1, "1 + canapé-lit", 1, 1, 1),
-(7, "myrte", "Le Myrte est une maison de type 1, peut accueillir de 2 à 4 personnes.", "", "", "2 a 4", 1, 1, 1, 1, 1, "1 + canapé-lit", 1, 1, 1),
-(8, "lentisque", "Le Lentisque est une maison de type 1 a deux pas de la piscine, peut accueillir de 2 à 4 personnes.", "", "", "2 a 4", 1, 1, 1, 1, 1, "1 + canapé-lit", 1, 1, 1),
-(9, "kiwi", "Le Kiwi est une charmante maison composée de 2 chambres, pouvant accueillir jusqu'à 4 personnes.", "", "", "4", 1, 1, 1, 1, 1, "3", 1, 1, 2),
-(10, "cerisier", "Le Cerisier est une charmante maison composée de 2 chambres, pouvant accueillir jusqu'à 4 personnes.", "", "", "4", 1, 1, 1, 1, 1, "3", 1, 1, 2),
-(11, "arbousier", "L'Arbousier est une maison pouvant accueillir entre 4 à 6 personnes.", "", "", "4 a 6", 1, 1, 1, 1, 1, "2 + canapé-lit", 1, 1, 2),
-(12, "datura", "Cette maison spacieuse peut accueillir 5 personnes.", "", "", "5", 1, 1, 1, 1, 1, "3", 1, 1, 2),
-(13, "asphodele", "L'Asphodèle est une maison confortable composée de 3 chambres.", "", "", "6", 1, 1, 1, 1, 1, "4", 1, 1, 3),
-(14, "amandier", "L’Amandier est une maison confortable composée de 3 chambres.", "", "", "6", 1, 1, 1, 1, 1, "3", 1, 2, 3),
-(15, "figuier", "Cette grande maison est composée de 3 chambres.", "", "", "8", 1, 1, 1, 1, 1, "5", 1, 2, 3),
-(16, "citronnier", "Il s’agit de notre plus petite maison. Parfaite pour un couple.", "", "", "2", 1, 1, 1, 1, 1, "1", 1, 1, 1);
+INSERT INTO house (id, title, descriptionTitle, previewPicture, pictures, capacityMin, capacityMax, wifi, barbecue, ac, parking, terrace, bed, canapeLit, kitchen, bathroom, room, description) VALUES
+(1, 'romarin', 'Le Romarin est une maison de type 1, peut accueillir de 2 à 4 personnes.', '', '', 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ''),
+(2, 'eucaliptus', 'L''Eucalyptus est une maison de type 1, elle est idéale pour 2 à 4 personnes.', '', '', 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ''),
+(3, 'laurier', 'Le Laurier, une maison de type 1, accueille 2 à 4 personnes.', '', '', 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ''),
+(4, 'olivier', 'L''Olivier, une maison de type 1, est parfaite pour 2 à 4 personnes.', '', '', 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ''),
+(5, 'rosier', 'Le Rosier, une maison de type 1, accueille confortablement 2 à 4 personnes.', '', '', 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ''),
+(6, 'ciste', 'Le Ciste est une maison de type 1, peut accueillir de 2 à 4 personnes.', '', '', 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ''),
+(7, 'myrte', 'Le Myrte est une maison de type 1, peut accueillir de 2 à 4 personnes.', '', '', 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ''),
+(8, 'lentisque', 'Le Lentisque est une maison de type 1 a deux pas de la piscine, peut accueillir de 2 à 4 personnes.', '', '', 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ''),
+(9, 'kiwi', 'Le Kiwi est une charmante maison composée de 2 chambres, pouvant accueillir jusqu''à 4 personnes.', '', '', 4, 4, 1, 1, 1, 1, 1, 3, 0, 1, 2, 0, ''),
+(10, 'cerisier', 'Le Cerisier est une charmante maison composée de 2 chambres, pouvant accueillir jusqu''à 4 personnes.', '', '', 4, 4, 1, 1, 1, 1, 1, 3, 0, 1, 2, 0, ''),
+(11, 'arbousier', 'L''Arbousier est une maison pouvant accueillir entre 4 à 6 personnes.', '', '', 4, 6, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, ''),
+(12, 'datura', 'Cette maison spacieuse peut accueillir 5 personnes.', '', '', 5, 5, 1, 1, 1, 1, 1, 3, 0, 1, 2, 0, ''),
+(13, 'asphodele', 'L''Asphodèle est une maison confortable composée de 3 chambres.', '', '', 6, 6, 1, 1, 1, 1, 1, 4, 0, 1, 3, 0, ''),
+(14, 'amandier', 'L\’Amandier est une maison confortable composée de 3 chambres.', '', '', 6, 6, 1, 1, 1, 1, 1, 3, 0, 2, 3, 0, ''),
+(15, 'figuier', 'Cette grande maison est composée de 3 chambres.', '', '', 8, 8, 1, 1, 1, 1, 1, 5, 0, 2, 3, 0, ''),
+(16, 'citronnier', 'Il s\’agit de notre plus petite maison. Parfaite pour un couple.', '', '', 2, 2, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, '');
+
 
 INSERT INTO period (id, name, startDate, endDate) VALUES
-(1, "lowSeason", "2024-04-01", "2024-05-31"),
+(1, "lowSeason", "2024-04-01", "2024-05-31", ''),
 (2, "mediumSeason", "2024-06-01", "2024-06-30"),
 (3, "highSeason", "2024-07-01", "2024-07-26"),
 (4, "veryHighSeason", "2024-07-27", "2024-08-24"),
@@ -130,7 +135,7 @@ INSERT INTO activity (id, headerTitle, headerDescription, title, description, ex
 -- DROP TABLE IF EXISTS residence;
 -- DROP TABLE IF EXISTS period;
 -- DROP TABLE IF EXISTS activity;
--- DROP TABLE IF EXISTS house;
+DROP TABLE IF EXISTS house;
 -- DROP TABLE IF EXISTS price;
 
 UPDATE house
