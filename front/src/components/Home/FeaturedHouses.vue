@@ -49,7 +49,6 @@ onMounted(async () => {
                 </RouterLink>
             </div>
             <div class="flex max-[1380px]:flex-col" v-if="featuredHouses.firstHouse && featuredHouses.secondHouse">
-
               <FeaturedHouse v-for="house in featuredHouses" :key="house!.id" :house="house!" class="max-[1380px]:mb-4 max-[980px]:mx-0 max-[980px]:mt-12" :displayPrice="false" />
             </div>
         </div>

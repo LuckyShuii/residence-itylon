@@ -22,7 +22,7 @@ const getFormattedTitle = (title?: string): string => {
     <div class="mt-[20px]">
         <div class="w-[380px] rounded-[10px] bg-green-light py-[45px] px-[35px]">
             <h3 class="font-mistress text-[40px] pb-[30px]">Découvrez {{ getFormattedTitle(houseData?.title) }}</h3>
-            <p>Et sit nihil nemo et non. Quam iure exercitationem officiis ad consequatur quia. Omnis accusamus veniam et perspiciatis est ullam repellendus officiis vitae. Omnis alias nisi ab quidem ullam asperiores. Quisquam harum exercitationem dolor assumenda qui tenetur.</p>
+            <p>{{ houseData?.description }}.</p>
         </div>
 
         <div class="w-[500px] rounded-[10px] py-[45px] px-[35px] m-[30px] border border-[#89B58C]">

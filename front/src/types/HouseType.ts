@@ -4,6 +4,7 @@ export interface HouseType {
     id: number;
     title: string;
     descriptionTitle: string;
+    description: string;
     previewPicture: string;
     pictures: string;
     capacityMin: number;

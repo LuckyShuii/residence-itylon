@@ -26,6 +26,9 @@ export class House extends BaseEntity {
     descriptionTitle: string;
 
     @Column()
+    description: string;
+
+    @Column()
     previewPicture: string;
 
     @Column()

@@ -9,7 +9,7 @@ import { capitalizeFirstLetter } from '@/utils/capitalizedFirstLetter';
 import TopSectionInfo
   from "@/components/Houses/HousePage/TopSectionInfo.vue";
 import type { HouseType } from '@/types/HouseType';
-import HousePictures from '@/components/Home/Houses/HousePictures.vue';
+import HousePictures from '@/components/Houses/HousePage/HousePictures.vue';
 
 const { loadHouses } = useHouseStore();
 const { houses } = storeToRefs(useHouseStore());
