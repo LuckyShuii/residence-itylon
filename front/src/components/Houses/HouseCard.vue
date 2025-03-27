@@ -20,8 +20,6 @@ const lowestPrice = computed(() => {
 
   return prices.length > 0 ? Math.min(...prices) : null;
 });
-
-
 </script>
 
 <template>

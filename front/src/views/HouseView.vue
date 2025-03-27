@@ -2,18 +2,22 @@
 import { useRoute } from 'vue-router'
 import TopImageBlock from '@/components/layout/TopImageBlock.vue';
 import type { BlockTemplateType } from '@/types/BlockTemplateType';
-import { onMounted, reactive, computed, ref } from 'vue';
+import { onMounted, reactive, computed } from 'vue';
 import { useHouseStore } from '@/store/HouseStore';
 import { storeToRefs } from 'pinia';
 import { capitalizeFirstLetter } from '@/utils/capitalizedFirstLetter';
+import TopSectionInfo
+  from "@/components/Houses/HousePage/TopSectionInfo.vue";
+import type { HouseType } from '@/types/HouseType';
+import HousePictures from '@/components/Home/Houses/HousePictures.vue';
 
 const { loadHouses } = useHouseStore();
 const { houses } = storeToRefs(useHouseStore());
 
-const requestHousePreviewPicture = computed(() => requestedHouse.value?.title === 'cerisier' ? 'kiwi' : requestedHouse.value?.title)
+const requestHousePreviewPicture = computed<string|undefined>(() => requestedHouse.value ? requestedHouse.value?.title === 'cerisier' ? 'kiwi' : requestedHouse.value?.title : undefined)
 
 const route = useRoute()
-const requestedHouse = computed(() => houses.value.find((house) => house.id === Number(route.query.h)))
+const requestedHouse = computed<HouseType|undefined>(() => houses.value ? houses.value.find((house) => house.id === Number(route.query.h)) : undefined)
 
 const blockData = reactive<BlockTemplateType>({
   title: '',
@@ -28,12 +32,15 @@ const loadBlockData = () => {
 }
 
 onMounted(async () => {
-    await loadHouses()
-    loadBlockData()
+  if (!houses.value.length) await loadHouses()
+  loadBlockData()
 })
 </script>
 
 <template>
-  <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph as string" :image-src="blockData.imageSrc" />
-  <pre>{{ requestedHouse }}</pre>
+  <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph ?? 'not found'" :image-src="blockData.imageSrc" />
+  <div class="w-full flex flex-col justify-center items-center">
+      <TopSectionInfo class="w-[1884px] flex justify-center items-center flex-wrap gap-y-[20px] gap-x-[20px] mx-8" :houseData="requestedHouse" />
+      <HousePictures :houseData="requestedHouse" />
+  </div>
 </template>
