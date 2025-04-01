@@ -20,7 +20,7 @@ const generateBasicBlockData = () => {
 </script>
 
 <template>
-  <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph as string" :image-src="blockData.imageSrc" />
+  <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph ?? 'not found'" :image-src="blockData.imageSrc" />
 
   <!-- Conteneur supérieur avec largeur maximale de 1270px et centré -->
   <div class="flex justify-center mt-[80px] max-w-[1270px] mx-auto">

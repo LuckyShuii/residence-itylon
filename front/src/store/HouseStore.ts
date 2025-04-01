@@ -29,7 +29,7 @@ export const useHouseStore = defineStore("house", () => {
     const loadHouses = async () => {
         try {
             allHouses.value = (
-                await axios.get<HouseType[]>(`http://localhost:8002/houses`)
+                await axios.get<HouseType[]>(`${import.meta.env.VITE_FRONTEND_URL}:8002/houses`)
             ).data;
         } catch (err) {
             toast.add({
@@ -42,7 +42,7 @@ export const useHouseStore = defineStore("house", () => {
 
     const getHousesPricing = async () => {
         try {
-            housesPricing.value = (await axios.get('http://localhost:8002/prices/houses')).data;
+            housesPricing.value = (await axios.get(`${import.meta.env.VITE_FRONTEND_URL}:8002/prices/houses`)).data;
         } catch (error) {
             toast.add({
                 severity: "error",

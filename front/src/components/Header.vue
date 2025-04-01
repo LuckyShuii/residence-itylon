@@ -18,7 +18,7 @@ const items = [
 ];
 const menu = ref();
 
-const activities = ref([]);
+const activities = ref<any>([]);
 const selectedActivity = ref(null);
 
 const discoveries = ref([
@@ -29,7 +29,7 @@ const selectedDiscover = ref(null);
 
 const loadActivities = async () => {
     try {
-        const response = await axios.get('http://localhost:8002/activities');
+        const response = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}:8002/activities`);
         activities.value = [{id: 0, headerTitle: "Toutes les activites"}, ...response.data];
     } catch (error) {
         toast.add({ severity: 'error', summary: 'Erreur', detail: 'Une erreur est survenue lors du chargement des activités', life: 6000 });

@@ -10,7 +10,7 @@ const activities = ref<ActivityType[]>([]);
 
 const loadActivities = async () => {
     try {
-        activities.value = (await axios.get('http://localhost:8002/activities')).data;
+        activities.value = (await axios.get(`${import.meta.env.VITE_FRONTEND_URL}:8002/activities`)).data;
     } catch (error) {
         toast.add({ severity: 'error', summary: 'Erreur', detail: 'Une erreur est survenue lors du chargement des activités', life: 6000 });
     }
