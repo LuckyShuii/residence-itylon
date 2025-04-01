@@ -24,7 +24,7 @@ const PriceController = {
         }
     },
 
-    getHousesPrincing: async (_req: Request, res: Response) => {
+    getHousesPricing: async (_req: Request, res: Response) => {
         try {
             const prices = await Price.getAllPrices();
 

@@ -7,7 +7,7 @@ import type { HouseType } from "@/types/HouseType";
 export const useHouseStore = defineStore("house", () => {
     const toast = useToast();
     const allHouses = ref<HouseType[] | undefined>([]);
-    const housesPrincing = ref();
+    const housesPricing = ref();
 
     const houses = computed(() => {
         if (!allHouses.value) return [];
@@ -40,9 +40,9 @@ export const useHouseStore = defineStore("house", () => {
         }
     };
 
-    const getHousesPrincing = async () => {
+    const getHousesPricing = async () => {
         try {
-            housesPrincing.value = (await axios.get('http://localhost:8002/prices/houses')).data;
+            housesPricing.value = (await axios.get('http://localhost:8002/prices/houses')).data;
         } catch (error) {
             toast.add({
                 severity: "error",
@@ -52,5 +52,5 @@ export const useHouseStore = defineStore("house", () => {
         }
     }   
 
-    return { loadHouses, houses, getHousesPrincing, housesPrincing };
+    return { loadHouses, houses, getHousesPricing, housesPricing };
 });
