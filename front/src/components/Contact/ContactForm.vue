@@ -10,6 +10,7 @@ interface FormData {
   email: string;
   phone: string;
   message: string;
+  rgpd: boolean;
 }
 
 const formData = reactive<FormData>({
@@ -17,13 +18,17 @@ const formData = reactive<FormData>({
   lastName: '',
   email: '',
   phone: '',
-  message: ''
+  message: '',
+  rgpd: false
 });
 
 const checkForm = (): void => {
   if (Object.values(formData).some(value => value === '')) {
     toast.add({ severity: 'error', summary: 'Formulaire', detail: 'Tous les champs sont obligatoires !', life: 6000 });
+    return;
   }
+
+  toast.add({ severity: 'success', summary: 'Formulaire', detail: 'Votre message a bien été envoyé !', life: 6000 });
 }
 </script>
 
@@ -53,10 +58,16 @@ const checkForm = (): void => {
       </div>
       <div>
         <label for="message">Message</label>
-        <textarea id="message" v-model="formData.message" rows="5" cols="30" class="w-full border border-gray-200 rounded-[10px] h-[310px] py-[5px] px-[8px] text-[16px] border border-green-btn"></textarea>
+        <textarea id="message" v-model="formData.message" rows="5" cols="30" class="w-full border border-green-btn rounded-[10px] h-[310px] py-[5px] px-[8px] text-[16px]"></textarea>
       </div>
 
-      <Button type="submit" label="Envoyer" class="mt-[25px] py-[5px] w-[160px]" />
+      <div class="flex items-center mt-4">
+        <Checkbox :binary="true" id="rgpd" v-model="formData.rgpd" class="mr-2 border border-green-btn rounded-[5px]" />
+        <label for="rgpd" class="text-sm">J'accepte que mes données soient envoyées et traitées conformément à la <a href="/politique-de-confidentialite" class="text-blue-600 underline">politique de confidentialité</a>.</label>
+      </div>
+      <div class="w-full flex justify-center items-center mt-[20px]">
+        <Button type="submit" label="Envoyer" class="mt-[25px] py-[5px] w-[160px]" />
+      </div>
     </form>
   </div>
 </template>
