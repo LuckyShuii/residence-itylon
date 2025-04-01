@@ -114,7 +114,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph" :image-src="blockData.imageSrc" />
+  <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph ?? 'not found'" :image-src="blockData.imageSrc" />
   <AllActivities :activities="activities" :isAllActivityView="true" />
   <hr class="border-0 h-[1px] w-full border-t-2 block mt-[-1rem]" v-if="!isAllActivities()">
   <div ref="activityContainer" class="w-full flex justify-center items-center opacity-0 transition-opacity duration-500" v-if="!isAllActivities()">

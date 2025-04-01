@@ -6,6 +6,7 @@ import ResidenceView from '@/views/ResidenceView.vue';
 import HousesView from "@/views/HousesView.vue";
 import NotFoundView from '@/views/NotFoundView.vue';
 import HouseView from '@/views/HouseView.vue';
+import PrincingView from '@/views/PrincingView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +46,11 @@ const router = createRouter({
       path: '/decouvrir/les-maisons/:houseName',
       name: 'house',
       component: HouseView
+    },
+    {
+      path: '/tarifs',
+      name: 'princing',
+      component: PrincingView
     },
     {
       path: '/:pathMatch(.*)*',

@@ -20,7 +20,7 @@ const HouseController = {
         } catch (err) {
             res.status(500).send('An error has occurred when trying to get the house');
         }
-    }
+    },
 }
 
 export default HouseController;

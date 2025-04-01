@@ -150,7 +150,9 @@ app.get("/houses", House.getAllHouses);
  *          type: integer
  *          example: 1
 */
-app.get("/house/:id", House.getHouseById);
+app.get("/houses/:id", House.getHouseById);
+
+app.get("/prices/houses", Price.getHousesPrincing);
 
 /**
  * @swagger
