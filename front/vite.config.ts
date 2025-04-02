@@ -20,6 +20,6 @@ export default defineConfig({
     watch: {
       usePolling: true, 
     },
-    hmr: isProd ? false : { clientPort: 5173 }
+    hmr: isProd ? false : { path: '/hmr', port: 7002 }, 
   }
 })

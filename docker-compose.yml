@@ -11,11 +11,17 @@ services:
       interval: 1s
       timeout: 2s
       retries: 20
-
+    ports:
+      - "8002:8002"
+      
   front:
     build: ./front
     environment:
       VITE_BACKEND_URL: ${BACKEND_URL}
+      VITE_MAIL_SERVICE_ID: ${MAIL_SERVICE_ID}
+      VITE_MAIL_TEMPLATE_ID: ${MAIL_TEMPLATE_ID}
+      VITE_MAIL_PUBLIC_KEY: ${MAIL_PUBLIC_KEY}
+      VITE_RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY}
     volumes:
       - ./front/src:/app/src
     depends_on:
@@ -26,6 +32,9 @@ services:
       interval: 1s
       timeout: 2s
       retries: 20
+    ports:
+      - "7002:7002"
+
   redis:
     image: redis
 

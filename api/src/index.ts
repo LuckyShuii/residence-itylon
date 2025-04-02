@@ -2,7 +2,8 @@
 import express from "express";
 import "reflect-metadata";
 import cors from "cors";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
+
 import { dataSource } from "./config/db";
 
 import ContactForm from "./controllers/contactFormController";
@@ -81,42 +82,6 @@ app.listen(port, async () => {
 app.get("/api", (_req, res) => {
     res.status(200).send("The server is ON");
 });
-
-/**
- * @swagger
- * /contact-form:
- *   post:
- *     summary: "Create a new contact form"
- *     description: "Create a new contact form in the database, and send an email to the user & the admin with the contact form informations"
- *     parameters:
- *      - in: body
- *        name: contactForm
- *        description: "Example of a contact form object to create in the database"
- *        schema:
- *          type: object
- *          properties:
- *            firstName:
- *              type: string
- *              description: "The first name of the contact form"
- *              example: "John"
- *            lastName:
- *              type: string
- *              description: "The last name of the contact form"
- *              example: "Doe"
- *            email:
- *              type: string
- *              description: "The email of the contact form"
- *              example: "john@doe.com"
- *            phone:
- *              type: string
- *              description: "The phone number of the contact form"
- *              example: "0606060606"
- *            message:
- *              type: string
- *              description: "The message of the contact form"
- *              example: "Hello, I am interested in your product"
-*/
-app.post("/api/contact-form", ContactForm.postNewContactForm);
 
 /**
  * @swagger
