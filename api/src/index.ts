@@ -1,6 +1,8 @@
+
 import express from "express";
 import "reflect-metadata";
 import cors from "cors";
+import dotenv from "dotenv";
 import { dataSource } from "./config/db";
 
 import ContactForm from "./controllers/contactFormController";
@@ -9,6 +11,8 @@ import House from "./controllers/houseController";
 import Price from "./controllers/priceController";
 import Residence from "./controllers/residenceController";
 import Period from "./controllers/periodController";
+
+dotenv.config();
 
 const app = express();
 
@@ -56,7 +60,15 @@ const openapiSpecification = swaggerJsdoc(options);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        process.env.FRONTEND_URL || "http://localhost:5173",
+        process.env.BACKEND_URL || "http://localhost:8002",
+        process.env.BASE_URL || "http://localhost:5000"
+    ].filter(Boolean) as string[],
+    methods: ["GET", "POST"]
+}));
+
 app.use(express.json());
 
 const port = 8002;
