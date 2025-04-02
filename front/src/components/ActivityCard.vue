@@ -7,8 +7,7 @@ const props = defineProps<{
 }>();
 
 const getActivityPicture = (picturePath: string): string => {
-  const pathToAdd = import.meta.env.VITE_STATUS === 'PROD' ? '/' : '../assets/';
-  return pathToAdd + picturePath.split(",")[0]
+  return '/' + picturePath.split(",")[0]
 }
 </script>
 

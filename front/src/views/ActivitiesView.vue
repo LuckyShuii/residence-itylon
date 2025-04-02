@@ -53,14 +53,12 @@ const generateImgSrc = (img: string): string => {
 };
 
 const generateActivityPictures = (images: string): void => {
-  const pathToAdd = import.meta.env.VITE_STATUS === 'PROD' ? '/' : '../assets/'
-
   activityPictures.value = images.split(',');
   activityPictures.value.pop();
   activityPictures.value = activityPictures.value.map((element) => {
     if (element.split('/')[0] === 'photos') {
 
-      return pathToAdd + element;
+      return '/' + element;
     }
     return '';
   }).filter((element) => element !== '');

@@ -1,14 +1,11 @@
 <script setup lang="ts">
 import type { HouseType } from '@/types/HouseType';
 import Slugify from 'slugify';
-import { computed } from 'vue';
 
 const props = defineProps<{
     house: HouseType;
     displayPrice: boolean
 }>();
-
-const pathToAdd = computed<string>(() => import.meta.env.VITE_STATUS === 'PROD' ? '/' : '../assets/')
 
 const getCapacity = (): string => {
   if (props.house.capacityMax === props.house.capacityMin) {
@@ -21,7 +18,7 @@ const getCapacity = (): string => {
 
 <template>
     <div class="w-[306px] bg-white rounded-[10px] flex flex-col ml-[121px]">
-        <img :src="pathToAdd + 'photos/best-photo/' + props.house.previewPicture + '.jpg'" alt="house" class="w-full h-[250px] object-cover rounded-t" />
+        <img :src="'/photos/best-photo/' + props.house.previewPicture + '.jpg'" alt="house" class="w-full h-[250px] object-cover rounded-t" />
         <div class="flex items-center justify-between px-[16px] py-[14px]">
             <div class="flex flex-col">
                 <h3 class="font-medium">{{ house.title }}</h3>
