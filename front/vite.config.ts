@@ -3,6 +3,8 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
+const isProd = process.env.VITE_STATUS === 'PROD';
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -18,8 +20,6 @@ export default defineConfig({
     watch: {
       usePolling: true, 
     },
-    hmr: {
-      clientPort: 5173, 
-    }
+    hmr: isProd ? false : { clientPort: 5173 }
   }
 })
