@@ -9,14 +9,10 @@ const { residenceHeaderTitle, description } = storeToRefs(useResidenceStore());
 
 const blockData = reactive<BlockTemplateType>({
   title: 'La résidence',
-  imageSrc: '../src/assets/photos/residence/residence_main.jpg'
+  imageSrc: '../src/assets/photos/residence/residence_main.jpg',
+  paragraph: "Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus"
 });
 
-const generateBasicBlockData = () => {
-  blockData.title = "Les activités";
-  blockData.paragraph = "Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus";
-  blockData.imageSrc = "../src/assets/photos/activities/plage.jpg";
-};
 </script>
 
 <template>
