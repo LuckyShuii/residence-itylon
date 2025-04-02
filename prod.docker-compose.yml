@@ -15,13 +15,12 @@ services:
   front:
     build: ./front
     environment:
-      VITE_FRONTEND_URL: ${FRONTEND_URL}
       VITE_BACKEND_URL: ${BACKEND_URL}
     depends_on:
       api:
         condition: service_healthy
     healthcheck:
-      test: "curl --fail --request GET --url '${VITE_FRONTEND_URL}/' || exit 1"
+      test: "curl --fail --request GET --url 'http://localhost:5173/' || exit 1"
       interval: 1s
       timeout: 2s
       retries: 20
