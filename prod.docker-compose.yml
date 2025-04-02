@@ -9,7 +9,7 @@ services:
       - ./api/src:/app/src
       - ./api/residence.sqlite:/app/residence.sqlite
     healthcheck:
-      test: 'curl --fail --request GET --url ''${BACKEND_URL}'' || exit 1'
+      test: "curl --fail --request GET --url '${BACKEND_URL}' || exit 1"
       interval: 1s
       timeout: 2s
       retries: 5
