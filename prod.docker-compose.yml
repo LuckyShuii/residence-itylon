@@ -1,30 +1,30 @@
 services:
   api:
     build: ./api
-    env_file:
-      - .env
-    ports:
-      - 8002:8002
+    environment:
+      VITE_FRONTEND_URL: ${FRONTEND_URL}
     volumes:
       - ./api/src:/app/src
       - ./api/residence.sqlite:/app/residence.sqlite
     healthcheck:
-      test: 'curl --fail --request GET --url ''http://localhost:8002/'' || exit 1'
+      test: 'curl --fail --request GET --url ''${FRONTEND_URL}:8002/'' || exit 1'
       interval: 1s
       timeout: 2s
       retries: 100
+    ports: 
+      - 8002:8002
 
   front:
     build: ./front
-    env_file:
-      - .env
+    environment:
+      VITE_FRONTEND_URL: http://localhost
     volumes:
       - ./front/src:/app/src
     depends_on:
       api:
         condition: service_healthy
     healthcheck:
-      test: "curl --fail --request GET --url 'http://localhost:5173/' || exit 1"
+      test: "curl --fail --request GET --url '${FRONTEND_URL}:5173/' || exit 1"
       interval: 1s
       timeout: 2s
       retries: 100
