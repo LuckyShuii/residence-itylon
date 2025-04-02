@@ -23,7 +23,7 @@ services:
       api:
         condition: service_healthy
     healthcheck:
-      test: "curl --fail --request GET --url '${FRONTEND_URL}/' || exit 1"
+      test: "curl --fail --request GET --url '${VITE_FRONTEND_URL}/' || exit 1"
       interval: 1s
       timeout: 2s
       retries: 20
@@ -40,4 +40,4 @@ services:
       front:
         condition: service_healthy
     ports:
-      - "5000:80"
+      - "8080:80"
