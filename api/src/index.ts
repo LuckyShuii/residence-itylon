@@ -78,7 +78,7 @@ app.listen(port, async () => {
     console.log(`Server is listening on port ${port}`);
 });
 
-app.get("/", (_req, res) => {
+app.get("/api", (_req, res) => {
     res.status(200).send("The server is ON");
 });
 
@@ -116,7 +116,7 @@ app.get("/", (_req, res) => {
  *              description: "The message of the contact form"
  *              example: "Hello, I am interested in your product"
 */
-app.post("/contact-form", ContactForm.postNewContactForm);
+app.post("/api/contact-form", ContactForm.postNewContactForm);
 
 /**
  * @swagger
@@ -125,7 +125,7 @@ app.post("/contact-form", ContactForm.postNewContactForm);
  *     summary: "Get all existing contact forms"
  *     description: "Get all existing contact forms in the database"
 */
-app.get("/contact-forms", ContactForm.getAllContactForms);
+app.get("/api/contact-forms", ContactForm.getAllContactForms);
 
 /**
  * @swagger
@@ -134,7 +134,7 @@ app.get("/contact-forms", ContactForm.getAllContactForms);
  *     summary: "Get all existing activities"
  *     description: "Get all existing activities in the database"
 */
-app.get("/activities", Activity.getAllActivities);
+app.get("/api/activities", Activity.getAllActivities);
 
 /**
  * @swagger
@@ -143,7 +143,7 @@ app.get("/activities", Activity.getAllActivities);
  *     summary: "Get all existing houses"
  *     description: "Get all existing houses in the database"
 */
-app.get("/houses", House.getAllHouses);
+app.get("/api/houses", House.getAllHouses);
 
 /**
  * @swagger
@@ -160,9 +160,9 @@ app.get("/houses", House.getAllHouses);
  *          type: integer
  *          example: 1
 */
-app.get("/house/:id", House.getHouseById);
+app.get("/api/house/:id", House.getHouseById);
 
-app.get("/prices/houses", Price.getHousesPricing);
+app.get("/api/prices/houses", Price.getHousesPricing);
 
 /**
  * @swagger
@@ -171,7 +171,7 @@ app.get("/prices/houses", Price.getHousesPricing);
  *     summary: "Get all existing prices"
  *     description: "Get all existing prices in the database"
 */
-app.get("/prices", Price.getAllPrices);
+app.get("/api/prices", Price.getAllPrices);
 
 /**
  * @swagger
@@ -180,7 +180,7 @@ app.get("/prices", Price.getAllPrices);
  *     summary: "Get all existing residences"
  *     description: "Get all existing residences in the database"
 */
-app.get("/residences", Residence.getAllResidences);
+app.get("/api/residences", Residence.getAllResidences);
 
 /**
  * @swagger
@@ -189,4 +189,4 @@ app.get("/residences", Residence.getAllResidences);
  *     summary: "Get all existing periods"
  *     description: "Get all existing periods in the database"
 */
-app.get("/periods", Period.getAllPeriods);
+app.get("/api/periods", Period.getAllPeriods);
