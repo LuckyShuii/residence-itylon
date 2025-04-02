@@ -15,7 +15,7 @@ const loadFeaturedHouses = async () => {
 
 const loadFirstHouse = async () => {
     try {
-        const firstHouse = (await axios.get(`${import.meta.env.VITE_FRONTEND_URL}:8002/house/8`)).data;
+        const firstHouse = (await axios.get(`${import.meta.env.VITE_BACKEND_URL}/house/8`)).data;
         firstHouse.title = firstHouse.title.charAt(0).toUpperCase() + firstHouse.title.slice(1);
         featuredHouses.value = { ...featuredHouses.value, firstHouse };
     } catch (error) {
@@ -25,7 +25,7 @@ const loadFirstHouse = async () => {
 
 const loadSecondHouses = async () => {
     try {
-        const secondHouse = (await axios.get(`${import.meta.env.VITE_FRONTEND_URL}:8002/house/12`)).data;
+        const secondHouse = (await axios.get(`${import.meta.env.VITE_BACKEND_URL}/house/12`)).data;
         secondHouse.title = secondHouse.title.charAt(0).toUpperCase() + secondHouse.title.slice(1);
         featuredHouses.value = { ...featuredHouses.value, secondHouse };
     } catch (error) {

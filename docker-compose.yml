@@ -3,32 +3,38 @@ services:
     build: ./api
     environment:
       VITE_FRONTEND_URL: ${FRONTEND_URL}
+      VITE_BACKEND_URL: ${BACKEND_URL}
+      VITE_BASE_URL: ${BASE_URL}
     volumes:
       - ./api/src:/app/src
       - ./api/residence.sqlite:/app/residence.sqlite
     healthcheck:
-      test: 'curl --fail --request GET --url ''${FRONTEND_URL}:8002/'' || exit 1'
+      test: 'curl --fail --request GET --url ''${BACKEND_URL}/'' || exit 1'
       interval: 1s
       timeout: 2s
-      retries: 100
+      retries: 5
     ports: 
       - 8002:8002
 
   front:
     build: ./front
     environment:
-      VITE_FRONTEND_URL: http://localhost
+      VITE_FRONTEND_URL: ${FRONTEND_URL}
+      VITE_BACKEND_URL: ${BACKEND_URL}
+      VITE_BASE_URL: ${BASE_URL}
     volumes:
       - ./front/src:/app/src
     depends_on:
       api:
         condition: service_healthy
     healthcheck:
-      test: "curl --fail --request GET --url '${FRONTEND_URL}:5173/' || exit 1"
+      test: "curl --fail --request GET --url '${FRONTEND_URL}/' || exit 1"
       interval: 1s
       timeout: 2s
-      retries: 100
-
+      retries: 5
+    ports:
+      - 5173:5173
+      - 7002:7002
   redis:
     image: redis
 

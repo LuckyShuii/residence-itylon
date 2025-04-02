@@ -15,7 +15,7 @@ const options = {
         },
         servers: [
             {
-                url: "http://localhost:8002/",
+                url: import.meta.env.VITE_BACKEND_URL,
                 description: "Local server"
             },
             {

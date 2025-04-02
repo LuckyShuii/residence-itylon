@@ -29,7 +29,7 @@ const selectedDiscover = ref(null);
 
 const loadActivities = async () => {
     try {
-        const response = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}:8002/activities`);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/activities`);
         activities.value = [{id: 0, headerTitle: "Toutes les activites"}, ...response.data];
     } catch (error) {
         toast.add({ severity: 'error', summary: 'Erreur', detail: 'Une erreur est survenue lors du chargement des activités', life: 6000 });

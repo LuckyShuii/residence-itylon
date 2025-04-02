@@ -139,8 +139,7 @@ a {
 .p-menuitem-content a:hover {
   background-color: var(--green-middle);
   cursor: pointer;
-  transition: 0.3s;
-  border-radius: 10px;
+  transition: 0.1s;
   color: white;
 }
 
