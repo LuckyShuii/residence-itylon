@@ -7,8 +7,9 @@ const props = defineProps<{
 }>();
 
 const houseTitle = computed(() => props.houseData && props.houseData.title === 'cerisier' ? 'kiwi' : props.houseData?.title)
+const pathToAdd = computed<string>(() => import.meta.env.VITE_STATUS === 'PROD' ? '/' : '../assets/')
 
-const getSrcHousePicture = (picrtureId: number): string => `/src/assets/photos/houses/${houseTitle.value}/${houseTitle.value}_${picrtureId}.jpg`;
+const getSrcHousePicture = (picrtureId: number): string => `${pathToAdd}photos/houses/${houseTitle.value}/${houseTitle.value}_${picrtureId}.jpg`;
 
 </script>
 

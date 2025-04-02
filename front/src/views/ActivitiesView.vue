@@ -31,7 +31,7 @@ const activityDetailData = reactive<ActivityDetail>({
 const blockData = reactive<BlockTemplateType>({
   title: 'Les activités',
   paragraph: 'Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus',
-  imageSrc: '../src/assets/photos/activities/plage.jpg'
+  imageSrc: 'photos/activities/plage.jpg'
 });
 
 const loadActivities = async () => {
@@ -45,7 +45,7 @@ const loadActivities = async () => {
 const generateBasicBlockData = () => {
   blockData.title = "Les activités";
   blockData.paragraph = "Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus";
-  blockData.imageSrc = "../src/assets/photos/activities/plage.jpg";
+  blockData.imageSrc = "photos/activities/plage.jpg";
 };
 
 const generateImgSrc = (img: string): string => {
@@ -53,11 +53,14 @@ const generateImgSrc = (img: string): string => {
 };
 
 const generateActivityPictures = (images: string): void => {
+  const pathToAdd = import.meta.env.VITE_STATUS === 'PROD' ? '/' : '../assets/'
+
   activityPictures.value = images.split(',');
   activityPictures.value.pop();
   activityPictures.value = activityPictures.value.map((element) => {
-    if (element.split('/')[0] === 'src') {
-      return '../' + element;
+    if (element.split('/')[0] === 'photos') {
+
+      return pathToAdd + element;
     }
     return '';
   }).filter((element) => element !== '');

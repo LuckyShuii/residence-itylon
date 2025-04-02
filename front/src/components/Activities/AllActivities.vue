@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import ActivityCard from "@/components/ActivityCard.vue";
+import type { ActivityType } from "@/types/ActivityType";
 
 const props = defineProps<{
-  activities: {},
+  activities: ActivityType[],
   isAllActivityView?: boolean
 }>()
 </script>

@@ -10,6 +10,6 @@ export const dataSource = new DataSource({
     type: "sqlite",
     database: "residence.sqlite",
     entities: [Activity, ContactForm, House, Price, Residence, Period],
-    synchronize: true,
+    synchronize: process.env.STATUS === "DEV" ? true : false,
     logging: ["error", "query"]
 });

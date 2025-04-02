@@ -15,7 +15,7 @@ const currentYear = new Date().getFullYear();
 const blockData = reactive<BlockTemplateType>({
   title: `Tarifs ${currentYear}`,
   paragraph: 'Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus',
-  imageSrc: '../src/assets/photos/contact/a%20residence%20(16).jpg'
+  imageSrc: 'photos/contact/a%20residence%20(16).jpg'
 });
 
 onMounted(async() => {

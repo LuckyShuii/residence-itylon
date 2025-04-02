@@ -141,9 +141,9 @@ DROP TABLE IF EXISTS house;
 UPDATE house
 SET previewPicture = UPPER(SUBSTR(title, 1, 1)) || SUBSTR(title, 2);
 
-UPDATE activity SET pictures = "src/assets/photos/activities/cheval.jpg," WHERE id = 4;
-UPDATE activity SET pictures = "src/assets/photos/activities/rando.jpg," WHERE id = 3;
-UPDATE activity SET pictures = "src/assets/photos/activities/bateau.webp," WHERE id = 2;
-UPDATE activity SET pictures = "src/assets/photos/activities/cheval.jpg,src/assets/photos/activities/cheval/cheval-1.jpg,src/assets/photos/activities/cheval/cheval-2.jpg,src/assets/photos/activities/cheval/cheval-3.jpg,src/assets/photos/activities/cheval/cheval-4.jpg," WHERE id = 4;
+UPDATE activity SET pictures = "/photos/activities/cheval.jpg," WHERE id = 4;
+UPDATE activity SET pictures = "/photos/activities/rando.jpg," WHERE id = 3;
+UPDATE activity SET pictures = "/photos/activities/bateau.webp," WHERE id = 2;
+UPDATE activity SET pictures = "/photos/activities/cheval.jpg,/photos/activities/cheval/cheval-1.jpg,/photos/activities/cheval/cheval-2.jpg,/photos/activities/cheval/cheval-3.jpg,/photos/activities/cheval/cheval-4.jpg," WHERE id = 4;
 
 UPDATE residence

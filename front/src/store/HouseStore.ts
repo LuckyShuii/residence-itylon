@@ -11,20 +11,15 @@ export const useHouseStore = defineStore("house", () => {
 
     const houses = computed(() => {
         if (!allHouses.value) return [];
-
+        
         return [...allHouses.value].sort((a, b) => {
-            const capacityA =
-                typeof a.capacity === "string"
-                    ? parseInt(a.capacity.split(" ")[0])
-                    : a.capacity;
-            const capacityB =
-                typeof b.capacity === "string"
-                    ? parseInt(b.capacity.split(" ")[0])
-                    : b.capacity;
-
-            return capacityA - capacityB;
+          // Utilisation de capacityMin pour le tri
+          const capacityA = a.capacityMin;
+          const capacityB = b.capacityMin;
+          
+          return capacityA - capacityB;
         });
-    });
+      });
 
     const loadHouses = async () => {
         try {

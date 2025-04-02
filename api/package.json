@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node-dev ./src/index.ts",
-    "stop": "ts-node-dev stop ./src/index.ts"
+    "stop": "ts-node-dev stop ./src/index.ts",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",

@@ -10,6 +10,7 @@ const { loadResidences } = useResidenceStore();
 onMounted(async () => {
     await loadResidences();
 });
+
 </script>
 
 <template>

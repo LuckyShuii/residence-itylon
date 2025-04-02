@@ -17,12 +17,20 @@ const props = defineProps<{
           <a :href="externalLink"><Button class="mt-4 w-[178px] !pl-[1rem]" icon="pi pi-external-link" label="En savoir plus" /></a>
         </div>
       </div>
-      <div class="bg-cover rounded-lg bg-center" :style="{ backgroundImage: `url(${pictures[1]})`, width: '406.44px', height: '346.82px' }"></div>
-      <div class="bg-cover rounded-lg bg-center" :style="{ backgroundImage: `url(${pictures[2]})`, width: '366.89px', height: '346.82px' }"></div>
+      <div class="w-[406.44px] h-[346.82px] overflow-hidden rounded-lg">
+        <img :src="pictures[1]" alt="Image 1" class="w-full h-full object-cover" />
+      </div>
+      <div class="w-[366.89px] h-[346.82px] overflow-hidden rounded-lg">
+        <img :src="pictures[2]" alt="Image 2" class="w-full h-full object-cover" />
+      </div>
     </div>
     <div class="flex justify-between mt-[35px]">
-      <div class="bg-cover rounded-lg bg-center" :style="{ backgroundImage: `url(${pictures[3]})`, width: '450.46px', height: '411.63px' }"></div>
-      <div class="bg-cover rounded-lg object-fit bg-center" :style="{ backgroundImage: `url(${pictures[4]})`, width: '825.87px', height: '411.63px' }"></div>
+      <div class="w-[450.46px] h-[411.63px] overflow-hidden rounded-lg">
+        <img :src="pictures[3]" alt="Image 3" class="w-full h-full object-cover" />
+      </div>
+      <div class="w-[825.87px] h-[411.63px] overflow-hidden rounded-lg">
+        <img :src="pictures[4]" alt="Image 4" class="w-full h-full object-cover" />
+      </div>
     </div>
   </div>
 </template>

@@ -11,7 +11,7 @@ const route = useRoute()
 const blockData = reactive<BlockTemplateType>({
   title: '',
   paragraph: 'Vous avez une question ? Vous souhaitez faire une réservation ?<br> N’hésitez pas à nous contacter !',
-  imageSrc: '../src/assets/photos/contact/a%20residence%20(16).jpg'
+  imageSrc: 'photos/contact/a%20residence%20(16).jpg'
 });
 
 watch(() => route.query, (newQuery) => {
@@ -25,7 +25,7 @@ watch(() => route.query, (newQuery) => {
 </script>
 
 <template>
-  <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph" :imageSrc="blockData.imageSrc" />
+  <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph ?? ''" :imageSrc="blockData.imageSrc" />
   <div class="flex w-full justify-center">
     <ContactForm />
     <div class="flex flex-col w-[670px]">
