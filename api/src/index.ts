@@ -63,8 +63,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 app.use(cors({
     origin: [
         process.env.FRONTEND_URL || "http://localhost:5173",
-        process.env.BACKEND_URL || "http://localhost:8002",
-        process.env.BASE_URL || "http://localhost:5000"
     ].filter(Boolean) as string[],
     methods: ["GET", "POST"]
 }));

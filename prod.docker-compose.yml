@@ -12,7 +12,7 @@ services:
       test: "curl --fail --request GET --url '${BACKEND_URL}' || exit 1"
       interval: 1s
       timeout: 2s
-      retries: 5
+      retries: 20
     ports: 
       - 8002:8002
 
@@ -29,7 +29,7 @@ services:
       test: "curl --fail --request GET --url '${VITE_FRONTEND_URL}' || exit 1"
       interval: 1s
       timeout: 2s
-      retries: 5
+      retries: 20
     ports:
       - 5173:5173
   redis:
