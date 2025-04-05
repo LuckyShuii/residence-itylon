@@ -44,7 +44,7 @@ const loadActivities = async () => {
 
 const generateBasicBlockData = () => {
   blockData.title = "Les activités";
-  blockData.paragraph = "Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus";
+  blockData.paragraph = "À seulement quelques minutes à pied de la mer, c’est l’endroit idéal pour se ressourcer loin de l’agitation. Vous pourrez profiter de nombreuses activités : baignade, balades en bateau, randonnées en pleine nature, ou encore promenades à cheval… Il y en a pour tous les goûts !";
   blockData.imageSrc = "photos/activities/plage.jpg";
 };
 

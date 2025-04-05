@@ -31,7 +31,7 @@ const getFormattedTitle = (title?: string): string => {
                 <div>
                     <div class="flex items-center my-[16px]">
                         <img src="/src/assets/icons/double_bed.svg" alt="bed icon" class="w-[30px] h-[30px] inline-block" />
-                        <p class="ml-[20px]">{{ houseData?.bed }} lit{{ Number(houseData?.bed) > 1 ? 's' : '' }} ({{ houseData?.capacityMax }} place{{ Number(houseData?.capacityMax) > 1 ? 's' : '' }})</p>
+                        <p class="ml-[20px]">{{ houseData?.bed }} lit{{ Number(houseData?.bed) > 1 ? 's' : '' }}</p>
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.kitchen) > 0">
                         <img src="/src/assets/icons/fridge.svg" alt="kitchen icon" class="w-[30px] h-[30px] inline-block" />
@@ -47,7 +47,7 @@ const getFormattedTitle = (title?: string): string => {
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.room) > 0">
                         <img src="/src/assets/icons/room.svg" alt="room icon" class="w-[30px] h-[30px] inline-block" />
-                        <p class="ml-[20px]">{{ houseData?.room }} Pièce{{ Number(houseData?.room) > 1 ? 's' : '' }}</p>
+                        <p class="ml-[20px]">{{ houseData?.room }} Chambre{{ Number(houseData?.room) > 1 ? 's' : '' }}</p>
                     </div>
                 </div>
                 <div>
@@ -55,9 +55,9 @@ const getFormattedTitle = (title?: string): string => {
                         <img src="/src/assets/icons/terrace.svg" alt="terrace icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">Terrasse</p>
                     </div>
-                    <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.wifi) > 0">
+                    <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.barbecue) > 0">
                         <img src="/src/assets/icons/bbq.svg" alt="wifi icon" class="w-[30px] h-[30px] inline-block" />
-                        <p class="ml-[20px]">Wifi gratuit</p>
+                        <p class="ml-[20px]">Barbecue</p>
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.parking) > 0">
                         <img src="/src/assets/icons/parking.svg" alt="parking icon" class="w-[30px] h-[30px] inline-block" />
