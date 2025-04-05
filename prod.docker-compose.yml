@@ -17,6 +17,10 @@ services:
       dockerfile: Dockerfile.prod
       args:
         VITE_BACKEND_URL: ${BACKEND_URL}
+        VITE_MAIL_SERVICE_ID: ${MAIL_SERVICE_ID}
+        VITE_MAIL_TEMPLATE_ID: ${MAIL_TEMPLATE_ID}
+        VITE_MAIL_PUBLIC_KEY: ${MAIL_PUBLIC_KEY}
+        VITE_RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY}
         VITE_STATUS: ${STATUS}
     depends_on:
       api:
