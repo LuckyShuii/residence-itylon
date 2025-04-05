@@ -27,17 +27,17 @@ const formData = reactive<FormData>({
 });
 
 const sendForm = async () => {
-  // const recaptchaResponse = grecaptcha.getResponse();
+  const recaptchaResponse = grecaptcha.getResponse();
   
-  // if (!recaptchaResponse) {
-  //   toast.add({
-  //     severity: 'error',
-  //     summary: 'Formulaire',
-  //     detail: 'Veuillez vérifier compléter le captcha',
-  //     life: 6000,
-  //   });
-  //   return;
-  // }
+  if (!recaptchaResponse) {
+    toast.add({
+      severity: 'error',
+      summary: 'Formulaire',
+      detail: 'Veuillez vérifier compléter le captcha',
+      life: 6000,
+    });
+    return;
+  }
 
   const templateParams = {
     name: formData.lastName,
@@ -45,7 +45,7 @@ const sendForm = async () => {
     phone: formData.phone,
     email: formData.email,
     message: formData.message,
-    //recaptchaResponse: recaptchaResponse,
+    recaptchaResponse: recaptchaResponse,
   };
 
   try {
