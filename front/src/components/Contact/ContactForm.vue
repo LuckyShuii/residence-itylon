@@ -27,7 +27,7 @@ const formData = reactive<FormData>({
 });
 
 const sendForm = async () => {
-  const recaptchaResponse = grecaptcha.getResponse();
+  const recaptchaResponse = (window as any).grecaptcha.getResponse();
   
   if (!recaptchaResponse) {
     toast.add({
