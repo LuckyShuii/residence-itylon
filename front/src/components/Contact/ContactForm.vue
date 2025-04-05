@@ -2,6 +2,7 @@
 import { ref, reactive, computed } from 'vue';
 import emailjs from 'emailjs-com';
 import { useToast } from 'primevue/usetoast';
+import { isProd } from '@/utils/isProd';
 
 const toast = useToast();
 const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY; 
@@ -25,8 +26,6 @@ const formData = reactive<FormData>({
   rgpd: false,
   recaptchaResponse: '' 
 });
-
-const isProd = computed(() => import.meta.env.VITE_STATUS === 'PROD');
 
 const sendForm = async () => {
   const recaptchaResponse = isProd.value ? (window as any).grecaptcha.getResponse() : undefined;
@@ -106,7 +105,6 @@ const checkForm = () => {
         <Checkbox :binary="true" id="rgpd" v-model="formData.rgpd" class="mr-2 border border-green-btn rounded-[5px]" />
         <label for="rgpd" class="text-sm">J'accepte que mes données soient envoyées et traitées conformément à la <a href="/politique-de-confidentialite" class="text-blue-600 underline">politique de confidentialité</a>.</label>
       </div>
-      {{ recaptchaSiteKey }}
       <div class="g-recaptcha" :data-sitekey="recaptchaSiteKey" v-if="isProd" data-callback="onSubmit"></div>
       <div class="w-full flex justify-center items-center mt-[20px]">
         <Button type="submit" label="Envoyer" class="mt-[25px] py-[5px] w-[160px]" />
