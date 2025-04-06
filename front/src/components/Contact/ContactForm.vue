@@ -95,11 +95,14 @@ const checkForm = async () => {
 };
 
 onMounted(() => {
-  if (window.grecaptcha) {
-    window.grecaptcha.render('recaptcha-container', {
-      sitekey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
-    });
-  }
+  const interval = setInterval(() => {
+    if (window.grecaptcha) {
+      window.grecaptcha.render('recaptcha-container', {
+        sitekey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
+      });
+      clearInterval(interval);
+    }
+  }, 100);
 });
 </script>
 
