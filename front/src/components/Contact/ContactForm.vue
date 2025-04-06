@@ -102,7 +102,7 @@ onMounted(() => {
       });
       clearInterval(interval);
     }
-  }, 100);
+  }, 5000);
 });
 </script>
 
