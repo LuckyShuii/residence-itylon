@@ -161,3 +161,8 @@ a {
   align-items: center;
   padding: 0 1rem
 }
+
+.p-checkbox-input, .p-checkbox-box {
+  width: 1.49rem;
+  height: 1.40rem;
+}

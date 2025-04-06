@@ -1,11 +1,18 @@
 <script setup lang="ts">
-import { ref, reactive, computed } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
 import emailjs from 'emailjs-com';
 import { useToast } from 'primevue/usetoast';
-import { isProd } from '@/utils/isProd';
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      render: (containerId: string, parameters: { sitekey: string }) => void;
+      getResponse: () => string;
+    };
+  }
+}
 
 const toast = useToast();
-const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY; 
 
 interface FormData {
   firstName: string;
@@ -28,13 +35,13 @@ const formData = reactive<FormData>({
 });
 
 const sendForm = async () => {
-  const recaptchaResponse = isProd.value ? (window as any).grecaptcha.getResponse() : undefined;
-  
-  if (isProd.value && !recaptchaResponse) {
+  const recaptchaResponse = (window as any).grecaptcha.getResponse();
+
+  if (!recaptchaResponse) {
     toast.add({
       severity: 'error',
       summary: 'Formulaire',
-      detail: 'Veuillez vérifier compléter le captcha',
+      detail: 'Veuillez vérifier que vous n\'êtes pas un robot !',
       life: 6000,
     });
     return;
@@ -46,7 +53,7 @@ const sendForm = async () => {
     phone: formData.phone,
     email: formData.email,
     message: formData.message,
-    recaptchaResponse: isProd.value ? recaptchaResponse : true,
+    recaptchaResponse: recaptchaResponse
   };
 
   try {
@@ -70,12 +77,20 @@ const checkForm = () => {
 
   sendForm();
 };
+
+onMounted(() => {
+  if (window.grecaptcha) {
+    window.grecaptcha.render('recaptcha-container', {
+      sitekey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
+    });
+  }
+});
 </script>
 
 <template>
   <div class="w-[670px] mt-[80px]">
     <h2 class="font-mistress text-[46px] mb-[37px]">Formulaire de contact</h2>
-    <form ref="formRef" class="border border-gray-200 rounded-[10px] w-full p-[41px] h-[826px]" @submit.prevent="sendForm">
+    <form ref="formRef" class="border border-gray-200 rounded-[10px] w-full p-[41px] h-[826px]" @submit.prevent="checkForm">
       <div class="flex justify-between w-full mb-[2rem]">
         <div class="flex flex-col gap-2">
           <label for="name">Nom</label>
@@ -102,12 +117,14 @@ const checkForm = () => {
       </div>
 
       <div class="flex items-center mt-4">
-        <Checkbox :binary="true" id="rgpd" v-model="formData.rgpd" class="mr-2 border border-green-btn rounded-[5px]" />
+        <Checkbox :binary="true" id="rgpd" v-model="formData.rgpd" class="mr-2 border border-green-btn rounded-[5px] w-8 h-6" />
         <label for="rgpd" class="text-sm">J'accepte que mes données soient envoyées et traitées conformément à la <a href="/politique-de-confidentialite" class="text-blue-600 underline">politique de confidentialité</a>.</label>
       </div>
-      <div class="g-recaptcha" :data-sitekey="recaptchaSiteKey" v-if="isProd" data-callback="onSubmit"></div>
-      <div class="w-full flex justify-center items-center mt-[20px]">
-        <Button type="submit" label="Envoyer" class="mt-[25px] py-[5px] w-[160px]" />
+      <div class="w-full flex justify-center items-center mt-[10px]">
+        <div id="recaptcha-container"></div>
+      </div>
+      <div class="w-full flex justify-center items-center mt-[10px]">
+        <Button type="submit" label="Envoyer" class="py-[5px] w-[160px]" />
       </div>
     </form>
   </div>
