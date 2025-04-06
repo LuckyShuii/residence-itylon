@@ -8,6 +8,7 @@ declare global {
     grecaptcha?: {
       render: (containerId: string, parameters: { sitekey: string }) => void;
       getResponse: () => string;
+      reset: () => void;
     };
   }
 }
@@ -69,13 +70,28 @@ const sendForm = async () => {
   }
 };
 
-const checkForm = () => {
+const resetForm = () => {
+  formData.firstName = '';
+  formData.lastName = '';
+  formData.email = '';
+  formData.phone = '';
+  formData.message = '';
+  formData.rgpd = false;
+  formData.recaptchaResponse = '';
+
+  if (window.grecaptcha) {
+    window.grecaptcha.reset();
+  }
+};
+
+const checkForm = async () => {
   if (Object.values(formData).some(value => value === '') && !formData.rgpd) {
     toast.add({ severity: 'error', summary: 'Formulaire', detail: 'Tous les champs sont obligatoires !', life: 6000 });
     return;
   }
 
-  sendForm();
+  await sendForm();
+  resetForm();
 };
 
 onMounted(() => {
