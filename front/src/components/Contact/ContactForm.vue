@@ -13,6 +13,7 @@ declare global {
   }
 }
 
+const sending = ref<boolean>(false);
 const toast = useToast();
 
 interface FormData {
@@ -36,6 +37,8 @@ const formData = reactive<FormData>({
 });
 
 const sendForm = async () => {
+  sending.value = true;
+
   const recaptchaResponse = (window as any).grecaptcha.getResponse();
 
   if (!recaptchaResponse) {
@@ -65,8 +68,11 @@ const sendForm = async () => {
       import.meta.env.VITE_MAIL_PUBLIC_KEY ?? ''
     );
     toast.add({ severity: 'success', summary: 'Formulaire', detail: 'Votre message a bien été envoyé !', life: 6000 });
+    resetForm();
   } catch (error) {
     toast.add({ severity: 'error', summary: 'Formulaire', detail: 'Une erreur est survenue lors de l\'envoi du formulaire.' + error, life: 6000 });
+  } finally {
+    sending.value = false;
   }
 };
 
@@ -91,18 +97,14 @@ const checkForm = async () => {
   }
 
   await sendForm();
-  resetForm();
 };
 
 onMounted(() => {
-  const interval = setInterval(() => {
-    if (window.grecaptcha) {
-      window.grecaptcha.render('recaptcha-container', {
-        sitekey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
-      });
-      clearInterval(interval);
-    }
-  }, 5000);
+  if (window.grecaptcha) {
+    window.grecaptcha.render('recaptcha-container', {
+      sitekey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
+    });
+  }
 });
 </script>
 
@@ -143,7 +145,7 @@ onMounted(() => {
         <div id="recaptcha-container"></div>
       </div>
       <div class="w-full flex justify-center items-center mt-[10px]">
-        <Button type="submit" label="Envoyer" class="py-[5px] w-[160px]" />
+        <Button type="submit" label="Envoyer" class="py-[5px] w-[160px]" :loading="sending" />
       </div>
     </form>
   </div>
