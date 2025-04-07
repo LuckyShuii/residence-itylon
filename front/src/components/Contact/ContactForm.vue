@@ -109,27 +109,27 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-[670px] mt-[80px]">
+  <div class="max-w-[670px] mt-[80px] max-[745px]:mx-6">
     <h2 class="font-mistress text-[46px] mb-[37px]">Formulaire de contact</h2>
-    <form ref="formRef" class="border border-gray-200 rounded-[10px] w-full p-[41px] h-[826px]" @submit.prevent="checkForm">
-      <div class="flex justify-between w-full mb-[2rem]">
-        <div class="flex flex-col gap-2">
+    <form ref="formRef" class="border border-gray-200 rounded-[10px] w-full p-[41px] min-h-[826px]" @submit.prevent="checkForm">
+      <div class="flex justify-between w-full mb-[2rem] max-[745px]:flex-col">
+        <div class="flex flex-col gap-2 max-[745px]:mb-4">
           <label for="name">Nom</label>
-          <InputText id="name" v-model="formData.lastName" class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
+          <InputText id="name" v-model="formData.lastName" class="max-[745px]:w-full w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
         </div>
         <div class="flex flex-col gap-2">
           <label for="firstname">Prénom</label>
-          <InputText id="firstname" v-model="formData.firstName" class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
+          <InputText id="firstname" v-model="formData.firstName" class="max-[745px]:w-full w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
         </div>
       </div>
-      <div class="flex justify-between w-full mb-[2rem]">
-        <div class="flex flex-col gap-2">
+      <div class="flex justify-between w-full mb-[2rem] max-[745px]:flex-col max-[745px]:mt-[-8px]">
+        <div class="flex flex-col gap-2 max-[745px]:mb-4">
           <label for="email">Email</label>
-          <InputText id="email" v-model="formData.email" class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
+          <InputText id="email" v-model="formData.email" class="max-[745px]:w-full w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
         </div>
         <div class="flex flex-col gap-2">
           <label for="phone">Téléphone</label>
-          <InputText type="tel" id="phone" v-model="formData.phone" placeholder="0606060606" class="w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
+          <InputText type="tel" id="phone" v-model="formData.phone" placeholder="0606060606" class="max-[745px]:w-full w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
         </div>
       </div>
       <div>

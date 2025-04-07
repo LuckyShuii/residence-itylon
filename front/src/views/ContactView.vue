@@ -26,9 +26,9 @@ watch(() => route.query, (newQuery) => {
 
 <template>
   <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph ?? ''" :imageSrc="blockData.imageSrc" />
-  <div class="flex w-full justify-center">
+  <div class="flex w-full justify-center max-[1450px]:flex-col max-[1450px]:items-center max-[1450px]:gap-10 max-[1450px]:px-4">
     <ContactForm />
-    <div class="flex flex-col w-[670px]">
+    <div class="flex flex-col w-full max-w-[670px] max-[1450px]:items-center ">
       <UsefulInfo />
       <FindUs />
     </div>
