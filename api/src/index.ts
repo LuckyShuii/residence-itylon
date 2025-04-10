@@ -2,7 +2,7 @@ import express from "express";
 import "reflect-metadata";
 import cors from "cors";
 import * as dotenv from "dotenv";
-import rateLimit from "express-rate-limit";
+// import rateLimit from "express-rate-limit";
 
 import { dataSource } from "./config/db";
 
@@ -26,12 +26,12 @@ app.use(cors({
 
 app.use(express.json());
 
-const limiter = rateLimit({
-    windowMs: 5 * 60 * 1000, 
-    max: 100, 
-    message: 'Too many requests from this IP, please try again later.',
-    headers: true,
-});
+// const limiter = rateLimit({
+//     windowMs: 5 * 60 * 1000, 
+//     max: 100, 
+//     message: 'Too many requests from this IP, please try again later.',
+//     headers: true,
+// });
 
 //app.use(limiter);
 
