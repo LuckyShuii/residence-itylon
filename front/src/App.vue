@@ -16,7 +16,7 @@
   </div>
 </template>
 
-<style scoped>
+<style>
   .min-h-screen {
     min-height: 100vh;
   }

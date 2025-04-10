@@ -14,7 +14,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <footer class="py-[40px] bg-green-light mt-[70px] flex-shrink-0 max-[1170px]:p-0">
+    <footer class="py-[40px] bg-green-light mt-[70px] max-[1170px]:p-0">
         <div class="max-w-[1440px] w-full mx-auto flex justify-between items-center px-[85px] max-[1170px]:flex-col-reverse">
             <img loading="lazy" src="@/assets/logo/logo-footer.svg" alt="logo" class="ml-[-1rem] max-[1170px]:my-8">
             <div class="flex justify-between max-w-[780px] w-full max-[1170px]:flex-col max-[1170px]:items-center max-[1170px]:mt-12">
