@@ -78,27 +78,29 @@ const getFormattedTitle = (title?: string): string => {
         <div class="w-[325px] rounded-[10px] py-[45px] px-[35px] items-start">
             <h3 class="font-mistress text-[40px] pb-[30px]">Tarifs</h3>
             <h4 class="font-light italic">Pour une semaine</h4>
-            <table class="w-full border-separate border-spacing-y-2">
-                <tr>
-                    <td>Avril, Mai & Octobre</td>
-                    <td>{{ houseData?.price[0].lowSeason }}€</td>
-                </tr>
-                <tr>
-                    <td>Juin & Septembre</td>
-                    <td>{{ houseData?.price[0].mediumSeason }}€</td>
-                </tr>
-                <tr>
-                    <td>01/07 - 27/07</td>
-                    <td>{{ houseData?.price[0].highSeason }}€</td>
-                </tr>
-                <tr>
-                    <td>28/07 - 24/08</td>
-                    <td>{{ houseData?.price[0].veryHighSeason }}€</td>
-                </tr>
-                <tr>
-                    <td>Ménage</td>
-                    <td>{{ houseData?.price[0].cleaningFee }}€</td>
-                </tr>
+            <table class="w-full">
+                <tbody class="border-separate border-spacing-y-2">
+                    <tr>
+                        <td>Avril, Mai & Octobre</td>
+                        <td>{{ houseData?.price[0].lowSeason }}€</td>
+                    </tr>
+                    <tr>
+                        <td>Juin & Septembre</td>
+                        <td>{{ houseData?.price[0].mediumSeason }}€</td>
+                    </tr>
+                    <tr>
+                        <td>01/07 - 27/07</td>
+                        <td>{{ houseData?.price[0].highSeason }}€</td>
+                    </tr>
+                    <tr>
+                        <td>28/07 - 24/08</td>
+                        <td>{{ houseData?.price[0].veryHighSeason }}€</td>
+                    </tr>
+                    <tr>
+                        <td>Ménage</td>
+                        <td>{{ houseData?.price[0].cleaningFee }}€</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>

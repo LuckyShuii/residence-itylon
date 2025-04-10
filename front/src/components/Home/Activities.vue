@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import { useToast } from 'primevue/usetoast';
 import type { ActivityType } from '@/types/ActivityType';
-import ActivityCard from '@/components/ActivityCard.vue';
+import ActivityCard from '@/components/Activities/ActivityCard.vue';
 
 const toast = useToast();
 const activities = ref<ActivityType[]>([]);

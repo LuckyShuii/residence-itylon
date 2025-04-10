@@ -14,10 +14,12 @@ const props = defineProps<{
             <h3 class="mb-2">{{ dates ? '(' + dates + ')' : '' }}</h3>
         </div>
         <table class="w-full border-separate border-spacing-y-2">
-            <tr v-for="house in pricesWithHouseName" :key="house.houseName">
+            <tbody>
+                <tr v-for="house in pricesWithHouseName" :key="house.houseName">
                 <td class="text-xl">{{ house.houseName }}</td>
                 <td class="text-end text-xl">{{ house.price }}€</td>
-            </tr>
+                </tr>
+            </tbody>
         </table>
     </div>
 </template>

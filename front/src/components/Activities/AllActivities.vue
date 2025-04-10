@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ActivityCard from "@/components/ActivityCard.vue";
+import ActivityCard from "@/components/Activities/ActivityCard.vue";
 import type { ActivityType } from "@/types/ActivityType";
 
 const props = defineProps<{
