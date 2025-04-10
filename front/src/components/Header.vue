@@ -99,9 +99,9 @@ onMounted(async () => {
             </li>
         </div>
         <div class="md:hidden card flex justify-center">
-            <Button type="button" icon="pi-arrow-right-arrow-left" @click="toggle" class="bg-transparent w-[5rem]" />
+            <Button type="button" icon="pi pi-bars" @click="toggle" class="bg-transparent w-[5rem]" />
             <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
-              <template #item="{ item, props }">
+              <template #item="{ item }">
                 <RouterLink :to='item.to'>
                   {{item.label}}
                 </RouterLink>
