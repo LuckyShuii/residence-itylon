@@ -31,7 +31,7 @@ onMounted(async() => {
         <PricingBlock :season="house.season"
                       :dates="house.dates"
                       :pricesWithHouseName="house.pricesWithHouseName"
-                      :key="1" 
+                      :key="house.id" 
                       v-for="house in housesPricing"
                       class="border border-[green-btn] rounded-[20px]"
                       />

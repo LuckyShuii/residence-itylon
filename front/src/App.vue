@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import { RouterView } from 'vue-router'
-  import Header from '@/components/Header.vue'
-  import Footer from '@/components/Footer.vue'
-  import Toast from 'primevue/toast';
+import { RouterView } from 'vue-router'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+import Toast from 'primevue/toast';
 </script>
 
 <template>

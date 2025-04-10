@@ -11,6 +11,7 @@ import InputMask from 'primevue/inputmask';
 import InputText from "primevue/inputtext";
 import Textarea from "primevue/textarea";
 import Checkbox from 'primevue/checkbox';
+import Dialog from 'primevue/dialog';
 
 import ToastService from 'primevue/toastservice';
 import { createPinia } from 'pinia';
@@ -28,6 +29,7 @@ app.component('InputMask', InputMask);
 app.component('TextArea', Textarea)
 app.component('Checkbox', Checkbox)
 app.component('ToastService', ToastService);
+app.component('Dialog', Dialog);
 
 app.use(pinia)
 app.use(PrimeVue);
