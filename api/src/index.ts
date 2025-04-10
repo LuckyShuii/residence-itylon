@@ -33,7 +33,7 @@ const limiter = rateLimit({
     headers: true,
 });
 
-app.use(limiter);
+//app.use(limiter);
 
 const port = 8002;
 
