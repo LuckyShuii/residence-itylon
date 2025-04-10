@@ -18,18 +18,18 @@ const props = defineProps<{
         </div>
       </div>
       <div class="w-[406.44px] h-[346.82px] overflow-hidden rounded-lg">
-        <img :src="pictures[1]" alt="Image 1" class="w-full h-full object-cover" />
+        <img loading="lazy" :src="pictures[1]" alt="Image 1" class="w-full h-full object-cover" />
       </div>
       <div class="w-[366.89px] h-[346.82px] overflow-hidden rounded-lg">
-        <img :src="pictures[2]" alt="Image 2" class="w-full h-full object-cover" />
+        <img loading="lazy" :src="pictures[2]" alt="Image 2" class="w-full h-full object-cover" />
       </div>
     </div>
     <div class="flex justify-between mt-[35px]">
       <div class="w-[450.46px] h-[411.63px] overflow-hidden rounded-lg">
-        <img :src="pictures[3]" alt="Image 3" class="w-full h-full object-cover" />
+        <img loading="lazy" :src="pictures[3]" alt="Image 3" class="w-full h-full object-cover" />
       </div>
       <div class="w-[825.87px] h-[411.63px] overflow-hidden rounded-lg">
-        <img :src="pictures[4]" alt="Image 4" class="w-full h-full object-cover" />
+        <img loading="lazy" :src="pictures[4]" alt="Image 4" class="w-full h-full object-cover" />
       </div>
     </div>
   </div>

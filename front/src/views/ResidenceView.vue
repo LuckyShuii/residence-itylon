@@ -18,7 +18,6 @@ const blockData = reactive<BlockTemplateType>({
 <template>
   <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph ?? 'not found'" :image-src="blockData.imageSrc" />
 
-  <!-- Conteneur supérieur avec largeur maximale de 1270px et centré -->
   <div class="flex justify-center mt-[80px] max-w-[1270px] mx-auto">
     <div class="flex justify-center max-h-[420px]">
       <div class="py-[40px] px-[35px] w-[570px] bg-green-light rounded-[10px]">
@@ -26,7 +25,7 @@ const blockData = reactive<BlockTemplateType>({
         <p v-html="description"></p>
       </div>
       <div class="h-full bg-green-light w-[670px] rounded-[10px] ml-[30px]">
-        <img src="/photos/home/image4.jpg" alt="residence entrance" class="object-cover w-full h-full rounded-[10px]"/>
+        <img loading="lazy" src="/photos/home/image4.jpg" alt="residence entrance" class="object-cover w-full h-full rounded-[10px]"/>
       </div>
     </div>
   </div>
@@ -34,37 +33,37 @@ const blockData = reactive<BlockTemplateType>({
   <div class="mt-[80px] max-w-[1270px] mx-auto">
     <div class="flex space-x-[40px] mb-[40px]">
       <div class="w-[324px] h-[281px]">
-        <img src="/photos/residence/residence_entrance_dirt.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
+        <img loading="lazy" src="/photos/residence/residence_entrance_dirt.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
       </div>
       <div class="w-[310px] h-[281px]">
-        <img src="/photos/residence/residence_bridge.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
+        <img loading="lazy" src="/photos/residence/residence_bridge.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
       </div>
       <div class="w-[556px] h-[281px]">
-        <img src="/photos/residence/residence_tree_lavander.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
+        <img loading="lazy" src="/photos/residence/residence_tree_lavander.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
       </div>
     </div>
 
     <div class="flex space-x-[40px] mb-[40px]">
       <div class="w-[556px] h-[392px]">
-        <img src="/photos/home/image3.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
+        <img loading="lazy" src="/photos/home/image3.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
       </div>
       <div class="w-[310px] h-[392px]">
-        <img src="/photos/residence/residence_pool.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
+        <img loading="lazy" src="/photos/residence/residence_pool.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
       </div>
       <div class="w-[324px] h-[392px]">
-        <img src="/photos/residence/residence_main.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
+        <img loading="lazy" src="/photos/residence/residence_main.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
       </div>
     </div>
 
     <div class="flex space-x-[40px]">
       <div class="w-[324px] h-[392px]">
-        <img src="/photos/residence/residence_h_trees.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
+        <img loading="lazy" src="/photos/residence/residence_h_trees.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
       </div>
       <div class="w-[310px] h-[392px]">
-        <img src="/photos/residence/residence_laverie_door.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
+        <img loading="lazy" src="/photos/residence/residence_laverie_door.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
       </div>
       <div class="w-[556px] h-[392px]">
-        <img src="/photos/home/image2.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
+        <img loading="lazy" src="/photos/home/image2.jpg" alt="" class="object-cover w-full h-full rounded-[10px]">
       </div>
     </div>
   </div>

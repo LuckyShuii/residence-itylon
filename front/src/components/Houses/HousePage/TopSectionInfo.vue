@@ -30,45 +30,45 @@ const getFormattedTitle = (title?: string): string => {
             <div class="flex justify-between">
                 <div>
                     <div class="flex items-center my-[16px]">
-                        <img src="/src/assets/icons/double_bed.svg" alt="bed icon" class="w-[30px] h-[30px] inline-block" />
+                        <img loading="lazy" src="/src/assets/icons/double_bed.svg" alt="bed icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">{{ houseData?.bed }} lit{{ Number(houseData?.bed) > 1 ? 's' : '' }}</p>
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.kitchen) > 0">
-                        <img src="/src/assets/icons/fridge.svg" alt="kitchen icon" class="w-[30px] h-[30px] inline-block" />
+                        <img loading="lazy" src="/src/assets/icons/fridge.svg" alt="kitchen icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">Cuisine équipée</p>
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.wifi) > 0">
-                        <img src="/src/assets/icons/wifi.svg" alt="wifi icon" class="w-[30px] h-[30px] inline-block" />
+                        <img loading="lazy" src="/src/assets/icons/wifi.svg" alt="wifi icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">Wifi gratuit</p>
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.ac) > 0">
-                        <img src="/src/assets/icons/ac.svg" alt="ac icon" class="w-[30px] h-[30px] inline-block" />
+                        <img loading="lazy" src="/src/assets/icons/ac.svg" alt="ac icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">Climatisation</p>
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.room) > 0">
-                        <img src="/src/assets/icons/room.svg" alt="room icon" class="w-[30px] h-[30px] inline-block" />
+                        <img loading="lazy" src="/src/assets/icons/room.svg" alt="room icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">{{ houseData?.room }} Chambre{{ Number(houseData?.room) > 1 ? 's' : '' }}</p>
                     </div>
                 </div>
                 <div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.terrace) > 0">
-                        <img src="/src/assets/icons/terrace.svg" alt="terrace icon" class="w-[30px] h-[30px] inline-block" />
+                        <img loading="lazy" src="/src/assets/icons/terrace.svg" alt="terrace icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">Terrasse</p>
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.barbecue) > 0">
-                        <img src="/src/assets/icons/bbq.svg" alt="wifi icon" class="w-[30px] h-[30px] inline-block" />
+                        <img loading="lazy" src="/src/assets/icons/bbq.svg" alt="wifi icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">Barbecue</p>
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.parking) > 0">
-                        <img src="/src/assets/icons/parking.svg" alt="parking icon" class="w-[30px] h-[30px] inline-block" />
+                        <img loading="lazy" src="/src/assets/icons/parking.svg" alt="parking icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">Place de parking</p>
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.bathroom) > 0">
-                        <img src="/src/assets/icons/bathroom.svg" alt="bathroom icon" class="w-[30px] h-[30px] inline-block" />
+                        <img loading="lazy" src="/src/assets/icons/bathroom.svg" alt="bathroom icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">{{ houseData?.bathroom }} Salle de bain{{ Number(houseData?.bathroom) > 1 ? 's' : '' }}</p>
                     </div>
                     <div class="flex items-center my-[16px]" v-if="houseData && Number(houseData?.canapeLit) > 0">
-                        <img src="/src/assets/icons/sofa.svg" alt="sofa icon" class="w-[30px] h-[30px] inline-block" />
+                        <img loading="lazy" src="/src/assets/icons/sofa.svg" alt="sofa icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">{{ houseData?.canapeLit }} Canapé{{ Number(houseData?.canapeLit) > 1 ? 's' : '' }}-lit{{ Number(houseData?.canapeLit) > 1 ? 's' : '' }}</p>
                     </div>
                 </div>

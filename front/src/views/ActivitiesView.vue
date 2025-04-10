@@ -119,6 +119,6 @@ onMounted(async () => {
   <AllActivities :activities="activities" :isAllActivityView="true" />
   <hr class="border-0 h-[1px] w-full border-t-2 block mt-[-1rem]" v-if="!isAllActivities()">
   <div ref="activityContainer" class="w-full flex justify-center items-center opacity-0 transition-opacity duration-500" v-if="!isAllActivities()">
-    <Activity :pictures="activityPictures" :title="activityDetailData.title" :description="activityDetailData.description" :external-link="activityDetailData.externalLink" />
+    <Activity :pictures="activityPictures" :title="activityDetailData.title" :description="activityDetailData.description" :external-link="activityDetailData.externalLink" id="detail" />
   </div>
 </template>
