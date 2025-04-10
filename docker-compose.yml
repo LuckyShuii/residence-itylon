@@ -23,6 +23,7 @@ services:
       VITE_MAIL_PUBLIC_KEY: ${MAIL_PUBLIC_KEY}
       VITE_RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY}
       VITE_STATUS: ${STATUS}
+      VITE_FRONTEND_URL: ${FRONTEND_URL}
     volumes:
       - ./front/src:/app/src
     depends_on:

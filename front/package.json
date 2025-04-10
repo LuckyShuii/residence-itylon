@@ -8,6 +8,7 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
+    "convert:images": "node convert.js",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
@@ -19,6 +20,7 @@
     "pinia": "^2.1.7",
     "primeicons": "^7.0.0",
     "primevue": "^3.52.0",
+    "sharp": "^0.34.1",
     "slugify": "^1.6.6",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

@@ -11,7 +11,7 @@ const route = useRoute()
 const blockData = reactive<BlockTemplateType>({
   title: '',
   paragraph: 'Vous avez une question ? Vous souhaitez faire une réservation ?<br> N’hésitez pas à nous contacter !',
-  imageSrc: 'photos/contact/a%20residence%20(16).jpg'
+  imageSrc: 'photos/contact/a%20residence%20(16).webp'
 });
 
 watch(() => route.query, (newQuery) => {

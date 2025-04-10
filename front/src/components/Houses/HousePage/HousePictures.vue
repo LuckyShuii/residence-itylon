@@ -22,7 +22,7 @@ const houseTitle = computed(() =>
 );
 
 const getSrcHousePicture = (pictureId: number): string =>
-  `/photos/houses/${houseTitle.value}/${houseTitle.value}_${pictureId}.jpg`;
+  `/webp/houses/${houseTitle.value}/${houseTitle.value}_${pictureId}.webp`;
 </script>
 
 <template>
