@@ -14,7 +14,7 @@ onMounted(() => {
 
 <template>
     <div id="hero-container" class="relative h-screen overflow-hidden opacity-0 transition-opacity duration-500">
-        <video class="absolute top-0 left-0 z-0 w-full h-full object-cover" autoplay muted loop>
+        <video class="absolute top-0 left-0 z-0 w-full h-full object-cover" autoplay muted loop playsinline>
             <source src="https://www.residence-itylon.com/media/videos/video-home-cut.mp4" type="video/mp4">
         </video>
         <div class="relative z-10 flex items-center flex-col justify-center h-full text-center">
