@@ -16,7 +16,7 @@ const lowestPrice = computed(() => {
 
   const prices = Object.entries(pricesObject)
       .filter(([key]) => key !== 'id' && key !== 'cleaningFee')
-      .map(([_, value]) => value);
+      .map(([, value]) => value);
 
   return prices.length > 0 ? Math.min(...prices) : null;
 });
