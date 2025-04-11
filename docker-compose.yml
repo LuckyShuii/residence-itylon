@@ -36,7 +36,6 @@ services:
       retries: 20
     ports:
       - "7002:7002"
-      - "5173:5173"
 
   redis:
     image: redis
