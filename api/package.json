@@ -22,8 +22,6 @@
     "nodemailer": "^6.9.13",
     "reflect-metadata": "^0.2.1",
     "sqlite3": "^5.1.7",
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.0",
     "typeorm": "^0.3.20"
   },
   "devDependencies": {
