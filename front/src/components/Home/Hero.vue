@@ -41,16 +41,17 @@ onMounted(() => {
     </video>
 
     <div
-      class="relative z-10 flex items-center flex-col justify-center h-full text-center px-4"
+      class="mt-[-1.3rem] relative z-10 flex items-center flex-col justify-center h-full text-center px-4"
     >
       <img
         src="@/assets/logo/logo-header.svg"
         alt="logo"
-        class="mx-auto w-[80%] max-w-[700px] sm:max-w-[500px] mb-6"
+        class="mx-auto w-[100%] sm:max-w-[700px]"
       />
 
       <p
-        class="text-white font-dm-sans font-extrabold text-[20px] tracking-[0.16em] mb-4"
+        class="text-white font-dm-sans font-extrabold text-[18px] tracking-[0.16em] mb-8 mt-[-3rem] sm:mt-[-8rem]
+"
       >
         LOCATION SAISONNIÈRE
       </p>
@@ -64,12 +65,15 @@ onMounted(() => {
       </RouterLink>
     </div>
 
-    <img
-      id="arrow-down"
-      src="@/assets/icons/down-arrow.svg"
-      alt="arrow-down"
-      class="cursor-pointer absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-[60px] w-[40px] h-[40px] animate-bounce z-20"
-    />
+    <div
+      class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full flex justify-center" >
+        <img
+        id="arrow-down"
+        src="@/assets/icons/down-arrow.svg"
+        alt="arrow-down"
+        class="hover:cursor-pointer absolute bottom-0 transform -translate-x-1/2 mb-[60px] w-[40px] h-[40px] animate-bounce z-20"
+        />
+    </div>
   </div>
 
   <div id="scroll-target"></div>
