@@ -100,11 +100,17 @@ const checkForm = async () => {
 };
 
 onMounted(() => {
-  if (window.grecaptcha) {
-    window.grecaptcha.render('recaptcha-container', {
-      sitekey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
-    });
-  }
+  const tryRenderCaptcha = () => {
+    if (window.grecaptcha) {
+      window.grecaptcha.render('recaptcha-container', {
+        sitekey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
+      });
+    } else {
+      setTimeout(tryRenderCaptcha, 500);
+    }
+  };
+
+  tryRenderCaptcha();
 });
 </script>
 
