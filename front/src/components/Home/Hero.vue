@@ -50,8 +50,7 @@ onMounted(() => {
       />
 
       <p
-        class="text-white font-dm-sans font-extrabold text-[18px] tracking-[0.16em] mb-8 mt-[-3rem] sm:mt-[-8rem]
-"
+        class="text-white font-dm-sans font-extrabold text-[14px] tracking-[0.16em] mb-8 mt-[-3rem] sm:mt-[-8rem] sm:text-[18px]"
       >
         LOCATION SAISONNIÈRE
       </p>
