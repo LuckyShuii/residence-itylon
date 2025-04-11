@@ -102,22 +102,17 @@ const checkForm = async () => {
 };
 
 onMounted(() => {
-  const tryRenderCaptcha = () => {
-    if (window.grecaptcha && typeof window.grecaptcha.render === 'function') {
-      window.grecaptcha.render('recaptcha-container', {
-        sitekey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
-      });
-    } else {
-      setTimeout(tryRenderCaptcha, 500);
-    }
-  };
-  tryRenderCaptcha();
+  if (window.grecaptcha && typeof window.grecaptcha.render === 'function') {
+    window.grecaptcha.render('recaptcha-container', {
+      sitekey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
+    });
+  }
 });
 </script>
 
 <template>
   <div class="max-w-[670px] mt-[80px] max-[745px]:mx-6">
-    <h2 class="font-mistress text-[46px] mb-[37px]">Formulaire de contact : {{ test }}</h2>
+    <h2 class="font-mistress text-[46px] mb-[37px]">Formulaire de contact</h2>
     <form ref="formRef" class="border border-gray-200 rounded-[10px] w-full p-[41px] min-h-[826px]" @submit.prevent="checkForm">
       <div class="flex justify-between w-full mb-[2rem] max-[745px]:flex-col">
         <div class="flex flex-col gap-2 max-[745px]:mb-4">
