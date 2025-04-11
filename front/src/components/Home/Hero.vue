@@ -18,7 +18,10 @@ onMounted(() => {
             <source src="https://www.residence-itylon.com/media/videos/video-home-cut.mp4" type="video/mp4">
         </video>
         <div class="relative z-10 flex items-center flex-col justify-center h-full text-center">
-            <img loading="lazy" src="@/assets/logo/logo-hero.svg" alt="logo" class="mx-auto" />
+            <img loading="lazy" src="@/assets/logo/logo-header.svg" alt="logo" class="mx-auto w-[700px] mt-[-3rem] mb-[-8rem]" />
+            <p class="mb-6 text-[20px] tracking-[0.16em] font-extrabold text-white font-dm-sans">
+                LOCATION SAISONNIÈRE
+            </p>
             <RouterLink to="/contact?page=reservation">
                 <Button class="mt-4 w-[172px] h-[46px] flex justify-center">RÉSERVER</Button>
             </RouterLink>
