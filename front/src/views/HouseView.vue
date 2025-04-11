@@ -27,7 +27,7 @@ const blockData = reactive<BlockTemplateType>({
 
 const loadBlockData = () => {
     blockData.title = capitalizeFirstLetter(requestedHouse.value?.title as string),
-    blockData.imageSrc = `photos/houses/${requestHousePreviewPicture.value}/${requestHousePreviewPicture.value}_preview.webp`,    
+    blockData.imageSrc = `webp/houses/${requestHousePreviewPicture.value}/${requestHousePreviewPicture.value}_preview.webp`,    
     blockData.paragraph = requestedHouse.value?.descriptionTitle
 }
 

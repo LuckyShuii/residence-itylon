@@ -20,7 +20,7 @@ const { residenceHeaderTitle, description } = storeToRefs(useResidenceStore());
 
 const blockData = reactive<BlockTemplateType>({
   title: 'La résidence',
-  imageSrc: 'photos/residence/residence_main.webp',
+  imageSrc: 'webp/residence/residence_main.webp',
   paragraph: "Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus"
 });
 </script>
