@@ -21,6 +21,6 @@ export default defineConfig({
       usePolling: true, 
     },
     hmr: isProd ? false : { path: '/hmr', port: 7002 }, 
-    allowedHosts: ['front']
+    allowedHosts: ['front', 'wildtransfer.fr']
   }
 })
