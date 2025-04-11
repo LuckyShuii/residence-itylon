@@ -16,8 +16,6 @@ declare global {
 const sending = ref<boolean>(false);
 const toast = useToast();
 
-const test = ref(import.meta.env.VITE_RECAPTCHA_SITE_KEY)
-
 interface FormData {
   firstName: string;
   lastName: string;
