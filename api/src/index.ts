@@ -2,7 +2,7 @@ import express from "express";
 import "reflect-metadata";
 import cors from "cors";
 import * as dotenv from "dotenv";
-// import rateLimit from "express-rate-limit";
+import rateLimit from "express-rate-limit";
 
 import { dataSource } from "./config/db";
 
@@ -19,21 +19,21 @@ const app = express();
 
 app.use(cors({
     origin: [
-        process.env.FRONTEND_URL || "http://localhost:5173",
+        process.env.FRONTEND_URL || "http:ocalhost:5173",
     ].filter(Boolean) as string[],
     methods: ["GET", "POST"]
 }));
 
 app.use(express.json());
 
-// const limiter = rateLimit({
-//     windowMs: 5 * 60 * 1000, 
-//     max: 100, 
-//     message: 'Too many requests from this IP, please try again later.',
-//     headers: true,
-// });
+const limiter = rateLimit({
+    windowMs: 5 * 60 * 1000, 
+    max: 100, 
+    message: 'Too many requests from this IP, please try again later.',
+    headers: true,
+});
 
-//app.use(limiter);
+app.use(limiter);
 
 const port = 8002;
 
