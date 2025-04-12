@@ -3,6 +3,7 @@ import "reflect-metadata";
 import cors from "cors";
 import * as dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
+import { createClient } from "redis";
 
 import { dataSource } from "./config/db";
 
@@ -14,6 +15,16 @@ import Residence from "./controllers/residenceController";
 import Period from "./controllers/periodController";
 
 dotenv.config();
+
+export const redisClient = createClient({ url: "redis://redis" });
+
+redisClient.on("error", (err) => {
+    console.log("Redis Client Error", err);
+});
+
+redisClient.on("connect", () => {
+    console.log("redis connected");
+});
 
 const app = express();
 
@@ -39,6 +50,14 @@ const port = 8002;
 
 app.listen(port, async () => {
     await dataSource.initialize();
+
+    try {
+        await redisClient.connect();
+        console.log("redis connected");
+    } catch (err) {
+        console.error("Impossible de se connecter à redis", err);
+    }
+    
     console.log(`Server is listening on port ${port}`);
 });
 
