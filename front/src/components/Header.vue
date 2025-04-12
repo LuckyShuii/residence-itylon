@@ -64,7 +64,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <header class="max-w-[1272px] bg-black bg-opacity-70 text-white flex justify-between items-center my-[32px] py-[18px] px-[31px] rounded-[10px] absolute w-full left-1/2 transform -translate-x-1/2 z-20">
+    <header class="max-w-[1272px] bg-black bg-opacity-70 text-white flex justify-between items-center my-[32px] py-[18px] px-[31px] rounded-[10px] absolute w-[95%] left-1/2 transform -translate-x-1/2 z-20">
         <RouterLink to="/">
             <img loading="lazy" src="@/assets/logo/logo-header.svg" alt="logo" class="w-[220px] m-[-1.3rem] p-0"/>
         </RouterLink>
@@ -90,7 +90,7 @@ onMounted(async () => {
                 </RouterLink>
             </li>
         </div>
-        <div class="md:hidden card flex justify-center">
+        <div class="md:hidden card flex justify-center h-[3.5rem]">
             <Button type="button" icon="pi pi-bars" @click="toggle" class="bg-transparent w-[5rem]" />
             <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
               <template #item="{ item }">
