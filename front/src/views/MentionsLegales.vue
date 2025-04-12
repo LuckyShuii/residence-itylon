@@ -18,11 +18,11 @@ const blockData = reactive<BlockTemplateType>({
     <section class="mb-12">
       <h2 class="font-mistress text-5xl mb-2">Éditeur du site</h2>
       <p class="mt-6">
-        <strong>Nom du site :</strong> lucasboillot.fr<br />
+        <strong>Nom du site :</strong> https://residence-itylon.com<br />
         <strong>Propriétaire :</strong> Lucas BOILLOT<br />
         <strong>Statut :</strong> Site réalisé gratuitement (non auto-entrepreneur)<br />
         <strong>Email :</strong> <a href="mailto:lucasnimes30000@gmail.com" class="underline">lucasnimes30000@gmail.com</a><br />
-        <strong>Téléphone :</strong> 07.79.99.23.33<br />
+        <strong>Téléphone :</strong> +33 7 79 99 23 33<br />
         <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/lucas-boillot/" class="underline" target="_blank">https://www.linkedin.com/in/lucas-boillot/</a><br />
         <strong>Site :</strong> <a href="https://lucasboillot.fr" class="underline" target="_blank">https://lucasboillot.fr</a>
       </p>
