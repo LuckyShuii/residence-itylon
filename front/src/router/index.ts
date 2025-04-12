@@ -7,6 +7,7 @@ import HousesView from "@/views/HousesView.vue";
 import NotFoundView from '@/views/NotFoundView.vue';
 import HouseView from '@/views/HouseView.vue';
 import PricingView from '@/views/PricingView.vue';
+import PolitiqueDeConfidentialite from '@/views/PolitiqueDeConfidentialite.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -51,6 +52,11 @@ const router = createRouter({
       path: '/tarifs',
       name: 'pricing',
       component: PricingView
+    },
+    {
+      path: '/politique-de-confidentialite',
+      name: 'politique-de-confidentialite',
+      component: PolitiqueDeConfidentialite
     },
     {
       path: '/:pathMatch(.*)*',
