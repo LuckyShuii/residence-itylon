@@ -71,6 +71,7 @@ const generateAdvancedData = (id: number): void => {
   blockData.imageSrc = generateImgSrc(currentActivity.pictures.split(",")[0]);
   activityDetailData.title = currentActivity.title;
   activityDetailData.description = currentActivity.description;
+  activityDetailData.externalLink = currentActivity.externalLink;
   generateActivityPictures(currentActivity.pictures);
 };
 

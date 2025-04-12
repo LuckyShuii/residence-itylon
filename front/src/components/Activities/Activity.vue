@@ -28,7 +28,7 @@ const openImage = (src: string) => {
         <div class="p-4">
           <h2 class="text-lg font-semibold mb-4">{{ title }}</h2>
           <p>{{ description }}</p>
-          <a :href="externalLink">
+          <a :href="externalLink" target="_blank">
             <Button class="mt-4 w-[178px] !pl-[1rem]" icon="pi pi-external-link" label="En savoir plus" />
           </a>
         </div>
@@ -59,7 +59,7 @@ const openImage = (src: string) => {
           <div class="p-4">
             <h2 class="text-lg font-semibold mb-4">{{ title }}</h2>
             <p>{{ description }}</p>
-            <a :href="externalLink">
+            <a :href="externalLink" target="_blank">
               <Button class="mt-4 w-[178px] !pl-[1rem]" icon="pi pi-external-link" label="En savoir plus" />
             </a>
           </div>
