@@ -19,16 +19,16 @@ const getFormattedTitle = (title?: string): string => {
 </script>
 
 <template>
-    <div class="mt-[20px]">
-        <div class="w-[380px] rounded-[10px] bg-green-light py-[45px] px-[35px]">
+    <div class="mt-[20px] max-[1380px]:flex-col max-[1380px]:px-6 max-[1380px]:w-full">
+        <div class="max-w-[380px] h-full rounded-[10px] bg-green-light py-[45px] px-[35px] max-[1380px]:max-w-full">
             <h3 class="font-mistress text-[40px] pb-[30px]">Découvrez {{ getFormattedTitle(houseData?.title) }}</h3>
             <p>{{ houseData?.description }}.</p>
         </div>
 
-        <div class="w-[500px] rounded-[10px] py-[45px] px-[35px] m-[30px] border border-[#89B58C]">
-            <h3 class="font-mistress text-[40px] pb-[30px]">Caractéristiques</h3>
-            <div class="flex justify-between">
-                <div>
+        <div class="w-[500px] rounded-[10px] py-[45px] px-[35px] m-[30px] border border-[#89B58C] max-[1380px]:max-w-full max-[1380px]:w-full max-[1380px]:mx-0">
+            <h3 class="font-mistress text-[40px] pb-[30px] max-[1380px]:text-center">Caractéristiques</h3>
+            <div class="flex justify-between max-[1380px]:justify-center">
+                <div class="max-[1380px]:mr-8">
                     <div class="flex items-center my-[16px]">
                         <img loading="lazy" src="/src/assets/icons/double_bed.svg" alt="bed icon" class="w-[30px] h-[30px] inline-block" />
                         <p class="ml-[20px]">{{ houseData?.bed }} lit{{ Number(houseData?.bed) > 1 ? 's' : '' }}</p>
@@ -75,30 +75,30 @@ const getFormattedTitle = (title?: string): string => {
             </div>
         </div>
 
-        <div class="w-[325px] rounded-[10px] py-[45px] px-[35px] items-start">
+        <div class="w-[325px] rounded-[10px] py-[45px] px-[35px] items-start max-[1380px]:max-w-full max-[1380px]:w-full max-[1380px]:mx-0 max-[1380px]:items-center max-[1380px]:flex max-[1380px]:flex-col">
             <h3 class="font-mistress text-[40px] pb-[30px]">Tarifs</h3>
             <h4 class="font-light italic">Pour une semaine</h4>
-            <table class="w-full">
-                <tbody class="border-separate border-spacing-y-2">
+            <table class="w-full border-separate border-spacing-y-4 max-[1380px]:w-[15rem]">
+                <tbody>
                     <tr>
                         <td>Avril, Mai & Octobre</td>
-                        <td>{{ houseData?.price[0].lowSeason }}€</td>
+                        <td class="max-[1380px]:text-end">{{ houseData?.price[0].lowSeason }}€</td>
                     </tr>
                     <tr>
                         <td>Juin & Septembre</td>
-                        <td>{{ houseData?.price[0].mediumSeason }}€</td>
+                        <td class="max-[1380px]:text-end">{{ houseData?.price[0].mediumSeason }}€</td>
                     </tr>
                     <tr>
                         <td>01/07 - 27/07</td>
-                        <td>{{ houseData?.price[0].highSeason }}€</td>
+                        <td class="max-[1380px]:text-end">{{ houseData?.price[0].highSeason }}€</td>
                     </tr>
                     <tr>
                         <td>28/07 - 24/08</td>
-                        <td>{{ houseData?.price[0].veryHighSeason }}€</td>
+                        <td class="max-[1380px]:text-end">{{ houseData?.price[0].veryHighSeason }}€</td>
                     </tr>
                     <tr>
                         <td>Ménage</td>
-                        <td>{{ houseData?.price[0].cleaningFee }}€</td>
+                        <td class="max-[1380px]:text-end">{{ houseData?.price[0].cleaningFee }}€</td>
                     </tr>
                 </tbody>
             </table>

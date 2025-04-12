@@ -11,7 +11,7 @@ const { houses } = storeToRefs(useHouseStore());
 
 const blockData = reactive<BlockTemplateType>({
   title: 'Les maisons',
-  paragraph: 'Deux phrases pour parler des maisons',
+  paragraph: 'Découvrez nos maisons nichées dans un écrin de verdure, où confort et simplicité se conjuguent pour vous offrir un séjour paisible à deux pas de la mer.',
   imageSrc: 'webp/houses/houses_main.webp'
 });
 

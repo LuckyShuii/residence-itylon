@@ -14,7 +14,7 @@ const currentYear = new Date().getFullYear();
 
 const blockData = reactive<BlockTemplateType>({
   title: `Tarifs ${currentYear}`,
-  paragraph: 'Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus',
+  paragraph: 'Nos tarifs sont indiqués à la semaine. Les séjours plus courts ou plus longs sont recalculés sur la base du tarif hebdomadaire. Merci de nous signaler impérativement la présence d’animaux de compagnie lors de votre réservation.',
   imageSrc: 'webp/contact/a%20residence%20(16).webp'
 });
 

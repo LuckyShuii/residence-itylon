@@ -21,7 +21,7 @@ const { residenceHeaderTitle, description } = storeToRefs(useResidenceStore());
 const blockData = reactive<BlockTemplateType>({
   title: 'La résidence',
   imageSrc: 'webp/residence/residence_main.webp',
-  paragraph: "Voluptate vitae quo maxime asperiores. Mollitia iusto qui nemo deserunt magni aut reiciendis consequuntur. Accusantium sunt ducimus assumenda. Praesentium est laborum numquam repellendus"
+  paragraph: "À Cargèse, tout près de la crique de Menasina, Itylon est une adresse discrète où règnent simplicité et convivialité. Ici, loin du clinquant, Jean et sa fille Isadora accueillent leurs hôtes dans un cadre naturel préservé, propice à la détente."
 });
 </script>
 
