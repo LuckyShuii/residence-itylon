@@ -9,28 +9,21 @@ import { useToast } from 'primevue/usetoast';
 const toast = useToast();
 const items = [
     { label: 'Accueil', icon: 'pi pi-fw pi-home', to: '/' },
-    { label: 'Découvrir la résidence', icon: 'pi pi-fw pi-search', to: '/decouvrir/la-residence' },
-    { label: 'Découvrir les maisons', icon: 'pi pi-fw pi-search', to: '/decouvrir/les-maisons' },
-    { label: 'Activités', icon: 'pi pi-fw pi-calendar', to: '/activites/toutes-les-activites?a=0' },
+    { label: 'Résidence', icon: 'pi pi-fw pi-search', to: '/decouvrir/la-residence' },
+    { label: 'Maisons', icon: 'pi pi-fw pi-search', to: '/decouvrir/les-maisons' },
+    { label: 'Alentours', icon: 'pi pi-fw pi-calendar', to: '/activites/toutes-les-activites?a=0' },
     { label: 'Tarifs', icon: 'pi pi-fw pi-money-bill', to: '/tarifs' },
     { label: 'Contact', icon: 'pi pi-fw pi-envelope', to: '/contact' },
-    { label: 'Réserver', icon: 'pi pi-fw pi-calendar-plus', to: '/contact?page=reservation' }
 ];
 const menu = ref();
 
 const activities = ref<any>([]);
 const selectedActivity = ref(null);
 
-const discoveries = ref([
-    { name: 'Les maisons' },
-    { name: 'La résidence' }
-]);
-const selectedDiscover = ref(null);
-
 const loadActivities = async () => {
     try {
         const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/activities`);
-        activities.value = [{id: 0, headerTitle: "Toutes les activites"}, ...response.data];
+        activities.value = [{id: 0, headerTitle: "Toutes les activités"}, ...response.data];
     } catch (error) {
         toast.add({ severity: 'error', summary: 'Erreur', detail: 'Une erreur est survenue lors du chargement des activités', life: 6000 });
     }
@@ -49,16 +42,11 @@ const resetDropdown = (event: any) => {
 
     reRoute(toRoute);
     resetSelectedActivity();
-    resetSelectedDiscover();
 };
 
 
 const resetSelectedActivity = () => {
     selectedActivity.value = null;
-};
-
-const resetSelectedDiscover = () => {
-    selectedDiscover.value = null;
 };
 
 const reRoute = (route: string) => {
@@ -84,21 +72,21 @@ onMounted(async () => {
             <li class="hover:border-b-2 hover:border-white">
                 <RouterLink to="/">Accueil</RouterLink>
             </li>
-            <li class="ml-[25px]">
-                <Dropdown v-model="selectedDiscover" :options="discoveries" optionLabel="name" placeholder="Découvrir" class="w-full md:w-14rem" @change="resetDropdown"/>
+            <li class="ml-[25px] hover:border-b-2 hover:border-white">
+                <RouterLink to="/decouvrir/la-residence">Résidence</RouterLink>
+            </li>
+            <li class="ml-[25px] mr-4 hover:border-b-2 hover:border-white">
+                <RouterLink to="/decouvrir/les-maisons">Maisons</RouterLink>
             </li>
             <li>
-                <Dropdown v-model="selectedActivity" :options="activities" optionLabel="headerTitle" placeholder="Activités" class="w-full md:w-14rem" @change="resetDropdown"/>
+                <Dropdown v-model="selectedActivity" :options="activities" optionLabel="headerTitle" placeholder="Alentours" class="w-full md:w-14rem" @change="resetDropdown"/>
             </li>
             <li class="hover:border-b-2 hover:border-white">
                 <RouterLink to="/tarifs">Tarifs</RouterLink>
-            </li>
-            <li class="ml-[25px] hover:border-b-2 hover:border-white">
-                <RouterLink to="/contact">Contact</RouterLink>
-            </li>
+            </li>   
             <li>
-                <RouterLink to="/contact?page=reservation">
-                    <Button class="ml-[25px] w-[100px] h-[42px] flex justify-center">Réserver</Button>
+                <RouterLink to="/contact?">
+                    <Button class="ml-[25px] w-[100px] h-[42px] flex justify-center">Contact</Button>
                 </RouterLink>
             </li>
         </div>
