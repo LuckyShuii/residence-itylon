@@ -166,12 +166,12 @@ const getFormattedTitle = (title?: string): string => {
                             {{ houseData?.price[0].veryHighSeason }}€
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>Ménage</td>
                         <td class="max-[1380px]:text-end">
                             {{ houseData?.price[0].cleaningFee }}€
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
