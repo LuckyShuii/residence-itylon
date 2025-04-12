@@ -8,7 +8,7 @@ type HouseData = {
     mediumSeason: number;
     highSeason: number;
     veryHighSeason: number;
-    cleaningFee: number;
+    // cleaningFee: number;
     house: {
         id: number;
         title: string;
@@ -54,7 +54,7 @@ const PriceController = {
                 mediumSeason: { season: "Moyenne saison", dates: "Juin & Septembre" },
                 highSeason: { season: "Haute saison", dates: "Du 1er au 27/07" },
                 veryHighSeason: { season: "Très haute saison", dates: "Du 28/07 au 24/08" },
-                cleaningFee: { season: "Ménage", dates: "" }
+                //cleaningFee: { season: "Ménage", dates: "" }
             };
             
             const housesType1 = ['romarin', 'eucalyptus', 'laurier', 'olivier', 'rosier', 'ciste', 'myrte', 'lentisque'];

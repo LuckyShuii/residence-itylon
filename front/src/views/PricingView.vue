@@ -26,12 +26,13 @@ onMounted(async() => {
     <TopImageBlock :title="blockData.title" :paragraph="blockData.paragraph ?? 'not found'" :image-src="blockData.imageSrc" />
     <div class="flex w-full justify-center flex-wrap gap-[40px] max-w-[1300px] mx-auto mt-[50px]">
         <BaseInfo />
-        <PricingBlock :season="house.season"
-                      :dates="house.dates"
-                      :pricesWithHouseName="house.pricesWithHouseName"
-                      :key="house.id" 
-                      v-for="house in housesPricing"
-                      class="border border-[green-btn] rounded-[20px]"
-                      />
+        <PricingBlock 
+            :season="house.season"
+            :dates="house.dates"
+            :pricesWithHouseName="house.pricesWithHouseName"
+            :key="house.id" 
+            v-for="house in housesPricing"
+            class="border border-[green-btn] rounded-[20px]"
+        />
     </div>
 </template>
