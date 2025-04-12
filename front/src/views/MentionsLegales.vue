@@ -19,7 +19,8 @@ const blockData = reactive<BlockTemplateType>({
       <h2 class="font-mistress text-5xl mb-2">Éditeur du site</h2>
       <p class="mt-6">
         <strong>Nom du site :</strong> https://residence-itylon.com<br />
-        <strong>Propriétaire :</strong> Lucas BOILLOT<br />
+        <strong>Développé par :</strong> Lucas BOILLOT (tout développé)<br />
+        <strong>Design imaginé par :</strong> Azraël Landres (<a href="https://www.linkedin.com/in/azraellandres/" target="_blank" class="underline text-blue-700">linkedin.com/in/azraellandres)</a><br />
         <strong>Statut :</strong> Site réalisé gratuitement (non auto-entrepreneur)<br />
         <strong>Email :</strong> <a href="mailto:lucasnimes30000@gmail.com" class="underline">lucasnimes30000@gmail.com</a><br />
         <strong>Téléphone :</strong> +33 7 79 99 23 33<br />
@@ -27,6 +28,7 @@ const blockData = reactive<BlockTemplateType>({
         <strong>Site :</strong> <a href="https://lucasboillot.fr" class="underline" target="_blank">https://lucasboillot.fr</a>
       </p>
     </section>
+
 
     <!-- Hébergeur -->
     <section class="mb-12">
