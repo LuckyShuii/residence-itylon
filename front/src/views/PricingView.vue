@@ -10,10 +10,8 @@ import { storeToRefs } from 'pinia';
 const { getHousesPricing } = useHouseStore();
 const { housesPricing } = storeToRefs(useHouseStore());
 
-const currentYear = new Date().getFullYear();
-
 const blockData = reactive<BlockTemplateType>({
-  title: `Tarifs ${currentYear}`,
+  title: `Tarifs 2024`,
   paragraph: 'Nos tarifs sont indiqués à la semaine. Les séjours plus courts ou plus longs sont recalculés sur la base du tarif hebdomadaire. Merci de nous signaler impérativement la présence d’animaux de compagnie lors de votre réservation.',
   imageSrc: 'webp/contact/a%20residence%20(16).webp'
 });

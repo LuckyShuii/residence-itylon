@@ -137,7 +137,7 @@ const getFormattedTitle = (title?: string): string => {
             </div>
         </div>
 
-        <div class="w-[325px] rounded-[10px] py-[45px] px-[35px] items-start max-[1380px]:max-w-full max-[1380px]:w-full max-[1380px]:mx-0 max-[1380px]:items-center max-[1380px]:flex max-[1380px]:flex-col">
+        <div class="w-[325px] rounded-[10px] py-[45px] px-[35px] items-start max-[1380px]:max-w-full max-[1380px]:w-full max-[1380px]:mx-0 max-[1380px]:items-center max-[1380px]:flex max-[1380px]:flex-col max-[1380px]:mt-[-1.5rem]">
             <h3 class="font-mistress text-[40px] pb-[30px]">Tarifs</h3>
             <h4 class="font-light italic">Pour une semaine</h4>
             <table class="w-full border-separate border-spacing-y-4 max-[1380px]:w-[15rem]">
