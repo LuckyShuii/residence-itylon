@@ -30,7 +30,7 @@ onMounted(async() => {
             :season="house.season"
             :dates="house.dates"
             :pricesWithHouseName="house.pricesWithHouseName"
-            :key="house.id" 
+            :key="house.id"
             v-for="house in housesPricing"
             class="border border-[green-btn] rounded-[20px]"
         />
