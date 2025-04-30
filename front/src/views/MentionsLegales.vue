@@ -34,11 +34,11 @@ const blockData = reactive<BlockTemplateType>({
     <section class="mb-12">
       <h2 class="font-mistress text-5xl mb-2">Hébergeur</h2>
       <p class="mt-6">
-        <strong>Nom de l’hébergeur :</strong> Hosterfy<br />
-        <strong>Informations générales :</strong> NETFY SARL au capital de 6 000 euros<br />
-        <strong>Siège social :</strong> 5 boulevard Vincent Gâche, 44200 Nantes<br />
-        <strong>RCS :</strong> 912 407 558 R.C.S. Nantes<br />
-        <strong>N° TVA :</strong> FR56 912407558
+        <strong>Nom de l’hébergeur :</strong> IONOS<br />
+        <strong>Informations générales :</strong> IONOS SARL au capital de 100 000 euros<br />
+        <strong>Siège social :</strong> 7 place de la Gare, 57200 Sarreguemines<br />
+        <strong>RCS :</strong> 431 303 775 R.C.S. Sarreguemines<br />
+        <strong>N° TVA :</strong> FR13 431303775
       </p>
     </section>
 
