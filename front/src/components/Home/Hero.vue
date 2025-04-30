@@ -35,7 +35,7 @@ onMounted(() => {
       playsinline
     >
       <source
-        src="https://www.residence-itylon.com/media/videos/video-home-cut.mp4"
+        src="https://www.residence-itylon.com/videos/home.mp4"
         type="video/mp4"
       />
     </video>
