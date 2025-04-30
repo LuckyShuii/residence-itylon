@@ -44,13 +44,13 @@ const blockData = reactive<BlockTemplateType>({
 
     <!-- Responsable de traitement des données (DPO) -->
     <section class="mb-12">
-      <h2 class="font-mistress text-5xl mb-2">Responsable de traitement des données (DPO)</h2>
-      <p class="mt-6">
-        <strong>Nom :</strong> Sébastien Berranger<br />
-        <strong>Email :</strong> <a href="mailto:sebastien.berranger@hosterfy.com" class="underline">sebastien.berranger@hosterfy.com</a><br />
-        <strong>Téléphone :</strong> +33 9 72 51 19 35 (choix 3)
-      </p>
-    </section>
+  <h2 class="font-mistress text-5xl mb-2">Responsable de traitement des données (DPO)</h2>
+  <p class="mt-6">
+    <strong>Nom :</strong> Délégué à la protection des données – IONOS SARL<br />
+    <strong>Email :</strong> <a href="mailto:privacy@ionos.fr" class="underline">privacy@ionos.fr</a><br />
+    <strong>Adresse :</strong> 7, place de la Gare, BP 70109, 57201 Sarreguemines Cedex, France
+  </p>
+</section>
 
     <!-- Propriété intellectuelle -->
     <section class="mb-12">
