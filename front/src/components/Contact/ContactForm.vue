@@ -109,8 +109,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="max-w-[670px] mt-[80px] max-[745px]:mx-6">
-    <h2 class="font-mistress text-[46px] mb-[37px]">Formulaire de contact</h2>
+  <div class="max-w-[670px] mt-[80px] max-[745px]:mx-6 max-[745px]:w-[98%]">
+    <h2 class="font-mistress text-[46px] mb-[37px] max-[745px]:text-center">Formulaire de contact</h2>
     <form ref="formRef" class="border border-gray-200 rounded-[10px] w-full p-[41px] min-h-[826px]" @submit.prevent="checkForm">
       <div class="flex justify-between w-full mb-[2rem] max-[745px]:flex-col">
         <div class="flex flex-col gap-2 max-[745px]:mb-4">
@@ -129,7 +129,7 @@ onMounted(() => {
         </div>
         <div class="flex flex-col gap-2">
           <label for="phone">Téléphone</label>
-          <InputText type="tel" id="phone" v-model="formData.phone" placeholder="0606060606" class="max-[745px]:w-full w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
+          <InputText type="tel" id="phone" v-model="formData.phone" placeholder="06..." class="max-[745px]:w-full w-[262px] h-[46px] py-[5px] px-[8px] text-[16px] border border-green-btn" />
         </div>
       </div>
       <div>
