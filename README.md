@@ -42,8 +42,7 @@ The project was built from the ground up using the following technologies:
 
 ## 🏝️ Live Preview
 
-https://wildtransfer.fr 
-soon to be : https://residence-itylon.com
+https://residence-itylon.com
 
 ---
 
