@@ -42,6 +42,7 @@ const sendForm = async () => {
   const recaptchaResponse = (window as any).grecaptcha.getResponse();
 
   if (!recaptchaResponse) {
+    sending.value = false;
     toast.add({
       severity: 'error',
       summary: 'Formulaire',
@@ -57,7 +58,7 @@ const sendForm = async () => {
     phone: formData.phone,
     email: formData.email,
     message: formData.message,
-    recaptchaResponse: recaptchaResponse
+    'g-recaptcha-response': recaptchaResponse,
   };
 
   try {
