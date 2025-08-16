@@ -70,7 +70,7 @@ const sendForm = async () => {
     toast.add({ severity: 'success', summary: 'Formulaire', detail: 'Votre message a bien été envoyé !', life: 6000 });
     resetForm();
   } catch (error) {
-    toast.add({ severity: 'error', summary: 'Formulaire', detail: 'Une erreur est survenue lors de l\'envoi du formulaire.' + error, life: 6000 });
+    toast.add({ severity: 'error', summary: 'Formulaire', detail: 'Une erreur est survenue lors de l\'envoi du formulaire. Merci de nous contacter au plus vite par téléphone ou mail directement !', life: 6000 });
   } finally {
     sending.value = false;
   }
