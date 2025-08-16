@@ -145,7 +145,7 @@ onMounted(() => {
         <div id="recaptcha-container"></div>
       </div>
       <div class="w-full flex justify-center items-center mt-[10px]">
-        <Button type="submit" label="Envoyer" class="py-[5px] w-[160px]" :loading="sending" />
+        <Button disabled type="submit" label="Envoyer" class="py-[5px] w-[160px]" :loading="sending" />
       </div>
     </form>
   </div>
