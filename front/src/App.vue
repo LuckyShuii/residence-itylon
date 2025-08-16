@@ -15,7 +15,6 @@ const updatePadding = () => {
 }
 
 onMounted(() => {
-  // au cas où la taille change (responsif, zoom, langue, etc.)
   ro.value = new ResizeObserver(updatePadding)
   if (messageWrapperRef.value) ro.value.observe(messageWrapperRef.value)
   window.addEventListener('resize', updatePadding)
@@ -41,7 +40,7 @@ onUnmounted(() => {
 
     <div
       ref="messageWrapperRef"
-      class="fixed bottom-0 left-0 right-0 z-20"
+      class="fixed bottom-0 left-0 right-0 z-20 !hidden"
       role="region"
       aria-label="Information disponibilité formulaire"
     >
