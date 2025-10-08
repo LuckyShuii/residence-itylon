@@ -77,22 +77,22 @@ INSERT INTO contact_form (firstName, lastName, email, phone, message) VALUES
 ('Eva', 'Garcia', 'eva.garcia@example.com', '555555555', 'Test message 4');
 
 INSERT INTO price (id, lowSeason, mediumSeason, highSeason, veryHighSeason, cleaningFee, houseId) VALUES
-(1, 500, 610, 1000, 1050, 40, 1), -- romarin
-(2, 500, 610, 1000, 1050, 40, 2), -- eucaliptus
-(3, 500, 610, 1000, 1050, 40, 3), -- laurier
-(4, 500, 610, 1000, 1050, 40, 4), -- olivier
-(5, 500, 610, 1000, 1050, 40, 5), -- rosier
-(6, 500, 610, 1000, 1050, 40, 6), -- ciste
-(7, 500, 610, 1000, 1050, 40, 7), -- myrte
-(8, 500, 610, 1000, 1050, 40, 8), -- lentisque
-(9, 600, 710, 1100, 1150, 50, 9), -- kiwi
-(10, 600, 710, 1100, 1150, 50, 10), -- cerisier
-(11, 650, 760, 1150, 1200, 50, 11), -- arbousier
-(12, 700, 900, 1250, 1350, 50, 12), -- datura
-(13, 750, 950, 1350, 1400, 60, 13), -- asphodele
-(14, 900, 1300, 1500, 1600, 60, 14), -- amandier
-(15, 950, 1400, 1600, 1700, 60, 15), -- figuier
-(16, 450, 550, 850, 950, 30, 16); -- citronnier
+(1, 640, 765, 1120, 1180, 0, 1), -- romarin
+(2, 640, 765, 1120, 1180, 0, 2), -- eucaliptus
+(3, 640, 765, 1120, 1180, 0, 3), -- laurier
+(4, 640, 765, 1120, 1180, 0, 4), -- olivier
+(5, 640, 765, 1120, 1180, 0, 5), -- rosier
+(6, 640, 765, 1120, 1180, 0, 6), -- ciste
+(7, 640, 765, 1120, 1180, 0, 7), -- myrte
+(8, 640, 765, 1120, 1180, 0, 8), -- lentisque
+(9, 740, 890, 1300, 1370, 0, 9), -- kiwi
+(10, 740, 890, 1300, 1370, 0, 10), -- cerisier
+(11, 800, 955, 1390, 1470, 0, 11), -- arbousier
+(12, 840, 1020, 1480, 1570, 0, 12), -- datura
+(13, 900, 1080, 1570, 1670, 0, 13), -- asphodele
+(14, 1060, 1275, 1860, 1960, 0, 14), -- amandier
+(15, 1120, 1330, 1960, 2060, 0, 15), -- figuier
+(16, 590, 700, 1020, 1080, 0, 16); -- citronnier
 
 INSERT INTO residence (id, headerTitle, title, description, postalAddress, email, phone, socials) VALUES
 (1, 'Residence Itylon', "Séjourner à Itylon, c'est être un peu chez soi en vacances", "Ici, rien de tape à l'oeil et de clinquant, nichées au milieu des fleurs et du maquis, sur un terrain arboré qui jouxte la superbe crique de Menasina, à l'entrée de Cargèse. Jean et Isadora, sa fille, jouent la carte de la décontraction : disponible et serein, ils ont su installer à Itylon une ambiance familiale et bon enfant. On se prend à fureter dans les recoins du jardin avant de prendre le petit chemin qui conduit à la plage. Un luxe simple, mais d'autant plus précieux.", 'Residence Itylon 20130 Cargèse', 'residence.itylon@gmail.com', '06.07.73.12.25', 'https://www.facebook.com/residenceitylon, https://www.instagram.com/residence_itylon/');
