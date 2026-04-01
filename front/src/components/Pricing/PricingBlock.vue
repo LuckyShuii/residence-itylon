@@ -1,25 +1,20 @@
 <script setup lang="ts">
-const props = defineProps<{
-    season: string;
-    dates: string;
-    pricesWithHouseName: {houseName: string, price: number}[];
-}>();
+const props = withDefaults(defineProps<{
+    imageSrc: string;
+    alt?: string;
+}>(), {
+    alt: "Tarifs 2026"
+});
 
 </script>
 
 <template>
-    <div class="w-[385px] px-[25px] py-[25px]">
-        <div class="flex justify-between items-end mb-2">
-            <h3 class="font-mistress text-[35px]">{{ season }}</h3>
-            <h3 class="mb-2">{{ dates ? '(' + dates + ')' : '' }}</h3>
-        </div>
-        <table class="w-full border-separate border-spacing-y-2">
-            <tbody>
-                <tr v-for="house in pricesWithHouseName" :key="house.houseName">
-                <td class="text-xl">{{ house.houseName }}</td>
-                <td class="text-end text-xl">{{ house.price }}€</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="w-full lg:basis-3/4 border border-[green-btn] rounded-[20px] overflow-hidden">
+        <img 
+            loading="lazy" 
+            :src="'/' + props.imageSrc" 
+            :alt="props.alt" 
+            class="w-full h-full object-cover"
+        />
     </div>
 </template>

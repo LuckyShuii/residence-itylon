@@ -52,8 +52,8 @@ const PriceController = {
             const seasonMapping = {
                 lowSeason: { season: "Basse saison", dates: "Avril, Mai & Octobre" },
                 mediumSeason: { season: "Moyenne saison", dates: "Juin & Septembre" },
-                highSeason: { season: "Haute saison", dates: "Du 1er au 27/07" },
-                veryHighSeason: { season: "Très haute saison", dates: "Du 28/07 au 24/08" },
+                highSeason: { season: "Haute saison", dates: "Juillet" },
+            veryHighSeason: { season: "Très haute saison", dates: "Août" },
                 //cleaningFee: { season: "Ménage", dates: "" }
             };
             

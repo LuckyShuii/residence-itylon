@@ -117,12 +117,12 @@ INSERT INTO house (id, title, descriptionTitle, previewPicture, pictures, capaci
 
 
 INSERT INTO period (id, name, startDate, endDate) VALUES
-(1, "lowSeason", "2024-04-01", "2024-05-31", ''),
-(2, "mediumSeason", "2024-06-01", "2024-06-30"),
-(3, "highSeason", "2024-07-01", "2024-07-26"),
-(4, "veryHighSeason", "2024-07-27", "2024-08-24"),
-(5, "mediumSeason", "2024-08-25", "2024-09-30"),
-(6, "lowSeason", "2024-10-01", "2024-10-31");
+(1, "lowSeason", "2026-04-01", "2026-05-31", ''),
+(2, "mediumSeason", "2026-06-01", "2026-06-30"),
+(3, "highSeason", "2026-07-01", "2026-07-26"),
+(4, "veryHighSeason", "2026-07-27", "2026-08-24"),
+(5, "mediumSeason", "2026-08-25", "2026-09-30"),
+(6, "lowSeason", "2026-10-01", "2026-10-31");
 
 INSERT INTO activity (id, headerTitle, headerDescription, title, description, externalLink, pictures) VALUES
 (1, "La plage de Menasina", "À seulement quelques minutes à pied de votre maison, la plage de Menasina s’étend sur environ 200 mètres. Elle nous offre une magnifique vue jusqu’à la marine de Cargèse", "La plage de Menasina", "Moins fréquentée que d'autres plages de la région, elle offre une tranquillité et une atmosphère paisible. L'endroit idéal pour se détendre, se baigner et profiter du soleil tout en admirant la vue imprenable sur la mer Méditerranée et les montagnes environnantes", "https://maps.app.goo.gl/tvUu4vUJAspCvBPs5", ""),

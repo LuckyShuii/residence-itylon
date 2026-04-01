@@ -155,13 +155,13 @@ const getFormattedTitle = (title?: string): string => {
                         </td>
                     </tr>
                     <tr>
-                        <td>01/07 - 27/07</td>
+                        <td>Juillet</td>
                         <td class="max-[1380px]:text-end">
                             {{ houseData?.price[0].highSeason }}€
                         </td>
                     </tr>
                     <tr>
-                        <td>28/07 - 24/08</td>
+                        <td>Août</td>
                         <td class="max-[1380px]:text-end">
                             {{ houseData?.price[0].veryHighSeason }}€
                         </td>
