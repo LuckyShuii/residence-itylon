@@ -1,55 +1,63 @@
-# Résidence Itylon – Modern Website Revamp
+# Résidence Itylon — v2 (Refonte)
 
-Welcome to the repository of **Résidence Itylon**, a stunning holiday destination featuring charming gîtes nestled in the heart of Corsica. This project is a complete redesign and development of their original website, offering a modern, responsive, and performant experience for potential visitors.
+## Description
+Refonte complète et modernisation du site web de **Résidence Itylon**, une résidence de gîtes en Corse. La v1 du site (PHP vanilla, voir le projet [`residence-Itylon.com`](../../residence-Itylon.com)) souffrait d'une UX datée, d'un manque de responsivité et de performances limitées. Cette v2 propose une architecture moderne **frontend / backend séparés**, conteneurisée, avec mise en cache pour optimiser les temps de réponse.
 
-## 🌄 About
+🌐 Live : [https://residence-itylon.com](https://residence-itylon.com)
 
-The aim of this project was to bring a fresh and elegant digital presence to Résidence Itylon by creating a fully customized website from scratch. The original website lacked responsiveness, modern UI/UX design, and speed optimization. This new version addresses those issues with a robust tech stack and clean architecture.
+## Stack technique
 
-Whether users are browsing from mobile or desktop, the site highlights the beauty of the Corsican landscapes, the comfort of the gîtes, and the simplicity of booking a stay.
+### Frontend (`front/`)
+- **Vue 3** — framework JavaScript progressif pour interfaces modernes
+- **Tailwind CSS** — utility-first CSS
 
----
+### Backend (`back/`)
+- **Express.js** — framework Node.js minimaliste pour API REST
+- **Redis** — cache pour le contenu dynamique et les sessions
+- **SQLite** — base relationnelle légère et embarquée
 
-## 🚀 Tech Stack
+### DevOps
+- **Docker** — application entièrement conteneurisée
+- **Nginx** — reverse proxy + delivery des fichiers statiques
 
-The project was built from the ground up using the following technologies:
+## Prérequis
+- Docker + Docker Compose (recommandé : tout est conteneurisé)
+- Optionnel pour le développement front sans Docker :
+  - Node.js >= 18
+  - npm ou pnpm
 
-### Frontend
-- **Vue 3** – A progressive JavaScript framework for building modern user interfaces.
-- **Tailwind CSS** – A utility-first CSS framework that helped craft a clean and responsive design.
+## Fonctionnalités
+- Design **mobile-first** et entièrement responsive
+- Galeries d'images haute résolution des gîtes et de leurs environs
+- UI moderne reflétant l'ambiance paisible de la résidence
+- Formulaire de contact personnalisé
+- Temps de chargement rapides grâce au cache Redis et au delivery statique Nginx
+- Environnement Docker pour déploiement et tests rapides
 
-### Backend
-- **Express.js** – A minimalist backend framework for handling API routes and business logic.
-- **Redis** – Used for caching and improving performance of dynamic content and sessions.
-- **SQLite** – A lightweight, file-based relational database perfect for small-to-medium web apps.
+## Installation
 
-### DevOps / Infrastructure
-- **Docker** – The entire application is containerized to ensure consistency across environments.
-- **Nginx** – Serves as a reverse proxy and static file handler to ensure fast content delivery and better scalability.
+```bash
+# 1. Cloner le dépôt et se placer dans l'application
+git clone <url-du-depot>
+cd residence-itylon
 
----
+# 2. Lancer la stack Docker (front + back + Redis + Nginx)
+docker compose up -d
+```
 
-## 🧠 Features
+Pour un développement front "à plat" (sans Docker) :
+```bash
+cd front
+npm install
+npm run dev
+```
 
-- Fully responsive and mobile-first design
-- High-resolution image galleries of the gîtes and surroundings
-- Clean, modern UI that reflects the peaceful atmosphere of the residence
-- Custom contact form integration
-- Fast load times thanks to Redis caching and Nginx static delivery
-- Dockerized environment for quick deployment and testing
+## Utilisation
+- Site public (via Docker) : [http://localhost](http://localhost)
+- Front en mode dev (sans Docker) : [http://localhost:5173](http://localhost:5173) (port par défaut Vite)
+- Production : [https://residence-itylon.com](https://residence-itylon.com)
 
----
-
-## 🏝️ Live Preview
-
-https://residence-itylon.com
-
----
-
-## 📬 Contact
-
-Feel free to reach out if you want to collaborate or if you're interested in a similar project!
-
-Portfolio: lucasboillot.fr (WIP)
-
-Linkedin: https://www.linkedin.com/in/lucas-boillot/
+### Documents annexes
+Le dossier parent (`itylon-v2/`) contient deux documents Word :
+- `Fiche_projet.docx` — fiche projet / cahier des charges initial
+- `memo_update_site.docx` — mémo pour la mise à jour du site en production
